@@ -23,22 +23,21 @@ public class HelloController {
 
     @FXML
     void operar(ActionEvent event) {
-        double num1 = Double.parseDouble(this.txtnum1.getText());
-        double num2 = Double.parseDouble(this.txtnum2.getText());
+        double num1;
+        double num2;
+        try {
+             num1 = Double.parseDouble(this.txtnum1.getText());
+             num2 = Double.parseDouble(this.txtnum2.getText());
+        }catch (Exception err){
+            this.resultado.setText("Contenido invalido para operar");
+            return;
+        }
         Button btn = (Button) event.getSource();
-        switch (btn.getText()){
-            case "-":
-                this.resultado.setText(Double.toString(num1 - num2));
-                break;
-            case "+":
-                this.resultado.setText(Double.toString(num1 + num2));
-                break;
-            case "*":
-                this.resultado.setText(Double.toString(num1 * num2));
-                break;
-            case "/":
-                this.resultado.setText(Double.toString(num1/num2));
-                break;
+        switch (btn.getText()) {
+            case "-" -> this.resultado.setText(Double.toString(num1 - num2));
+            case "+" -> this.resultado.setText(Double.toString(num1 + num2));
+            case "*" -> this.resultado.setText(Double.toString(num1 * num2));
+            case "/" -> this.resultado.setText(Double.toString(num1 / num2));
         }
 
     }
