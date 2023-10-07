@@ -12,178 +12,122 @@ import java.util.regex.Pattern;
 
 public class HelloController {
 
-    @FXML
-    private Button botonBorrar;
-
-    @FXML
-    private Button botonIgual;
-
-    @FXML
-    private Button botonMult;
-
-    @FXML
-    private Button botonRestar;
-
-    @FXML
-    private Button botonSumar;
-
-    @FXML
-    private Button button1;
-
-    @FXML
-    private Button button2;
-
-    @FXML
-    private Button button3;
-
-    @FXML
-    private Button button4;
-
-    @FXML
-    private Button button5;
-
-    @FXML
-    private Button button6;
-
-    @FXML
-    private Button button7;
-
-    @FXML
-    private Button button8;
-
-    @FXML
-    private Button button9;
 
     @FXML
     private Label mostrarOperacion;
 
     @FXML
     private Label resultado;
-    //private String operacion = "";
-    private String operador = "\\+";
-    private ArrayList<String> operadores = new ArrayList<>();
-    private ArrayList<String> operacion = new ArrayList<>();
-    private String string = "";
 
+    private ArrayList<String> operadores = new ArrayList<>();
+    private ArrayList<String> numeros = new ArrayList<>();
+    private String string = "";
+    private String strinMostrar="";
+    private boolean hayResultado=false;
+    /**
+     * Método que devuelve al valor inicial todas las variables
+     * */
     @FXML
     void eliminar(MouseEvent event) {
-
-
-
-
-        /*
-        this.operador = "";
-        this.operacion = "";
+        this.string="";
+        this.numeros=new ArrayList<>();
+        this.operadores=new ArrayList<>();
+        this.strinMostrar="";
+        this.resultado.setText("");
         this.mostrarOperacion.setText("");
-        */
-
+        this.hayResultado=false;
     }
-
+    /**
+     * Método que mete el texto del evento el cual lo llama, este
+     * se le asignara a todos los botones para que cuando lo llamen,
+     * el texto del boton (el numero), se guarde en una string (por si el numero es mas grande que 9),
+     * luego se guarda en la string para mostrar por pantalla.
+     * */
     @FXML
     void meter(MouseEvent event) {
-
+        if (hayResultado&&this.operadores.size()==0){
+            this.eliminar(event);
+            return;
+        }
         Button btn = (Button) event.getSource();
         this.string += btn.getText();
-        this.mostrarOperacion.setText(this.mostrarOperacion.getText() + this.string);
-
-        /*
-        Button btn = (Button) event.getSource();
-        this.operacion += btn.getText();
-        this.mostrarOperacion.setText(operacion);
-        */
-
+        this.strinMostrar+=btn.getText();
+        this.mostrarOperacion.setText(this.strinMostrar);
     }
-
+    /**
+     * Método que guarda un operador en la lista de operadores,
+     * comprueba si la string donde se esta guardando el numero anterior al
+     * operador no esta vacia, ya que si hemos realizado una operacion previamente
+     * se podra meter un signo a continuacion y no un numero, por lo cual la string estará vacia,
+     * si no esta vacia, añadimos el numero que ya estará completo, a la lista de los numeros.
+     * */
     @FXML
     void meterSigno(MouseEvent event) {
 
         Button btn = (Button) event.getSource();
-        this.operacion.add(this.string);
-        this.operador = btn.getText();
         this.operadores.add(btn.getText());
+        this.strinMostrar+=btn.getText();
+        this.mostrarOperacion.setText(this.strinMostrar);
+        if(this.string.length()==0){
+            return;
+        }
+        this.numeros.add(this.string);
         this.string = "";
-        this.mostrarOperacion.setText(this.operacion.toString() + btn.getText());
-
-
-        /*
-        Button btn = (Button) event.getSource();
-        this.operador = btn.getText();
-        this.operacion += btn.getText();
-        this.mostrarOperacion.setText(operacion);
-        */
 
     }
-
+    /**
+     * Método que se encarga de hacer las operaciones, como tiene que haber 1 operador
+     * menos que la cantidad de numeros totales, se comprueba, ya que si no estará mal,
+     * luego se recorre la lista de los operadores, para acceder al numero anterior a este, que sera
+     * el que esta en la misma posicion que el operador en la lista de los numeros, y el que prosigue a este,
+     * se accede a ellos y se opera, luego el numero siguiente pasa a ser el resultado de la operacion, por si
+     * hay que seguir operando. Luego se guarda el resultado en la lista de los numeros, se muestra y se vacia la lista
+     * de operadores, tambien se reinicia el valor de la string donde se guarda el numero.
+     * */
     @FXML
     void operar(MouseEvent event) {
-        this.operacion.add(this.string);
+        this.numeros.add(this.string);
         this.string = "";
-        System.out.println(this.operadores.size());
-        System.out.println(this.operadores);
-        System.out.println(this.operacion.size());
-        System.out.println(this.operacion);
-        if (this.operadores.size() != (this.operacion.size() - 1)) {
-            this.resultado.setText("mal");
+        if ((this.operadores.size() != (this.numeros.size() - 1)) || this.operadores.size()==0) {
+            this.eliminar(event);
             return;
         }
         for (int i = 0; i < this.operadores.size(); i++) {
-            Double num1 = Double.parseDouble(this.operacion.get(i));
-            Double num2 = Double.parseDouble(this.operacion.get(i + 1));
-
+            Double num1;
+            Double num2;
+            try {
+                 num1 = Double.parseDouble(this.numeros.get(i));
+                 num2 = Double.parseDouble(this.numeros.get(i + 1));
+            }catch (Exception err){
+                this.eliminar(event);
+                this.mostrarOperacion.setText("mal");
+                return;
+            }
             switch (this.operadores.get(i)) {
-                case "-" :
-                    this.operacion.set(i+1,String.valueOf(num1 - num2));
+                case "-" -> {
+                    this.numeros.set(i + 1, String.valueOf(num1 - num2));
                     this.resultado.setText(String.valueOf(num1 - num2));
-                    break;
-                case "+" :
-                    this.operacion.set(i+1,String.valueOf(num1 + num2));
+                }
+                case "+" -> {
+                    this.numeros.set(i + 1, String.valueOf(num1 + num2));
                     this.resultado.setText(String.valueOf(num1 + num2));
-                    break;
-                case "*" :
-                    this.operacion.set(i+1,String.valueOf(num1 * num2));
+                }
+                case "*" -> {
+                    this.numeros.set(i + 1, String.valueOf(num1 * num2));
                     this.resultado.setText(String.valueOf(num1 * num2));
-                    break;
-                case "/" :
-                    this.operacion.set(i+1,String.valueOf(num1 / num2));
+                }
+                case "/" -> {
+                    this.numeros.set(i + 1, String.valueOf(num1 / num2));
                     this.resultado.setText(String.valueOf(num1 / num2));
-                    break;
+                }
             }
         }
-        /*
-        this.operacion=new ArrayList<>(List.of(this.resultado.getText()));
+        hayResultado=true;
+        this.strinMostrar=this.resultado.getText();
+        this.string="";
+        this.mostrarOperacion.setText(this.strinMostrar);
         this.operadores=new ArrayList<>();
-        this.mostrarOperacion.setText(String.valueOf(this.operacion));
-        */
-
-
-
-        /*
-        String separador =  Pattern.quote(this.operador);
-        String[] partes = this.operacion.split(separador);
-        if (partes.length == 3) {
-            this.resultado.setText("Operacion invalida, suma de dos en dos");
-            return;
-        }
-        Double num1;
-        Double num2;
-        try {
-            num1 = Double.parseDouble(partes[0]);
-            num2 = Double.parseDouble(partes[1]);
-        } catch (Exception err) {
-            System.out.println("error" + err.getMessage());
-            return;
-        }
-
-        switch (this.operador) {
-            case "-" -> this.resultado.setText(String.valueOf(num1 - num2));
-            case "+" -> this.resultado.setText(String.valueOf(num1 + num2));
-            case "*" -> this.resultado.setText(String.valueOf(num1 * num2));
-            case "/" -> this.resultado.setText(String.valueOf(num1 / num2));
-        }
-        this.operacion = this.resultado.getText();
-        this.mostrarOperacion.setText(this.operacion);
-        this.operador = "";
-        */
+        this.numeros=new ArrayList<>(List.of(this.resultado.getText()));
     }
 
 }
