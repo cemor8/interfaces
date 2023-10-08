@@ -6,93 +6,93 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="473.0" prefWidth="344.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo3.HelloController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="419.0" prefWidth="344.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo3.HelloController">
    <children>
-      <Pane layoutY="93.0" prefHeight="374.0" prefWidth="327.0">
+      <Pane layoutY="88.0" prefHeight="339.0" prefWidth="344.0">
          <children>
-            <Button fx:id="button7" layoutX="14.0" layoutY="26.0" mnemonicParsing="false" onMouseClicked="#meter" text="7">
+            <Button fx:id="button7" layoutX="14.0" layoutY="26.0" mnemonicParsing="false" onMouseClicked="#meter" prefHeight="61.0" prefWidth="62.0" text="7">
                <font>
                   <Font size="25.0" />
                </font>
             </Button>
-            <Button fx:id="button3" layoutX="157.0" layoutY="166.0" mnemonicParsing="false" onMouseClicked="#meter" text="3">
+            <Button fx:id="button3" layoutX="157.0" layoutY="166.0" mnemonicParsing="false" onMouseClicked="#meter" prefHeight="61.0" prefWidth="62.0" text="3">
                <font>
                   <Font size="25.0" />
                </font>
             </Button>
-            <Button fx:id="button4" layoutX="14.0" layoutY="92.0" mnemonicParsing="false" onMouseClicked="#meter" text="4">
+            <Button fx:id="button4" layoutX="15.0" layoutY="92.0" mnemonicParsing="false" onMouseClicked="#meter" prefHeight="61.0" prefWidth="62.0" text="4">
                <font>
                   <Font size="25.0" />
                </font>
             </Button>
-            <Button fx:id="button5" layoutX="87.0" layoutY="92.0" mnemonicParsing="false" onMouseClicked="#meter" text="5">
+            <Button fx:id="button5" layoutX="87.0" layoutY="92.0" mnemonicParsing="false" onMouseClicked="#meter" prefHeight="61.0" prefWidth="62.0" text="5">
                <font>
                   <Font size="25.0" />
                </font>
             </Button>
-            <Button fx:id="button1" layoutX="14.0" layoutY="166.0" mnemonicParsing="false" onMouseClicked="#meter" text="1">
+            <Button fx:id="button1" layoutX="14.0" layoutY="166.0" mnemonicParsing="false" onMouseClicked="#meter" prefHeight="61.0" prefWidth="62.0" text="1">
                <font>
                   <Font size="25.0" />
                </font>
             </Button>
-            <Button fx:id="button2" layoutX="87.0" layoutY="166.0" mnemonicParsing="false" onMouseClicked="#meter" text="2">
+            <Button fx:id="button2" layoutX="87.0" layoutY="166.0" mnemonicParsing="false" onMouseClicked="#meter" prefHeight="61.0" prefWidth="62.0" text="2">
                <font>
                   <Font size="25.0" />
                </font>
             </Button>
-            <Button fx:id="botonSumar" layoutX="248.0" layoutY="26.0" mnemonicParsing="false" onMouseClicked="#meterSigno" text="+">
+            <Button fx:id="botonSumar" layoutX="235.0" layoutY="26.0" mnemonicParsing="false" onMouseClicked="#meterSigno" prefHeight="61.0" prefWidth="95.0" text="+">
                <font>
                   <Font size="25.0" />
                </font>
             </Button>
-            <Button fx:id="botonRestar" layoutX="252.0" layoutY="92.0" mnemonicParsing="false" onMouseClicked="#meterSigno" text="-">
+            <Button fx:id="botonRestar" layoutX="235.0" layoutY="92.0" mnemonicParsing="false" onMouseClicked="#meterSigno" prefHeight="61.0" prefWidth="95.0" text="-">
                <font>
                   <Font size="25.0" />
                </font>
             </Button>
-            <Button fx:id="botonIgual" layoutX="12.0" layoutY="242.0" mnemonicParsing="false" onMouseClicked="#operar" text="=">
+            <Button fx:id="botonIgual" layoutX="14.0" layoutY="238.0" mnemonicParsing="false" onMouseClicked="#operar" prefHeight="61.0" prefWidth="62.0" text="=">
                <font>
                   <Font size="25.0" />
                </font>
             </Button>
-            <Button fx:id="botonBorrar" layoutX="149.0" layoutY="242.0" mnemonicParsing="false" onMouseClicked="#eliminar" text="CE">
+            <Button fx:id="botonBorrar" layoutX="157.0" layoutY="238.0" mnemonicParsing="false" onMouseClicked="#eliminar" prefHeight="61.0" prefWidth="62.0" text="C">
                <font>
                   <Font size="25.0" />
                </font>
             </Button>
-            <Button fx:id="button6" layoutX="157.0" layoutY="92.0" mnemonicParsing="false" onMouseClicked="#meter" text="6">
+            <Button fx:id="button6" layoutX="157.0" layoutY="92.0" mnemonicParsing="false" onMouseClicked="#meter" prefHeight="61.0" prefWidth="62.0" text="6">
                <font>
                   <Font size="25.0" />
                </font>
             </Button>
-            <Button fx:id="button8" layoutX="87.0" layoutY="26.0" mnemonicParsing="false" onMouseClicked="#meter" text="8">
+            <Button fx:id="button8" layoutX="87.0" layoutY="26.0" mnemonicParsing="false" onMouseClicked="#meter" prefHeight="61.0" prefWidth="62.0" text="8">
                <font>
                   <Font size="25.0" />
                </font>
             </Button>
-            <Button fx:id="button9" layoutX="157.0" layoutY="26.0" mnemonicParsing="false" onMouseClicked="#meter" text="9">
+            <Button fx:id="button9" layoutX="157.0" layoutY="26.0" mnemonicParsing="false" onMouseClicked="#meter" prefHeight="61.0" prefWidth="62.0" text="9">
                <font>
                   <Font size="25.0" />
                </font>
             </Button>
-            <Button layoutX="87.0" layoutY="242.0" mnemonicParsing="false" onMouseClicked="#meter" text="0">
+            <Button layoutX="90.0" layoutY="238.0" mnemonicParsing="false" onMouseClicked="#meter" prefHeight="61.0" prefWidth="56.0" text="0">
                <font>
                   <Font size="25.0" />
                </font>
             </Button>
-            <Button fx:id="botonMult" layoutX="243.0" layoutY="161.0" mnemonicParsing="false" onMouseClicked="#meterSigno" text="*">
+            <Button fx:id="botonMult" layoutX="235.0" layoutY="166.0" mnemonicParsing="false" onMouseClicked="#meterSigno" prefHeight="61.0" prefWidth="95.0" text="*">
                <font>
                   <Font size="25.0" />
                </font>
             </Button>
-            <Button fx:id="botonDiv" layoutX="243.0" layoutY="242.0" mnemonicParsing="false" onMouseClicked="#meterSigno" text="/">
+            <Button fx:id="botonDiv" layoutX="235.0" layoutY="238.0" mnemonicParsing="false" onMouseClicked="#meterSigno" prefHeight="61.0" prefWidth="95.0" text="/">
                <font>
                   <Font size="25.0" />
                </font>
             </Button>
          </children>
       </Pane>
-      <Label fx:id="mostrarOperacion" layoutX="14.0" layoutY="18.0" prefHeight="82.0" prefWidth="234.0">
+      <Label fx:id="mostrarOperacion" layoutX="14.0" layoutY="18.0" prefHeight="82.0" prefWidth="227.0">
          <font>
             <Font size="24.0" />
          </font></Label>
