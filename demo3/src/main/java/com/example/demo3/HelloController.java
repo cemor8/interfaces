@@ -6,9 +6,7 @@ import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.regex.Pattern;
 
 public class HelloController {
 
@@ -22,7 +20,7 @@ public class HelloController {
     private ArrayList<String> operadores = new ArrayList<>();
     private ArrayList<String> numeros = new ArrayList<>();
     private String string = "";
-    private String strinMostrar="";
+    private String stringMostrar ="";
     private boolean hayResultado=false;
     /**
      * Método que devuelve al valor inicial todas las variables
@@ -32,7 +30,7 @@ public class HelloController {
         this.string="";
         this.numeros=new ArrayList<>();
         this.operadores=new ArrayList<>();
-        this.strinMostrar="";
+        this.stringMostrar ="";
         this.resultado.setText("");
         this.mostrarOperacion.setText("");
         this.hayResultado=false;
@@ -51,8 +49,8 @@ public class HelloController {
         }
         Button btn = (Button) event.getSource();
         this.string += btn.getText();
-        this.strinMostrar+=btn.getText();
-        this.mostrarOperacion.setText(this.strinMostrar);
+        this.stringMostrar +=btn.getText();
+        this.mostrarOperacion.setText(this.stringMostrar);
     }
     /**
      * Método que guarda un operador en la lista de operadores,
@@ -65,9 +63,28 @@ public class HelloController {
     void meterSigno(MouseEvent event) {
 
         Button btn = (Button) event.getSource();
+        if(this.stringMostrar.length()==0 ||
+                (!Character.isDigit(this.stringMostrar.charAt(this.stringMostrar.length()-1)) && this.stringMostrar.length()>=2 && Character.isDigit(this.stringMostrar.charAt(this.stringMostrar.length()-2)))
+        ) {
+
+            switch (btn.getText()) {
+                case "-", "+" -> {
+                    this.string += btn.getText();
+                    System.out.println(this.string);
+                    this.stringMostrar += btn.getText();
+                    this.mostrarOperacion.setText(this.stringMostrar);
+                    return;
+                }
+                default -> {
+                }
+            }
+
+        }
+        
+
         this.operadores.add(btn.getText());
-        this.strinMostrar+=btn.getText();
-        this.mostrarOperacion.setText(this.strinMostrar);
+        this.stringMostrar +=btn.getText();
+        this.mostrarOperacion.setText(this.stringMostrar);
         if(this.string.length()==0){
             return;
         }
@@ -86,6 +103,7 @@ public class HelloController {
      * */
     @FXML
     void operar(MouseEvent event) {
+
         this.numeros.add(this.string);
         this.string = "";
         if ((this.operadores.size() != (this.numeros.size() - 1)) || this.operadores.size()==0) {
@@ -123,9 +141,9 @@ public class HelloController {
             }
         }
         hayResultado=true;
-        this.strinMostrar=this.resultado.getText();
+        this.stringMostrar =this.resultado.getText();
         this.string="";
-        this.mostrarOperacion.setText(this.strinMostrar);
+        this.mostrarOperacion.setText(this.stringMostrar);
         this.operadores=new ArrayList<>();
         this.numeros=new ArrayList<>(List.of(this.resultado.getText()));
     }
