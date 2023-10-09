@@ -80,7 +80,6 @@ public class HelloController {
             }
 
         }
-        
 
         this.operadores.add(btn.getText());
         this.stringMostrar +=btn.getText();
