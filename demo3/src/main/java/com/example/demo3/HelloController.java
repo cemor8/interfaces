@@ -76,6 +76,7 @@ public class HelloController {
                     return;
                 }
                 default -> {
+                    this.eliminar(event);
                 }
             }
 
@@ -117,7 +118,6 @@ public class HelloController {
                  num2 = Double.parseDouble(this.numeros.get(i + 1));
             }catch (Exception err){
                 this.eliminar(event);
-                this.mostrarOperacion.setText("mal");
                 return;
             }
             switch (this.operadores.get(i)) {
@@ -134,12 +134,17 @@ public class HelloController {
                     this.resultado.setText(String.valueOf(num1 * num2));
                 }
                 case "/" -> {
+                    if(num2==0){
+                        System.out.println("aprende matematicas");
+                        this.eliminar(event);
+                        return;
+                    }
                     this.numeros.set(i + 1, String.valueOf(num1 / num2));
                     this.resultado.setText(String.valueOf(num1 / num2));
                 }
             }
         }
-        hayResultado=true;
+        this.hayResultado=true;
         this.stringMostrar =this.resultado.getText();
         this.string="";
         this.mostrarOperacion.setText(this.stringMostrar);
