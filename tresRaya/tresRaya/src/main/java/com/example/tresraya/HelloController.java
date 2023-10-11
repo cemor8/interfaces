@@ -60,7 +60,6 @@ public class HelloController implements Initializable {
         lista.add(this.button2);
         lista.add(this.button3);
         this.listaBotones.add(lista);
-
         ArrayList<Button> lista2=new ArrayList<>();
         lista2.add(this.button4);
         lista2.add(this.button5);
