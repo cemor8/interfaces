@@ -57,6 +57,9 @@ public class HelloController implements Initializable {
     }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle){
+        Collection<Button> buttonCollection = new ArrayList<>();
+        Collections.addAll(buttonCollection, button1, button2, button3,button4,button5,button6,button7,button8,button9);
+        buttonCollection.forEach(button -> button.setFocusTraversable(false));
         ArrayList<Button> lista=new ArrayList<>();
         lista.add(this.button1);
         lista.add(this.button2);
