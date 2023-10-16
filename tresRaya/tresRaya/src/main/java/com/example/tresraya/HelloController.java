@@ -47,7 +47,11 @@ public class HelloController implements Initializable {
     private String jugadorX = "X";
     private String jugadorO = "O";
     private boolean ganador=false;
-
+    /**
+     * Método que reestablece la partida, borra el contenido y estilo de botones,
+     * el turno se reinicia, indica que no hay ganador y empieza el jugador x
+     * otra vez.
+     * */
     @FXML
     void eliminar(MouseEvent event) {
         this.bloquearDesbloquearBoton(false,true);
@@ -55,6 +59,11 @@ public class HelloController implements Initializable {
         this.turno=0;
         this.ganador=false;
     }
+    /**
+     * Método que inicializa el programa, mete los botones en una coleccion para desactivarles el
+     * preseleccionado azul que aparece por defecto, luego los añado a una lista para luego comprobar
+     * los ganadores.
+     * */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle){
         Collection<Button> buttonCollection = new ArrayList<>();
@@ -79,7 +88,12 @@ public class HelloController implements Initializable {
 
 
     }
-
+    /**
+     * Método que es llamado cuando se clicka con el raton un boton,
+     * comprueba de quien es el turno y dependiendo de quien sea, rellena
+     * el boton de una manera u otra. Luego comprueba si hay ganador, si lo hay acaba el juego,
+     * si no lo hay, comprueba si el juego sigue transcurriendo o si ha acabado y hay un empate.
+     * */
     @FXML
     void jugar(MouseEvent event) {
         Button btn = (Button) event.getSource();
@@ -113,7 +127,9 @@ public class HelloController implements Initializable {
 
         }
     }
-
+    /**
+     * Método que comprueba si hay un ganador. Recibe el tipo de jugador que se buscará.
+     * */
     public boolean comprobacion(String jugador){
         if(comprobarGanador(jugador,0,0,1,0,3) ||
                 comprobarGanador(jugador,0,0,1,1,3)||
@@ -132,7 +148,10 @@ public class HelloController implements Initializable {
     }
 
 
-
+    /**
+     * Método que resetea los botones si el parametro resetear es true, tambien recibe el
+     * estado e indica este a la propiedad setDisable.
+     * */
     public void bloquearDesbloquearBoton(boolean estado,boolean resetear) {
         for (int i = 0;i<this.listaBotones.size();i++){
             for (int j = 0;j<this.listaBotones.get(i).size();j++){
@@ -145,7 +164,13 @@ public class HelloController implements Initializable {
         }
     }
 
-
+    /**
+     * Método que se encarga de comprobar si hay un ganador, recibe el jugador a buscar, las filas y
+     * columnas donde se empieza y hacia la direccion a la que se busca, que es la suma a la fila y a la columna.
+     * Empieza a buscar, mientras este dentro del tablero y el boton tenga texto, comprueba que el texto es igual al jugador,
+     * si no lo es devuelve directamente false, si el jugador se encuentra ahi, avanza a la siguiente casilla y sigue hasta que
+     * el jugador gane, que devolvera true, o no, que devolvera false.
+     * */
     public boolean comprobarGanador(String jugador,int filaInicial, int columnaInicial,int filaSuma,int columnaSuma,int veces){
         int filaSumada= filaInicial;
         int columnaSumada=columnaInicial;
@@ -160,6 +185,8 @@ public class HelloController implements Initializable {
 
             if(this.listaBotones.get(filaSumada).get(columnaSumada).getText().equals(jugador)){
                 aciertos+=1;
+            }else {
+                return aciertos >= 3;
             }
             filaSumada+=filaSuma;
             columnaSumada+=columnaSuma;
