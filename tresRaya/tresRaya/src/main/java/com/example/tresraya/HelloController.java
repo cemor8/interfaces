@@ -46,12 +46,14 @@ public class HelloController implements Initializable {
     private int turno = 0;
     private String jugadorX = "X";
     private String jugadorO = "O";
+    private boolean ganador=false;
 
     @FXML
     void eliminar(MouseEvent event) {
         this.bloquearDesbloquearBoton(false,true);
         this.mostrarTurno.setText("Turno jugador X");
         this.turno=0;
+        this.ganador=false;
     }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle){
@@ -84,11 +86,12 @@ public class HelloController implements Initializable {
             this.turno += 1;
             btn.setDisable(true);
 
-            if(comprobacion(this.jugadorX)
-
-            ){
+            if(comprobacion(this.jugadorX)){
                 this.mostrarTurno.setText("Ganador Jugador X");
                 this.bloquearDesbloquearBoton(true,false);
+                this.ganador=true;
+            }else if(!this.ganador && this.turno>=8){
+                    this.mostrarTurno.setText("Empate");
             }
 
 
@@ -98,11 +101,10 @@ public class HelloController implements Initializable {
             this.turno += 1;
             btn.setDisable(true);
 
-            if(comprobacion(this.jugadorO)
-
-            ){
+            if(comprobacion(this.jugadorO)){
                 this.mostrarTurno.setText("Ganador Jugador O");
                 this.bloquearDesbloquearBoton(true,false);
+                this.ganador=true;
             }
 
 
