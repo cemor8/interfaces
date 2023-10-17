@@ -107,12 +107,16 @@ public class HelloController implements Initializable {
                 this.mostrarTurno.setText("Ganador Jugador X");
                 this.bloquearDesbloquearBoton(true,false);
                 this.ganador=true;
+                return;
             }else if(!this.ganador && this.turno>=8){
                     this.mostrarTurno.setText("Empate");
+                    return;
             }
+            this.mostrarTurno.setText("Turno jugador O");
 
 
         } else {
+
             btn.setText(this.jugadorO);
             btn.setStyle("-fx-background-color: #23ADB0; -fx-text-fill: #000000; -fx-font-size: 16px");
             this.turno += 1;
@@ -122,7 +126,12 @@ public class HelloController implements Initializable {
                 this.mostrarTurno.setText("Ganador Jugador O");
                 this.bloquearDesbloquearBoton(true,false);
                 this.ganador=true;
+                return;
+            }else if(!this.ganador && this.turno>=8){
+                this.mostrarTurno.setText("Empate");
+                return;
             }
+            this.mostrarTurno.setText("Turno jugador X");
 
 
         }
