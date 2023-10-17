@@ -12,33 +12,8 @@ import java.net.URL;
 import java.util.*;
 
 public class HelloController implements Initializable {
-
     @FXML
-    private Button button1;
-
-    @FXML
-    private Button button2;
-
-    @FXML
-    private Button button3;
-
-    @FXML
-    private Button button4;
-
-    @FXML
-    private Button button5;
-
-    @FXML
-    private Button button6;
-
-    @FXML
-    private Button button7;
-
-    @FXML
-    private Button button8;
-
-    @FXML
-    private Button button9;
+    private GridPane gridPane;
     @FXML
     private Label mostrarTurno;
     @FXML
@@ -60,34 +35,34 @@ public class HelloController implements Initializable {
         this.ganador=false;
     }
     /**
-     * Método que inicializa el programa, mete los botones en una coleccion para desactivarles el
-     * preseleccionado azul que aparece por defecto, luego los añado a una lista para luego comprobar
-     * los ganadores.
+     * Método que de forma dinamica crea 0 botones para añadirlos a un gridpane en una
+     * disposición de 3x3, tambien crea una matriz 3x3 para luego hacer las comprobaciones de victoria.
+     * a mayores, modifica el ancho, alto y desactiva la preseleccion azul del boton.
      * */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle){
         this.mostrarTurno.setText("Turno jugador X");
-        Collection<Button> buttonCollection = new ArrayList<>();
-        Collections.addAll(buttonCollection, button1, button2, button3,button4,button5,button6,button7,button8,button9);
-        buttonCollection.forEach(button -> button.setFocusTraversable(false));
-        ArrayList<Button> lista=new ArrayList<>();
-        lista.add(this.button1);
-        lista.add(this.button2);
-        lista.add(this.button3);
-        this.listaBotones.add(lista);
-        ArrayList<Button> lista2=new ArrayList<>();
-        lista2.add(this.button4);
-        lista2.add(this.button5);
-        lista2.add(this.button6);
-        this.listaBotones.add(lista2);
-        ArrayList<Button> lista3=new ArrayList<>();
-        lista3.add(this.button7);
-        lista3.add(this.button8);
-        lista3.add(this.button9);
-        this.listaBotones.add(lista3);
-
-
-
+        int i=1;
+        //Hago fors para crear los botones, en cada iteracion del for creo una lista vacia para añadir los botones
+        for (int fila = 0; fila < 3; fila++) {
+            this.listaBotones.add(new ArrayList<>());
+            for (int columna = 0; columna < 3; columna++) {
+                Button boton = new Button();
+                //le pongo el ancho, alto y desactivo la preseleccion azul
+                boton.setPrefWidth(150);
+                boton.setPrefHeight(75);
+                boton.setFocusTraversable(false);
+                //establezco id y le indico que cuando el raton clicke en el llame al metodo jugar.
+                boton.setId("button"+i);
+                boton.setOnMouseClicked(mouseEvent -> jugar(mouseEvent));
+                // lo añado al gridPane indicando la columnda y luego la fila donde quiero ponerlo
+                this.gridPane.add(boton, columna, fila);
+                this.listaBotones.get(fila).add(boton);
+                i++;
+            }
+        }
+        this.gridPane.setHgap(10);
+        this.gridPane.setVgap(10);
     }
     /**
      * Método que es llamado cuando se clicka con el raton un boton,
@@ -127,9 +102,6 @@ public class HelloController implements Initializable {
                 this.mostrarTurno.setText("Ganador Jugador O");
                 this.bloquearDesbloquearBoton(true,false);
                 this.ganador=true;
-                return;
-            }else if(!this.ganador && this.turno>=8){
-                this.mostrarTurno.setText("Empate");
                 return;
             }
             this.mostrarTurno.setText("Turno jugador X");
