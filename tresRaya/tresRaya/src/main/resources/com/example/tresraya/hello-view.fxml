@@ -8,7 +8,6 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="408.0" prefWidth="590.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tresraya.HelloController">
    <children>
       <GridPane layoutX="187.0" layoutY="80.0" prefHeight="185.0" prefWidth="227.0">
@@ -34,7 +33,7 @@
             <Button fx:id="button9" mnemonicParsing="false" onMouseClicked="#jugar" prefHeight="47.0" prefWidth="76.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
          </children>
       </GridPane>
-      <Label fx:id="mostrarTurno" layoutX="191.0" layoutY="10.0" prefHeight="70.0" prefWidth="219.0" text="Turno del jugador X" AnchorPane.bottomAnchor="328.0" AnchorPane.leftAnchor="191.0" AnchorPane.rightAnchor="180.0" AnchorPane.topAnchor="10.0">
+      <Label fx:id="mostrarTurno" layoutX="191.0" layoutY="10.0" prefHeight="70.0" prefWidth="219.0" AnchorPane.bottomAnchor="328.0" AnchorPane.leftAnchor="191.0" AnchorPane.rightAnchor="180.0" AnchorPane.topAnchor="10.0">
          <font>
             <Font size="24.0" />
          </font>
