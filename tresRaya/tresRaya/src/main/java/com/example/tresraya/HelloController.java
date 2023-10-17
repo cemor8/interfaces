@@ -84,7 +84,7 @@ public class HelloController implements Initializable {
                 this.bloquearDesbloquearBoton(true,false);
                 this.ganador=true;
                 return;
-            }else if(!this.ganador && this.turno>=8){
+            }else if(!this.ganador && this.turno>=9){
                     this.mostrarTurno.setText("Empate");
                     return;
             }
