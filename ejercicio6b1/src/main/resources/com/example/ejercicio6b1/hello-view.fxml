@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="651.0" prefWidth="601.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ejercicio6b1.HelloController">
+   <children>
+      <Label fx:id="labelNumeroComensales" layoutX="137.0" layoutY="71.0" prefHeight="35.0" prefWidth="144.0" text="Numero de comensales" />
+      <TextField fx:id="introducirNumeroComensales" layoutX="336.0" layoutY="76.0" />
+      <Button fx:id="btnIntroducirNumeroComensales" layoutX="189.0" layoutY="138.0" mnemonicParsing="false" onMouseClicked="#introducirComensales" prefHeight="42.0" prefWidth="97.0" text="Introducir" />
+      <Label fx:id="labelIndicarMenu" layoutX="137.0" layoutY="236.0" prefHeight="35.0" prefWidth="126.0" text="Menu del comensal: 1" />
+      <TextField fx:id="introducirMenu" layoutX="336.0" layoutY="241.0" />
+      <Button fx:id="btnIntroducirMenu" layoutX="189.0" layoutY="305.0" mnemonicParsing="false" onMouseClicked="#introducirMenu" prefHeight="42.0" prefWidth="112.0" text="Introducir Menu" />
+      <Label fx:id="labelMostrarMenusFinal" layoutX="112.0" layoutY="354.0" prefHeight="184.0" prefWidth="391.0" />
+      <Button fx:id="btnEliminar" layoutX="245.0" layoutY="557.0" mnemonicParsing="false" onMouseClicked="#eliminar" prefHeight="42.0" prefWidth="112.0" text="Eliminar " />
+      <Button fx:id="btnEliminar1" layoutX="321.0" layoutY="305.0" mnemonicParsing="false" onMouseClicked="#eliminar" prefHeight="42.0" prefWidth="112.0" text="Eliminar " />
+      <Button fx:id="btnEliminar2" layoutX="321.0" layoutY="138.0" mnemonicParsing="false" onMouseClicked="#eliminar" prefHeight="42.0" prefWidth="112.0" text="Eliminar " />
+   </children>
+</AnchorPane>
