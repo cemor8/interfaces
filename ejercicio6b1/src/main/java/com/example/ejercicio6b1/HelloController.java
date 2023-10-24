@@ -56,7 +56,24 @@ public class HelloController implements Initializable {
     void eliminar(MouseEvent event) {
         this.comensales=0;
         this.menus=new ArrayList<>();
-        this.labelIndicarMenu.setText("");
+        this.labelIndicarMenu.setText("Menu del comensal: 1");
+        this.introducirNumeroComensales.setVisible(true);
+        this.introducirNumeroComensales.setEditable(true);
+        this.btnIntroducirNumeroComensales.setVisible(true);
+        this.btnEliminar2.setVisible(true);
+        this.labelNumeroComensales.setVisible(true);
+        this.labelIndicarMenu.setVisible(false);
+        this.introducirMenu.setVisible(false);
+        this.btnIntroducirMenu.setVisible(false);
+        this.btnEliminar1.setVisible(false);
+        this.labelIndicarMenu.setVisible(false);
+        this.introducirMenu.setVisible(false);
+        this.btnIntroducirMenu.setVisible(false);
+        this.btnEliminar1.setVisible(false);
+        this.btnEliminar.setVisible(false);
+
+        this.introducirNumeroComensales.setText("");
+        this.labelMostrarMenusFinal.setText("");
     }
 
     @FXML

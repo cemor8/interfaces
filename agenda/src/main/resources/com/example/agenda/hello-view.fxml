@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="806.0" prefWidth="955.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.agenda.HelloController">
+   <children>
+      <Label layoutX="273.0" layoutY="89.0" prefHeight="66.0" prefWidth="121.0" text="Nombre">
+         <font>
+            <Font name="Arial" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="273.0" layoutY="163.0" prefHeight="66.0" prefWidth="121.0" text="Número">
+         <font>
+            <Font name="Arial" size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="introducirTexto" layoutX="496.0" layoutY="109.0" />
+      <TextField fx:id="introducirNumero" layoutX="496.0" layoutY="183.0" />
+      <Button fx:id="btnMeter" layoutX="450.0" layoutY="632.0" mnemonicParsing="false" onMouseClicked="#meterContacto" prefHeight="56.0" prefWidth="103.0" text="Añadir" />
+      <TableView fx:id="tablaAgenda" layoutX="260.0" layoutY="314.0" prefHeight="275.0" prefWidth="390.0">
+         <columns>
+            <TableColumn fx:id="columnaNombre" prefWidth="75.0" text="nombre" />
+            <TableColumn fx:id="columnaNumero" prefWidth="75.0" text="numero" />
+         </columns>
+      </TableView>
+      <Button fx:id="btnBuscar" layoutX="306.0" layoutY="632.0" mnemonicParsing="false" onMouseClicked="#buscarContacto" prefHeight="56.0" prefWidth="103.0" text="Buscar" />
+      <Button fx:id="btnEnviarModificaciones" layoutX="478.0" layoutY="716.0" mnemonicParsing="false" onMouseClicked="#modificarContacto" prefHeight="56.0" prefWidth="149.0" text="Enviar Nuevos Valores" />
+      <Button fx:id="bntEliminar" layoutX="594.0" layoutY="632.0" mnemonicParsing="false" onMouseClicked="#eliminarContacto" prefHeight="56.0" prefWidth="103.0" text="Eliminar" />
+      <Button fx:id="btnVaciar" layoutX="157.0" layoutY="632.0" mnemonicParsing="false" onMouseClicked="#vaciarAgenda" prefHeight="56.0" prefWidth="103.0" text="Vaciar" />
+      <Label fx:id="labelOpcionModificar" layoutX="394.0" layoutY="8.0" prefHeight="66.0" prefWidth="121.0">
+         <font>
+            <Font name="Arial" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="labelNumeroBuscarModificar" layoutX="246.0" layoutY="243.0" prefHeight="66.0" prefWidth="149.0" text="Número a buscar" visible="false">
+         <font>
+            <Font name="Arial" size="18.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnModificar" layoutX="321.0" layoutY="716.0" mnemonicParsing="false" onMouseClicked="#modificarInicio" prefHeight="56.0" prefWidth="121.0" text="Modificar" />
+      <TextField fx:id="introducirNumeroBuscar" layoutX="496.0" layoutY="264.0" visible="false" />
+   </children>
+</AnchorPane>
