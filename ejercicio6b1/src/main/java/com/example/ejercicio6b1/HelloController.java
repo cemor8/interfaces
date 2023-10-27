@@ -18,6 +18,8 @@ public class HelloController implements Initializable {
 
     @FXML
     private Button btnEliminar1;
+    @FXML
+    private Button btnEliminarUlt;
 
     @FXML
     private Button btnEliminar2;
@@ -74,6 +76,7 @@ public class HelloController implements Initializable {
         this.btnIntroducirMenu.setVisible(false);
         this.btnEliminar1.setVisible(false);
         this.btnEliminar.setVisible(false);
+        this.btnEliminarUlt.setVisible(false);
 
         this.introducirNumeroComensales.setText("");
         this.labelMostrarMenusFinal.setText("");
@@ -99,6 +102,7 @@ public class HelloController implements Initializable {
         this.introducirMenu.setVisible(true);
         this.btnIntroducirMenu.setVisible(true);
         this.btnEliminar1.setVisible(true);
+        this.btnEliminarUlt.setVisible(true);
 
     }
     /**
@@ -118,7 +122,6 @@ public class HelloController implements Initializable {
         this.introducirMenu.setText("");
         if(this.menus.size()!=this.comensales){
             this.labelIndicarMenu.setText("Menu del comensal: "+(this.menus.size()+1));
-
             return;
         }
         this.labelIndicarMenu.setVisible(false);
@@ -126,12 +129,22 @@ public class HelloController implements Initializable {
         this.btnIntroducirMenu.setVisible(false);
         this.btnEliminar1.setVisible(false);
         this.btnEliminar.setVisible(true);
+        this.btnEliminarUlt.setVisible(false);
         for(int i = 0 ; i<this.menus.size();i++){
             this.labelMostrarMenusFinal.setText(this.labelMostrarMenusFinal.getText()+"\nComensal: "+(i+1)+", Menu: "+this.menus.get(i)+"\n");
         }
 
 
     }
+    @FXML
+    void eliminarUltimo(MouseEvent event) {
+        if (!this.menus.isEmpty()){
+            System.out.println("hola");
+            this.menus.remove(this.menus.get(this.menus.size()-1));
+            this.labelIndicarMenu.setText("Menu del comensal: "+(this.menus.size()+1));
+        }
+    }
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

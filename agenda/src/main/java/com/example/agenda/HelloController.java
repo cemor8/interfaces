@@ -55,7 +55,7 @@ public class HelloController implements Initializable {
 
     @FXML
     private TableView<Contacto> tablaAgenda;
-    ObservableList<Contacto> listaContactos = FXCollections.observableArrayList();
+    private ObservableList<Contacto> listaContactos = FXCollections.observableArrayList();
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -281,6 +281,4 @@ public class HelloController implements Initializable {
         this.cambiarVisibilidad(true,false);
         this.btnModificar.setVisible(true);
     }
-
-
 }
