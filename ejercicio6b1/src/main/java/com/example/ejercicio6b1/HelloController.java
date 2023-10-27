@@ -51,7 +51,10 @@ public class HelloController implements Initializable {
         Matcher matcher= patron.matcher(texto);
         return matcher.matches();
     }
-
+    /**
+     * Método que se encarga de eliminar todos los registros del programa y volver
+     * al apartado de introducir el numero de comensales.
+     * */
     @FXML
     void eliminar(MouseEvent event) {
         this.comensales=0;
@@ -75,14 +78,18 @@ public class HelloController implements Initializable {
         this.introducirNumeroComensales.setText("");
         this.labelMostrarMenusFinal.setText("");
     }
-
+    /**
+     * Método que se encarga de introducir el numero de comensales de la mesa,
+     * si el numero no esta comprendido entre 1 y 5, lo indica.
+     * @param event event
+     * */
     @FXML
     void introducirComensales(MouseEvent event) {
         if(!validarContenido("[1-5]",this.introducirNumeroComensales.getText())){
             this.introducirNumeroComensales.setText("Numero incorrecto");
             return;
         }
-        this.comensales=Integer.valueOf(this.introducirNumeroComensales.getText());
+        this.comensales=Integer.parseInt(this.introducirNumeroComensales.getText());
         this.introducirNumeroComensales.setVisible(false);
         this.introducirNumeroComensales.setEditable(false);
         this.btnIntroducirNumeroComensales.setVisible(false);
@@ -94,16 +101,24 @@ public class HelloController implements Initializable {
         this.btnEliminar1.setVisible(true);
 
     }
-
+    /**
+     * Método que se encarga de introducir el menu asignadoa cada comensal, cuando se ha acabado
+     * de introducir los menús, muestra por pantalla el resultado final.
+     * @param event event
+     * */
     @FXML
     void introducirMenu(MouseEvent event) {
+
         if(!validarContenido("[1-3]",this.introducirMenu.getText())){
             this.labelIndicarMenu.setText("Menu incorrecto");
+            this.introducirMenu.setText("");
             return;
         }
         this.menus.add(this.introducirMenu.getText());
+        this.introducirMenu.setText("");
         if(this.menus.size()!=this.comensales){
             this.labelIndicarMenu.setText("Menu del comensal: "+(this.menus.size()+1));
+
             return;
         }
         this.labelIndicarMenu.setVisible(false);
@@ -114,6 +129,7 @@ public class HelloController implements Initializable {
         for(int i = 0 ; i<this.menus.size();i++){
             this.labelMostrarMenusFinal.setText(this.labelMostrarMenusFinal.getText()+"\nComensal: "+(i+1)+", Menu: "+this.menus.get(i)+"\n");
         }
+
 
     }
 

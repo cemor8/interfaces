@@ -16,7 +16,7 @@
       <Label layoutX="121.0" layoutY="247.0" text="Nombre del estudiante" />
       <TextField fx:id="nombreBuscar" layoutX="322.0" layoutY="243.0" />
       <Label layoutX="130.0" layoutY="303.0" text="Nota del estudiante" />
-      <Label fx:id="mostrarNota" layoutX="322.0" layoutY="292.0" prefHeight="39.0" prefWidth="105.0" AnchorPane.bottomAnchor="144.0" AnchorPane.leftAnchor="322.0" AnchorPane.rightAnchor="171.0" AnchorPane.topAnchor="292.0" />
+      <Label fx:id="mostrarNota" layoutX="322.0" layoutY="292.0" prefHeight="39.0" prefWidth="167.0" AnchorPane.bottomAnchor="144.0" AnchorPane.leftAnchor="322.0" AnchorPane.rightAnchor="109.0" AnchorPane.topAnchor="292.0" />
       <Button fx:id="btnBuscar" layoutX="238.0" layoutY="363.0" mnemonicParsing="false" onMouseClicked="#buscar" prefHeight="51.0" prefWidth="123.0" text="Buscar nota" />
    </children>
 </AnchorPane>

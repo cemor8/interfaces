@@ -38,7 +38,11 @@ public class HelloController {
         Matcher matcher= patron.matcher(texto);
         return matcher.matches();
     }
-
+    /**
+     * Método que se encarga de añadir un alumno a la lista de alumnos.
+     * Comprueba sus valores para comprobar que son válidos
+     * @param event event
+     * */
     @FXML
     void añadir(MouseEvent event) {
         if(!validarExpresion("^[A-Za-z]{4,10}$",this.nombreAñadir.getText())||
@@ -54,7 +58,11 @@ public class HelloController {
         this.notaAñadir.setText("");
 
     }
-
+    /**
+     * Método que se encarga de buscar un alumno en la lista para devolver su nota.
+     * Comprueba que sus datos sean válidos.
+     * @param event event
+     * */
     @FXML
     void buscar(MouseEvent event) {
         if(!validarExpresion("^[A-Za-z]{4,10}$",this.nombreBuscar.getText())){

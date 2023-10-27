@@ -12,11 +12,7 @@ import java.util.regex.Pattern;
 
 public class HelloController {
 
-    @FXML
-    private Button botonBorrar;
 
-    @FXML
-    private Button botonMeter;
 
     @FXML
     private Label facturaPrecioUnidad;

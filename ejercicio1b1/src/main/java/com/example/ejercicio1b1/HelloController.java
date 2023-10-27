@@ -11,8 +11,6 @@ import java.util.regex.Pattern;
 
 public class HelloController{
 
-    @FXML
-    private Button botonBuscar;
 
     @FXML
     private TextField letra;
@@ -22,31 +20,31 @@ public class HelloController{
 
     @FXML
     private Label resultado;
-    @FXML
-    private Button botonBorrar;
 
+    /**
+     * Método que elimina el texto.
+     * @param event event
+     * */
     @FXML
     public void eliminar(MouseEvent event){
         this.letra.setText("");
         this.palabra.setText("");
         this.resultado.setText("");
     }
-
+    /**
+     * Método que se encarga de buscar las ocurrencias de una letra en un texto introducido
+     * @param event event
+     * */
     @FXML
     void buscar(MouseEvent event) {
         String texto = this.palabra.getText();
         String letra=this.letra.getText();
-        if (letra.length() != 1){
-            this.resultado.setText("Introduce una letra");
-            return;
-        }else {
             Pattern pattern=Pattern.compile("[a-zA-z]");
             Matcher matcher=pattern.matcher(letra);
-            if (!matcher.matches()){
-                this.resultado.setText("El parametro a buscar no es una letra");
-                return;
+        if (letra.length() != 1 || !matcher.matches()) {
+            this.resultado.setText("Introduce una letra");
+            return;
             }
-        }
         int contador=0;
         int posicion=0;
         posicion=texto.indexOf(letra);
@@ -62,7 +60,6 @@ public class HelloController{
         }else{
             this.resultado.setText("La letra: "+letra+", no aparece en el texto");
         }
-
 
     }
 

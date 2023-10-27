@@ -8,6 +8,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -37,16 +39,15 @@ public class HelloController {
             this.mostrarLista.setText("Error al introducir la lista");
             return;
         }
-        String[] numeros=this.introducirLista.getText().split(",");
+        List<String> numeros=new ArrayList<>(Arrays.asList(this.introducirLista.getText().split(","))) ;
         this.mostrarLista.setText("");
-        for(int i=0;i<numeros.length;i++){
+        for(int i=numeros.size()-1;i>=0;i--){
 
-            if(numeros[i].equals(this.numeroBorrar.getText())){
-
-                continue;
+            if(numeros.get(i).equals(this.numeroBorrar.getText())){
+                numeros.remove(numeros.get(i));
             }
-            this.mostrarLista.setText(this.mostrarLista.getText()+numeros[i]+" ");
         }
+        this.mostrarLista.setText(String.join(",",numeros));
 
     }
 
