@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="0eefd452-9ec4-4524-812a-e201cc8501a4" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/ejercicio3_b2/GeneradorNumerosAleatorios.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/ejercicio3_b2/ListaNumerosEnteros.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ejerciciosRepasoConMenu/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ejerciciosRepasoConMenu/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ejerciciosRepasoConMenu/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ejerciciosRepasoConMenu/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ejerciciosRepasoConMenu/src/main/java/com/example/ejerciciosrepasoconmenu/ControllerB1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ejerciciosRepasoConMenu/src/main/java/com/example/ejerciciosrepasoconmenu/ControllerB2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ejerciciosRepasoConMenu/src/main/resources/com/example/ejerciciosrepasoconmenu/menuB1.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ejerciciosRepasoConMenu/src/main/resources/com/example/ejerciciosrepasoconmenu/menuB2.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../escenas/src/main/java/com/example/escenas/HelloController1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../escenas/src/main/resources/com/example/escenas/hello-view.fxml1.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ejercicio3b1/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ejercicio3b1/.idea/misc.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 5
+}]]></component>
+  <component name="ProjectId" id="2XXB7J5l65gC0M1IrFQKaZdzD2V" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/cmorbla/Desktop/servicios/cafeteria2"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.example.ejercicio3_b2" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0eefd452-9ec4-4524-812a-e201cc8501a4" name="Changes" comment="" />
+      <created>1698765378547</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1698765378547</updated>
+    </task>
+    <servers />
+  </component>
+</project>

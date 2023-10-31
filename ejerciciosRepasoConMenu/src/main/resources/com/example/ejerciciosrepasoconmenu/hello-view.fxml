@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ejerciciosrepasoconmenu.HelloController">
+   <children>
+      <Button fx:id="botonMenu1" layoutX="126.0" layoutY="152.0" mnemonicParsing="false" onMouseClicked="#cambiarEscena" prefHeight="84.0" prefWidth="121.0" text="Menu bloque 1" />
+      <Button fx:id="botonMenu2" layoutX="355.0" layoutY="152.0" mnemonicParsing="false" onMouseClicked="#cambiarEscena" prefHeight="84.0" prefWidth="121.0" text="Menu bloque 2" />
+   </children>
+</AnchorPane>

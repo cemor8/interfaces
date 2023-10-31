@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ejerciciosrepasoconmenu.ControllerB1">
+   <children>
+      <Button fx:id="btnEjer1" layoutX="76.0" layoutY="44.0" mnemonicParsing="false" onMouseClicked="#cambiarVentana" prefHeight="66.0" prefWidth="96.0" text="ejer1" />
+      <Button fx:id="btnEjer2" layoutX="233.0" layoutY="44.0" mnemonicParsing="false" onMouseClicked="#cambiarVentana" prefHeight="66.0" prefWidth="96.0" text="ejer2" />
+      <Button fx:id="btnEjer3" layoutX="418.0" layoutY="44.0" mnemonicParsing="false" onMouseClicked="#cambiarVentana" prefHeight="66.0" prefWidth="96.0" text="ejer3" />
+      <Button fx:id="btnEjer4" layoutX="161.0" layoutY="167.0" mnemonicParsing="false" onMouseClicked="#cambiarVentana" prefHeight="66.0" prefWidth="96.0" text="ejer4" />
+      <Button fx:id="btnEjer6" layoutX="322.0" layoutY="167.0" mnemonicParsing="false" onMouseClicked="#cambiarVentana" prefHeight="66.0" prefWidth="96.0" text="ejer6" />
+      <Button fx:id="btnVolver" layoutX="233.0" layoutY="279.0" mnemonicParsing="false" onMouseClicked="#cambiarEscena" prefHeight="66.0" prefWidth="96.0" text="Atras" />
+   </children>
+</AnchorPane>
