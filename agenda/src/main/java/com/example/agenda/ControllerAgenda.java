@@ -14,7 +14,7 @@ import java.util.ResourceBundle;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class HelloController implements Initializable {
+public class ControllerAgenda implements Initializable {
     @FXML
     public Label labelNumeroBuscarModificar;
     @FXML
@@ -117,7 +117,7 @@ public class HelloController implements Initializable {
             this.labelOpcionModificar.setText("Introduce un numero para eliminar el contacto");
             return;
         }
-        if(!creaExpresion("^\\d{3}-\\d{2}-\\d{2}-\\d{2}$",this.introducirTexto.getText())){
+        if(!creaExpresion("^\\d{3}-\\d{2}-\\d{2}-\\d{2}$",this.introducirNumero.getText())){
             this.labelOpcionModificar.setText("Contenido invalido");
             return;
         }
@@ -161,7 +161,7 @@ public class HelloController implements Initializable {
         }
         this.listaContactos.add(contacto);
         this.ordenarPorNombre();
-        this.tablaAgenda.setItems(listaContactos);
+        this.tablaAgenda.setItems(this.listaContactos);
         this.eliminarTexto(event);
     }
     /**
@@ -187,10 +187,10 @@ public class HelloController implements Initializable {
             return;
         }
         Contacto contacto=contactoOptional.get();
-        if(!this.introducirTexto.getText().isEmpty()&&!creaExpresion("^[a-zA-Z0-9]{1,20}$",this.introducirTexto.getText())){
+        if(!this.introducirTexto.getText().isEmpty() && creaExpresion("^[a-zA-Z0-9]{1,20}$",this.introducirTexto.getText())){
             contacto.setNombre(this.introducirTexto.getText());
         }
-        if(!this.introducirNumero.getText().isEmpty()&&!creaExpresion("^\\d{3}-\\d{2}-\\d{2}-\\d{2}$",this.introducirNumeroBuscar.getText())){
+        if(!this.introducirNumero.getText().isEmpty()&&creaExpresion("^\\d{3}-\\d{2}-\\d{2}-\\d{2}$",this.introducirNumero.getText())){
             contacto.setNumero(this.introducirNumero.getText());
 
         }
@@ -247,7 +247,7 @@ public class HelloController implements Initializable {
     void vaciarAgenda(MouseEvent event) {
         this.labelOpcionModificar.setText("");
         this.listaContactos=FXCollections.observableArrayList();
-        this.tablaAgenda.setItems(listaContactos);
+        this.tablaAgenda.setItems(this.listaContactos);
         this.tablaAgenda.refresh();
     }
     /**

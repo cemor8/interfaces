@@ -1,4 +1,4 @@
-package com.example.ejercicio1b1;
+package com.example.agenda;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -7,12 +7,12 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class HelloApplication extends Application {
+public class MainApliAgenda extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(MainApliAgenda.class.getResource("mainViewAgenda.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
-        stage.setTitle("Ejercicio1 bloque 1");
+        stage.setTitle("Agenda");
         stage.setScene(scene);
         stage.show();
     }

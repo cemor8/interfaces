@@ -5,19 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0eefd452-9ec4-4524-812a-e201cc8501a4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/ejercicio3_b2/GeneradorNumerosAleatorios.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/ejercicio3_b2/ListaNumerosEnteros.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ejerciciosRepasoConMenu/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ejerciciosRepasoConMenu/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ejerciciosRepasoConMenu/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ejerciciosRepasoConMenu/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ejerciciosRepasoConMenu/src/main/java/com/example/ejerciciosrepasoconmenu/ControllerB1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ejerciciosRepasoConMenu/src/main/java/com/example/ejerciciosrepasoconmenu/ControllerB2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ejerciciosRepasoConMenu/src/main/resources/com/example/ejerciciosrepasoconmenu/menuB1.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ejerciciosRepasoConMenu/src/main/resources/com/example/ejerciciosrepasoconmenu/menuB2.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../escenas/src/main/java/com/example/escenas/HelloController1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../escenas/src/main/resources/com/example/escenas/hello-view.fxml1.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ejercicio3b1/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ejercicio3b1/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ejerciciosRepasoConMenu/src/main/java/com/example/ejerciciosrepasoconmenu/ControllerPrimitiva.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ejerciciosRepasoConMenu/src/main/java/com/example/ejerciciosrepasoconmenu/GeneradorNumerosAleatorios.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ejerciciosRepasoConMenu/src/main/java/com/example/ejerciciosrepasoconmenu/ListaNumerosEnteros.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ejerciciosRepasoConMenu/src/main/java/com/example/ejerciciosrepasoconmenu/MainApliPrimitiva.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ejerciciosRepasoConMenu/src/main/resources/com/example/ejerciciosrepasoconmenu/mainViewPrimitiva.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demo3/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../demo3/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ejerciciosRepasoConMenu/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ejerciciosRepasoConMenu/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ejerciciosRepasoConMenu/src/main/java/com/example/ejerciciosrepasoconmenu/ControllerB1.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ejerciciosRepasoConMenu/src/main/java/com/example/ejerciciosrepasoconmenu/ControllerB1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ejerciciosRepasoConMenu/src/main/java/com/example/ejerciciosrepasoconmenu/ControllerB2.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ejerciciosRepasoConMenu/src/main/java/com/example/ejerciciosrepasoconmenu/ControllerB2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ejerciciosRepasoConMenu/src/main/java/com/example/ejerciciosrepasoconmenu/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ejerciciosRepasoConMenu/src/main/java/com/example/ejerciciosrepasoconmenu/HelloApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../escenas/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../escenas/.idea/misc.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,9 +27,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 5
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
   <component name="ProjectId" id="2XXB7J5l65gC0M1IrFQKaZdzD2V" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -40,7 +40,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/cmorbla/Desktop/servicios/cafeteria2"
+    "last_opened_file_path": "C:/Users/carlos/Desktop/interfaces/ejercicio1b1"
   }
 }]]></component>
   <component name="RecentsManager">

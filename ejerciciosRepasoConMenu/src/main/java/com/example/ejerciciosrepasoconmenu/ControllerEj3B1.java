@@ -1,7 +1,6 @@
-package com.example.ejercicio3b1;
+package com.example.ejerciciosrepasoconmenu;
 
 import javafx.fxml.FXML;
-import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -13,7 +12,7 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class HelloController {
+public class ControllerEj3B1 {
 
     @FXML
     private Button botonBorrar;

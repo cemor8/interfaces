@@ -5,7 +5,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.example</groupId>
-  <artifactId>ejercicio2b2</artifactId>
+  <artifactId>ejercicio2b1</artifactId>
   <version>1.0-SNAPSHOT</version>
   <name>ejercicio2b2</name>
 
@@ -58,7 +58,7 @@
             <!-- Default configuration for running with: mvn clean javafx:run -->
             <id>default-cli</id>
             <configuration>
-              <mainClass>com.example.ejercicio2b2/com.example.ejercicio2b2.HelloApplication</mainClass>
+              <mainClass>com.example.ejercicio2b2/com.example.ejercicio2b2.MainApliEj2B1</mainClass>
               <launcher>app</launcher>
               <jlinkZipName>app</jlinkZipName>
               <jlinkImageName>app</jlinkImageName>

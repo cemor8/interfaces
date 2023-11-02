@@ -5,7 +5,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="409.0" prefWidth="595.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ejercicio3b1.HelloController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="409.0" prefWidth="595.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ejerciciosrepasoconmenu.ControllerEj3B1">
   <children>
     <TextField fx:id="introducirLista" layoutX="102.0" layoutY="86.0" prefHeight="62.0" prefWidth="158.0" />
     <Label layoutX="91.0" layoutY="27.0" prefHeight="52.0" prefWidth="218.0" text="Introduce una lista separada por comas" />

@@ -58,7 +58,7 @@
             <!-- Default configuration for running with: mvn clean javafx:run -->
             <id>default-cli</id>
             <configuration>
-              <mainClass>com.example.ejercicio4b1/com.example.ejercicio4b1.HelloApplication</mainClass>
+              <mainClass>com.example.ejercicio4b1/com.example.ejercicio4b1.MainApliEj4B1</mainClass>
               <launcher>app</launcher>
               <jlinkZipName>app</jlinkZipName>
               <jlinkImageName>app</jlinkImageName>

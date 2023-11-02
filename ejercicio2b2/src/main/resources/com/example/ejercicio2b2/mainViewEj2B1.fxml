@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="646.0" prefWidth="725.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ejercicio2b2.HelloController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="646.0" prefWidth="725.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ejercicio2b2.ControllerEj2B1">
   <children>
     <TextField fx:id="introducirUnidades" layoutX="267.0" layoutY="95.0" prefHeight="36.0" prefWidth="139.0" />
     <TextField fx:id="introducirPrecioUnidad" layoutX="473.0" layoutY="95.0" prefHeight="36.0" prefWidth="158.0" />

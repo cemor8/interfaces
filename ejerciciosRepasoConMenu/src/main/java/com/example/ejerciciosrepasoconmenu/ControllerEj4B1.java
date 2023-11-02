@@ -1,17 +1,15 @@
-package com.example.ejercicio4b1;
+package com.example.ejerciciosrepasoconmenu;
 import javafx.fxml.FXML;
-import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class HelloController {
+public class ControllerEj4B1 {
 
     @FXML
     private Button btnAñadir;

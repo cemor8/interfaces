@@ -1,8 +1,14 @@
 package com.example.ejerciciosrepasoconmenu;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public class ControllerB2 {
 
@@ -16,12 +22,30 @@ public class ControllerB2 {
     private Button btnVolverAtras;
 
     @FXML
-    void cambiarEscena(MouseEvent event) {
-
+    void cambiarEscena(MouseEvent event) throws IOException {
+        Button btn = (Button) event.getSource();
+        Stage stage = (Stage) btn.getScene().getWindow();
+        Parent root = FXMLLoader.load(getClass().getResource("menuB1.fxml"));
+        stage.setTitle("Menu bloques");
+        stage.setScene(new Scene(root));
     }
     @FXML
-    void cambiarVentana(MouseEvent event) {
-
+    void cambiarVentana(MouseEvent event) throws IOException {
+        Button btn = (Button) event.getSource();
+        Stage stage=new Stage();
+        Parent root= null;
+        switch (btn.getId()){
+            case "btnAgenda":
+                root = FXMLLoader.load(getClass().getResource("mainViewAgenda.fxml"));
+                stage.setTitle("Ejericicio Agenda");
+                break;
+            case "btnPrimitiva":
+                root = FXMLLoader.load(getClass().getResource("mainViewPrimitiva.fxml"));
+                stage.setTitle("Ejercicio primitiva");
+                break;
+        }
+        stage.setScene(new Scene(root));
+        stage.show();
     }
 
 }
