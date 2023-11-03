@@ -19,13 +19,13 @@ public class ControllerB2 {
     private Button btnPrimitiva;
 
     @FXML
-    private Button btnVolverAtras;
+    private Button btnVolver;
 
     @FXML
     void cambiarEscena(MouseEvent event) throws IOException {
         Button btn = (Button) event.getSource();
         Stage stage = (Stage) btn.getScene().getWindow();
-        Parent root = FXMLLoader.load(getClass().getResource("menuB1.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("hello-view.fxml"));
         stage.setTitle("Menu bloques");
         stage.setScene(new Scene(root));
     }

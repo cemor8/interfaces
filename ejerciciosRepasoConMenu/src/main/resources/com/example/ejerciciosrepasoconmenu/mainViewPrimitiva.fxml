@@ -15,5 +15,6 @@
       <Button fx:id="btnEmpezar" layoutX="224.0" layoutY="480.0" mnemonicParsing="false" onMouseClicked="#eliminar" prefHeight="48.0" prefWidth="126.0" text="Volver a jugar" />
       <Button fx:id="btnEliminarUltimo" layoutX="287.0" layoutY="152.0" mnemonicParsing="false" onMouseClicked="#eliminarUltimo" prefHeight="36.0" prefWidth="108.0" text="Eliminar numero" />
       <Label fx:id="mostrarListaElegida" layoutX="182.0" layoutY="250.0" prefHeight="48.0" prefWidth="208.0" />
+      <Label fx:id="mostrarMensaje" layoutX="211.0" layoutY="25.0" prefHeight="42.0" prefWidth="157.0" />
    </children>
 </AnchorPane>

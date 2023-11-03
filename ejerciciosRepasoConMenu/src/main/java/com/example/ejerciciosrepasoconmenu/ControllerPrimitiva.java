@@ -6,6 +6,8 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
@@ -20,6 +22,8 @@ public class ControllerPrimitiva {
     private Button btnEmpezar;
     @FXML
     private Button btnEliminarUltimo;
+    @FXML
+    private Label mostrarMensaje;
 
     @FXML
     private TextField introducirNumero;
@@ -33,20 +37,17 @@ public class ControllerPrimitiva {
      * */
     @FXML
     void meterNumero(MouseEvent event) {
+        this.mostrarMensaje.setText("");
         Integer numero=null;
         try {
-            System.out.println("hola");
-            System.out.println(this.introducirNumero.getText());
             numero=Integer.valueOf(this.introducirNumero.getText());
-            System.out.println("dsa");
             if( (numero<1 || numero>49)) {
-                System.out.println("mal");
                 throw new Exception("numero invalido");
             }
-            System.out.println("hola2");
             this.listaNumsSeleccionados.lista(numero);
-            System.out.println("hola3");
         }catch (Exception err){
+            this.introducirNumero.setText("");
+            this.mostrarMensaje.setText("Numero inválido");
             System.out.println(err.getMessage());
             return;
         }
@@ -61,11 +62,13 @@ public class ControllerPrimitiva {
             try{
                 listaNumerosAleatorios.lista(numeroAleatorio);
             }catch (Exception err){
+                this.introducirNumero.setText("");
                 System.out.println(err.getMessage());
             }
         }
         String numerosElegidos= this.listaNumsSeleccionados.getNumeros().stream().map(Objects::toString).collect(Collectors.joining(", "));
         this.mostrarListaElegida.setText("Lista elegida "+numerosElegidos);
+        Collections.sort(listaNumerosAleatorios.getNumeros());
         String numerosPremiados= listaNumerosAleatorios.getNumeros().stream().map(Objects::toString).collect(Collectors.joining(", "));
         this.mostrarListaPremiada.setText("Lista premiada "+numerosPremiados);
         int aciertos= 0;
@@ -87,6 +90,7 @@ public class ControllerPrimitiva {
      * */
     @FXML
     void eliminar(MouseEvent event) {
+        this.introducirNumero.setText("");
         this.mostrarAciertos.setText("");
         this.mostrarListaElegida.setText("");
         this.mostrarListaPremiada.setText("");
