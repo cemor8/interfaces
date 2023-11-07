@@ -1,5 +1,4 @@
 package com.example.gestionalumnos;
-
 import javafx.beans.Observable;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
@@ -16,7 +15,6 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
-
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -58,23 +56,13 @@ public class ControllerGestion implements Initializable {
     private TableColumn<Alumno, String> columnaCiclo;
     @FXML
     private TableColumn<Alumno, String> columnaNombre;
-    private ObservableList<Alumno> listaAlumnos= FXCollections.observableArrayList();
+    private DatosAlumnos datosAlumnos;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         this.columnaNombre.setCellValueFactory(new PropertyValueFactory<>("nombre"));
         this.columnaCiclo.setCellValueFactory(new PropertyValueFactory<>("ciclo"));
         this.tablaAlumnos.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY_ALL_COLUMNS);
-        this.tablaAlumnos.setItems(this.listaAlumnos);
-        this.columnaNombre.setCellValueFactory(new PropertyValueFactory<>("nombre"));
-        this.columnaCiclo.setCellValueFactory(new PropertyValueFactory<>("ciclo"));
-        columnaNombre.setCellValueFactory(cellData -> {
-            String nombre = cellData.getValue().getNombre();
-            String apellidos = cellData.getValue().getApellidos();
-            return new SimpleStringProperty(nombre + " " + apellidos);
-        });
-        TableColumn<Alumno, String> columnaApellidos = new TableColumn<>("apellidos");
-        columnaApellidos.setCellValueFactory(new PropertyValueFactory<>("apellidos"));
-        tablaAlumnos.getColumns().addAll(columnaNombre, columnaApellidos);
+        this.tablaAlumnos.setItems(this.datosAlumnos.getListaAlumnos());
     }
 
 
@@ -92,23 +80,33 @@ public class ControllerGestion implements Initializable {
     void eliminarTodo(MouseEvent event) {
 
     }
-    public void recibirAlumno(Alumno alumno){
-        this.listaAlumnos.add(alumno);
-    }
     @FXML
-    void mostrarFicha(MouseEvent event) throws IOException {
+    void mostrarFicha(MouseEvent event) {
         Button btn=(Button) event.getSource();
         if(btn.getId().equals("btnModificar")){
-            ControllerFicha controllerFicha=new ControllerFicha();
             Alumno alumnoSeleccionado = tablaAlumnos.getSelectionModel().getSelectedItem();
             if(alumnoSeleccionado==null){
                 return;
             }
-            controllerFicha.recibirAlumno(alumnoSeleccionado);
+            this.datosAlumnos.setAlumnoSeleccionado(alumnoSeleccionado);
         }
+        try{
+            cambiarVentana();
+        }catch (IOException err){
+            System.out.println(err.getMessage());
+        }
+
+    }
+    public void establecerDatos(DatosAlumnos datosAlumnos){
+        this.datosAlumnos=datosAlumnos;
+    }
+    public void cambiarVentana() throws IOException {
         Stage stage=new Stage();
-        Parent root= FXMLLoader.load(getClass().getResource("fichaAlumno.fxml"));
-        stage.setTitle("stage 2");
+        FXMLLoader fxmlLoader = new FXMLLoader(ApliGestion.class.getResource("fichaAlumno.fxml"));
+        ControllerFicha controllerFicha=fxmlLoader.getController();
+        controllerFicha.establecerDatos(this.datosAlumnos);
+        Parent root=fxmlLoader.load();
+        stage.setTitle("Ficha");
         stage.setScene(new Scene(root));
         stage.show();
     }
