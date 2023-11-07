@@ -14,9 +14,9 @@ public class ApliGestion extends Application {
     public void start(Stage stage) throws IOException {
         this.datosAlumnos=cargarDatos();
         FXMLLoader fxmlLoader = new FXMLLoader(ApliGestion.class.getResource("mainView.fxml"));
+        Parent root=fxmlLoader.load();
         ControllerGestion controllerGestion = fxmlLoader.getController();
         controllerGestion.establecerDatos(this.datosAlumnos);
-        Parent root=fxmlLoader.load();
         Scene scene = new Scene(root);
         stage.setTitle("Gestión de alumnos");
         stage.setScene(scene);
@@ -24,9 +24,6 @@ public class ApliGestion extends Application {
     }
     private DatosAlumnos cargarDatos(){
         return new DatosAlumnos();
-    }
-    public DatosAlumnos devolverDatosAlumnos(){
-        return datosAlumnos;
     }
 
 
