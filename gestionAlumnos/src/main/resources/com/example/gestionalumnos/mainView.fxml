@@ -45,7 +45,10 @@
       <Button fx:id="btnVaciar" layoutX="496.0" layoutY="608.0" mnemonicParsing="false" onMouseClicked="#eliminarTodo" prefHeight="57.0" prefWidth="88.0" text="Vaciar" />
       <Label layoutX="574.0" layoutY="205.0" prefHeight="43.0" prefWidth="97.0" />
       <Label layoutX="574.0" layoutY="263.0" prefHeight="43.0" prefWidth="97.0" />
-      <Label fx:id="mostrarCantidad" layoutX="605.0" layoutY="270.0" prefHeight="113.0" prefWidth="164.0" />
+      <Label fx:id="mostrarCantidad" layoutX="605.0" layoutY="270.0" prefHeight="113.0" prefWidth="164.0">
+         <font>
+            <Font name="Arial" size="24.0" />
+         </font></Label>
       <Button fx:id="eliminarFiltro" layoutX="409.0" layoutY="689.0" mnemonicParsing="false" onMouseClicked="#eliminarFiltro" prefHeight="57.0" prefWidth="173.0" text="Eliminar Filtro" />
    </children>
 </AnchorPane>

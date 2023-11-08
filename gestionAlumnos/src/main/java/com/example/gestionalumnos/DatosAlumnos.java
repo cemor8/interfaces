@@ -7,7 +7,7 @@ import java.util.List;
 
 public class DatosAlumnos {
     private Alumno alumnoSeleccionado;
-    private ObservableList<Alumno> listaAlumnos= FXCollections.observableArrayList(List.of(new Alumno("e","ebvcbc bcvbc","e",2.2,"2","2")));
+    private ObservableList<Alumno> listaAlumnos= FXCollections.observableArrayList();
 
     public ObservableList<Alumno> getListaAlumnos() {
         return listaAlumnos;

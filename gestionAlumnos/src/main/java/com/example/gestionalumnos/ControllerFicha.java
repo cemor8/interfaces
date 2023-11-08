@@ -64,7 +64,8 @@ public class ControllerFicha {
                 this.alumno.setNombre(this.introducirNombre.getText());
 
             }
-            if (validarContenido("^[A-Z][a-z]+\\\\s[A-Z][a-z]+$", this.introducirApellidos.getText())) {
+            System.out.println("compruebo apel");
+            if (validarContenido("^[A-Z][a-z]+(\\s[A-Z][a-z]+)?$", this.introducirApellidos.getText())) {
                 this.alumno.setApellidos(this.introducirApellidos.getText());
 
             }
@@ -75,7 +76,7 @@ public class ControllerFicha {
                 this.alumno.setNum_telefono(this.introducirTelef.getText());
 
             }
-            if (validarContenido("(?:10|\\d(?:\\.\\d{1,2})?)", this.introducirNota.getText())) {
+            if (validarContenido("^([0-9]{1}([.][0-9]{1,2})?|10)$", this.introducirNota.getText())) {
                 this.alumno.setNotaMedia(Double.parseDouble(this.introducirNota.getText()));
 
             }
@@ -85,6 +86,8 @@ public class ControllerFicha {
         }
         System.out.println(this.alumno.getNombre());
         this.tabla.refresh();
+        this.alumno=null;
+        this.datosAlumnos.setAlumnoSeleccionado(null);
     }
     /**
      * Método que devuelve true si se cumple una expresion regular en una string

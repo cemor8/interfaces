@@ -78,7 +78,7 @@ public class ControllerGestion implements Initializable {
         Button btn=(Button) event.getSource();
         switch (btn.getId()){
             case "btnContarTotal":
-                this.mostrarCantidad.setText(String.valueOf(this.datosAlumnos.getListaAlumnos().size()));
+                this.mostrarCantidad.setText("Alumnos: "+this.datosAlumnos.getListaAlumnos().size());
                 break;
             default:
                 int cantidadDam=this.datosAlumnos.getListaAlumnos().stream().filter(alumno -> alumno.getCiclo().equalsIgnoreCase("Desarrollo de Aplicaciones Multiplataforma")).toArray().length;

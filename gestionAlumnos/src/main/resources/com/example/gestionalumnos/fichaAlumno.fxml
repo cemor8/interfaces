@@ -21,25 +21,25 @@
             <Font name="Arial" size="24.0" />
          </font>
       </Label>
-      <TextField fx:id="introducirNombre" layoutX="246.0" layoutY="81.0" />
+      <TextField fx:id="introducirNombre" layoutX="225.0" layoutY="81.0" prefHeight="25.0" prefWidth="192.0" />
       <Label layoutX="75.0" layoutY="123.0" prefHeight="43.0" prefWidth="108.0" text="Apellidos">
          <font>
             <Font name="Arial" size="24.0" />
          </font>
       </Label>
-      <TextField fx:id="introducirApellidos" layoutX="246.0" layoutY="132.0" />
+      <TextField fx:id="introducirApellidos" layoutX="225.0" layoutY="132.0" prefHeight="25.0" prefWidth="192.0" />
       <Label layoutX="95.0" layoutY="171.0" prefHeight="43.0" prefWidth="50.0" text="DNI">
          <font>
             <Font name="Arial" size="24.0" />
          </font>
       </Label>
-      <TextField fx:id="introducirDni" layoutX="246.0" layoutY="180.0" />
+      <TextField fx:id="introducirDni" layoutX="228.0" layoutY="180.0" prefHeight="25.0" prefWidth="192.0" />
       <Label layoutX="72.0" layoutY="225.0" prefHeight="43.0" prefWidth="114.0" text="Teléfono">
          <font>
             <Font name="Arial" size="24.0" />
          </font>
       </Label>
-      <TextField fx:id="introducirTelef" layoutX="246.0" layoutY="234.0" />
+      <TextField fx:id="introducirTelef" layoutX="228.0" layoutY="234.0" prefHeight="25.0" prefWidth="192.0" />
       <Label layoutX="72.0" layoutY="289.0" prefHeight="43.0" prefWidth="57.0" text="Ciclo">
          <font>
             <Font name="Arial" size="24.0" />
