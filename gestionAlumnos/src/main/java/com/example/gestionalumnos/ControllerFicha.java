@@ -47,33 +47,39 @@ public class ControllerFicha {
      * */
     @FXML
     void enviar(MouseEvent event) {
-        System.out.println("empieza enviar");
+        System.out.println(this.alumno);
         if (this.alumno == null) {
+            System.out.println("creando");
             if (!validarContenido("^[A-Z][a-z]{3,20}$", this.introducirNombre.getText()) || !validarContenido("^[A-Z][a-z]+(\\s[A-Z][a-z]+)?$", this.introducirApellidos.getText()) ||
                     !validarContenido("^\\d{3}-\\d{2}-\\d{2}-\\d{2}$", this.introducirTelef.getText()) ||
                     !validarContenido("^([0-9]{1}([.][0-9]{1,2})?|10)$", this.introducirNota.getText()) ||
                     this.introducirCiclo.getValue() == null || !calcularDni()
             ) {
+                System.out.println("gola4");
+                return;
+            }else if(!this.comprobarIgualdad()){
+                System.out.println("hola");
                 return;
             }
             Alumno alumnoCreado = new Alumno(this.introducirNombre.getText(), this.introducirApellidos.getText(),
                     this.introducirCiclo.getValue(), Double.parseDouble(this.introducirNota.getText()), this.introducirDni.getText(), this.introducirTelef.getText());
             this.datosAlumnos.meterAlumno(alumnoCreado);
         }else {
+            System.out.println("modificando");
             if (validarContenido("^[A-Z][a-z]{3,20}$", this.introducirNombre.getText())) {
                 this.alumno.setNombre(this.introducirNombre.getText());
 
             }
-            System.out.println("compruebo apel");
             if (validarContenido("^[A-Z][a-z]+(\\s[A-Z][a-z]+)?$", this.introducirApellidos.getText())) {
                 this.alumno.setApellidos(this.introducirApellidos.getText());
-
             }
-            if (calcularDni()) {
+            if (calcularDni() && this.comprobarIgualdad()) {
                 this.alumno.setDni(this.introducirDni.getText());
+                System.out.println("dni mal");
             }
-            if (validarContenido("^\\d{3}-\\d{2}-\\d{2}-\\d{2}$", this.introducirTelef.getText())) {
+            if (validarContenido("^\\d{3}-\\d{2}-\\d{2}-\\d{2}$", this.introducirTelef.getText())&& this.comprobarIgualdad()) {
                 this.alumno.setNum_telefono(this.introducirTelef.getText());
+                System.out.println("telef mal");
 
             }
             if (validarContenido("^([0-9]{1}([.][0-9]{1,2})?|10)$", this.introducirNota.getText())) {
@@ -84,7 +90,7 @@ public class ControllerFicha {
                 this.alumno.setCiclo(this.introducirCiclo.getValue());
             }
         }
-        System.out.println(this.alumno.getNombre());
+        System.out.println("reseteando");
         this.tabla.refresh();
         this.alumno=null;
         this.datosAlumnos.setAlumnoSeleccionado(null);
@@ -126,12 +132,17 @@ public class ControllerFicha {
      * */
     public void comprobarAlumno(){
         this.introducirCiclo.getItems().addAll("Desarrollo de Aplicaciones Multiplataforma", "Desarrollo de Aplicaciones Web", "Sistemas Microinformáticos y Redes");
+        this.introducirNombre.setStyle("-fx-prompt-text-fill: #333333; -fx-font-style: italic;");
+        this.introducirApellidos.setStyle("-fx-prompt-text-fill: #333333; -fx-font-style: italic;");
+        this.introducirDni.setStyle("-fx-prompt-text-fill: #333333; -fx-font-style: italic;");
+        this.introducirTelef.setStyle("-fx-prompt-text-fill: #333333; -fx-font-style: italic;");
+        this.introducirCiclo.setStyle("-fx-prompt-text-fill: #333333; -fx-font-style: italic;");
         if (this.alumno == null) {
             this.introducirNombre.setPromptText("Nombre entre 3-20 caracteres");
             this.introducirApellidos.setPromptText("Apellidos separados por espacio");
             this.introducirDni.setPromptText("Dni tiene que ser válido");
-            this.introducirTelef.setPromptText("formato xxx-xx-xx-xx");
-            this.introducirCiclo.setPromptText("Despliega para seleccionar ciclo");
+            this.introducirTelef.setPromptText("Formato xxx-xx-xx-xx");
+            this.introducirCiclo.setPromptText("Despliega para elejir ciclo");
         } else {
             this.introducirNombre.setPromptText(this.alumno.getNombre());
             this.introducirApellidos.setPromptText(this.alumno.getApellidos());
@@ -148,5 +159,13 @@ public class ControllerFicha {
     public void recibirTabla(TableView<Alumno> tabla){
         this.tabla=tabla;
     }
-
+    /**
+     * Método que se encarga de comprobar si ya hay algun alumno con el mismo Dni o numero de
+     * telefono en la lista de alumnos.
+     * @return boolean
+     * */
+    public boolean comprobarIgualdad(){
+        return this.datosAlumnos.getListaAlumnos().stream().noneMatch(alumno1 -> alumno1.getDni().equalsIgnoreCase(this.introducirDni.getText())) &&
+                this.datosAlumnos.getListaAlumnos().stream().noneMatch(alumno1 -> alumno1.getNum_telefono().equalsIgnoreCase(this.introducirTelef.getText()));
+    }
 }

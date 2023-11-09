@@ -110,6 +110,7 @@ public class ControllerGestion implements Initializable {
         this.datosAlumnos.resetear();
         this.tablaAlumnos.setItems(this.datosAlumnos.getListaAlumnos());
         this.tablaAlumnos.refresh();
+        this.mostrarCantidad.setText("");
     }
     /**
      * Método que se encarga de filtrar los alumnos segun los checkbox marcados
@@ -162,13 +163,17 @@ public class ControllerGestion implements Initializable {
     void mostrarFicha(MouseEvent event) {
         Button btn=(Button) event.getSource();
         if(btn.getId().equals("btnModificar")){
+            System.out.println("modificar");
             Alumno alumnoSeleccionado = this.tablaAlumnos.getSelectionModel().getSelectedItem();
             System.out.println(alumnoSeleccionado);
             if(alumnoSeleccionado==null){
                 return;
             }
             this.datosAlumnos.setAlumnoSeleccionado(alumnoSeleccionado);
+        }else {
+            this.datosAlumnos.setAlumnoSeleccionado(null);
         }
+        System.out.println("llegue cambiar ventana");
         try{
             cambiarVentana();
         }catch (IOException err){
