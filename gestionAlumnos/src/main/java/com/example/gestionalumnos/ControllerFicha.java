@@ -7,6 +7,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.control.ComboBox;
+import javafx.stage.Stage;
 
 import java.net.URL;
 import java.util.ArrayList;
@@ -86,6 +87,8 @@ public class ControllerFicha {
         this.tabla.refresh();
         this.alumno=null;
         this.datosAlumnos.setAlumnoSeleccionado(null);
+        Stage stage=(Stage) this.btnEnviar.getScene().getWindow();
+        stage.close();
     }
     /**
      * Método que devuelve true si se cumple una expresion regular en una string

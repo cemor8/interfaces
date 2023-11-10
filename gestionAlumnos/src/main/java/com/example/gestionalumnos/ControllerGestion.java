@@ -122,24 +122,17 @@ public class ControllerGestion implements Initializable {
     @FXML
     void filtrar(MouseEvent event) {
         ObservableList<Alumno> listaAlumnosFiltrado=FXCollections.observableArrayList();
-        Boolean encontrado=false;
         if(!this.checkDam.isSelected() && !this.checkDaw.isSelected() && !this.checkSist.isSelected()){
             return;
         }
         for (Alumno alumno : this.datosAlumnos.getListaAlumnos()){
            if(alumno.getCiclo().equalsIgnoreCase("Desarrollo de Aplicaciones Multiplataforma") && this.checkDam.isSelected()){
-               encontrado=true;
                listaAlumnosFiltrado.add(alumno);
            }else if(alumno.getCiclo().equalsIgnoreCase("Desarrollo de Aplicaciones Web") && this.checkDaw.isSelected()){
                listaAlumnosFiltrado.add(alumno);
-               encontrado=true;
            }else if(alumno.getCiclo().equalsIgnoreCase("Sistemas Microinformáticos y Redes") && this.checkSist.isSelected()){
                listaAlumnosFiltrado.add(alumno);
-               encontrado=true;
            }
-        }
-        if(!encontrado){
-            return;
         }
         this.tablaAlumnos.setItems(listaAlumnosFiltrado);
         this.tablaAlumnos.refresh();
