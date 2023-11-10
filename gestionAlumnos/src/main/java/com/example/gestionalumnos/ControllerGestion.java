@@ -75,6 +75,9 @@ public class ControllerGestion implements Initializable {
      * */
     @FXML
     void contar(MouseEvent event) {
+        if(this.datosAlumnos.getListaAlumnos().isEmpty()){
+            return;
+        }
         Button btn=(Button) event.getSource();
         switch (btn.getId()){
             case "btnContarTotal":
@@ -163,9 +166,7 @@ public class ControllerGestion implements Initializable {
     void mostrarFicha(MouseEvent event) {
         Button btn=(Button) event.getSource();
         if(btn.getId().equals("btnModificar")){
-            System.out.println("modificar");
             Alumno alumnoSeleccionado = this.tablaAlumnos.getSelectionModel().getSelectedItem();
-            System.out.println(alumnoSeleccionado);
             if(alumnoSeleccionado==null){
                 return;
             }
@@ -173,7 +174,6 @@ public class ControllerGestion implements Initializable {
         }else {
             this.datosAlumnos.setAlumnoSeleccionado(null);
         }
-        System.out.println("llegue cambiar ventana");
         try{
             cambiarVentana();
         }catch (IOException err){

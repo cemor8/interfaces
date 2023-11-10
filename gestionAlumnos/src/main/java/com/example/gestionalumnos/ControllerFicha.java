@@ -47,25 +47,20 @@ public class ControllerFicha {
      * */
     @FXML
     void enviar(MouseEvent event) {
-        System.out.println(this.alumno);
         if (this.alumno == null) {
-            System.out.println("creando");
             if (!validarContenido("^[A-Z][a-z]{3,20}$", this.introducirNombre.getText()) || !validarContenido("^[A-Z][a-z]+(\\s[A-Z][a-z]+)?$", this.introducirApellidos.getText()) ||
                     !validarContenido("^\\d{3}-\\d{2}-\\d{2}-\\d{2}$", this.introducirTelef.getText()) ||
                     !validarContenido("^([0-9]{1}([.][0-9]{1,2})?|10)$", this.introducirNota.getText()) ||
                     this.introducirCiclo.getValue() == null || !calcularDni()
             ) {
-                System.out.println("gola4");
                 return;
             }else if(!this.comprobarIgualdad()){
-                System.out.println("hola");
                 return;
             }
             Alumno alumnoCreado = new Alumno(this.introducirNombre.getText(), this.introducirApellidos.getText(),
                     this.introducirCiclo.getValue(), Double.parseDouble(this.introducirNota.getText()), this.introducirDni.getText(), this.introducirTelef.getText());
             this.datosAlumnos.meterAlumno(alumnoCreado);
         }else {
-            System.out.println("modificando");
             if (validarContenido("^[A-Z][a-z]{3,20}$", this.introducirNombre.getText())) {
                 this.alumno.setNombre(this.introducirNombre.getText());
 
@@ -75,11 +70,9 @@ public class ControllerFicha {
             }
             if (calcularDni() && this.comprobarIgualdad()) {
                 this.alumno.setDni(this.introducirDni.getText());
-                System.out.println("dni mal");
             }
             if (validarContenido("^\\d{3}-\\d{2}-\\d{2}-\\d{2}$", this.introducirTelef.getText())&& this.comprobarIgualdad()) {
                 this.alumno.setNum_telefono(this.introducirTelef.getText());
-                System.out.println("telef mal");
 
             }
             if (validarContenido("^([0-9]{1}([.][0-9]{1,2})?|10)$", this.introducirNota.getText())) {
@@ -90,7 +83,6 @@ public class ControllerFicha {
                 this.alumno.setCiclo(this.introducirCiclo.getValue());
             }
         }
-        System.out.println("reseteando");
         this.tabla.refresh();
         this.alumno=null;
         this.datosAlumnos.setAlumnoSeleccionado(null);
