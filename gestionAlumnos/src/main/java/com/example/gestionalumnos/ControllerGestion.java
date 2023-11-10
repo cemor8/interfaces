@@ -172,6 +172,7 @@ public class ControllerGestion implements Initializable {
         }catch (IOException err){
             System.out.println(err.getMessage());
         }
+        this.tablaAlumnos.refresh();
 
     }
     /**
@@ -192,10 +193,9 @@ public class ControllerGestion implements Initializable {
         Parent root=fxmlLoader.load();
         ControllerFicha controllerFicha=fxmlLoader.getController();
         controllerFicha.establecerDatos(this.datosAlumnos);
-        controllerFicha.recibirTabla(this.tablaAlumnos);
         stage.setTitle("Ficha");
         stage.setScene(new Scene(root));
-        stage.show();
+        stage.showAndWait();
     }
     /**
      * Método que cambia el estado de los botones.

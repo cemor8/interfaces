@@ -39,7 +39,6 @@ public class ControllerFicha {
     private ComboBox<String> introducirCiclo;
     private Alumno alumno = null;
     private DatosAlumnos datosAlumnos;
-    private TableView<Alumno> tabla;
     /**
      * Método que se encarga de comprobar los requisitos dependiendo de la funcion de la ventana,
      * si la ventana es para añadir un nuevo alumno, todos los campos deben de estar cubiertos y correctos.
@@ -84,7 +83,6 @@ public class ControllerFicha {
                 this.alumno.setCiclo(this.introducirCiclo.getValue());
             }
         }
-        this.tabla.refresh();
         this.alumno=null;
         this.datosAlumnos.setAlumnoSeleccionado(null);
         Stage stage=(Stage) this.btnEnviar.getScene().getWindow();
@@ -146,13 +144,6 @@ public class ControllerFicha {
             this.introducirCiclo.setPromptText(this.alumno.getCiclo());
             this.introducirNota.setPromptText(String.valueOf(this.alumno.getNotaMedia()));
         }
-    }
-    /**
-     * Método que se encarga de recibir una tabla para trabajar con ella.
-     * @param tabla tabla de datos a mostrar.
-     * */
-    public void recibirTabla(TableView<Alumno> tabla){
-        this.tabla=tabla;
     }
     /**
      * Método que se encarga de comprobar si ya hay algun alumno con el mismo Dni o numero de
