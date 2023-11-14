@@ -1,0 +1,45 @@
+mhrimaz/awesomejavafx
+
+
+materialfx
+
+
+
+app delivery- simular login, cada vez que se lance nos manda registrarse,
+
+almacenar datos reelevantes sobre el usuario,
+
+
+hola , nombre del usuario
+
+
+pantalla aparece comida para elegir, comida con imagenes, precio, esas cositas
+
+boton para añadir al carro, cuando acabemos de añadir, ver carro,
+
+
+pantalla del carro,
+
+resumen oedido, precio, total, lo que es, boton de pagar, simular tarjeta de credito, cuando este todo ok, mensaje de todo ok, pedido realizado.
+
+
+opciones de volver atras, eliminar elementos del carro, añadir mas de 1 elemento a la vez.
+
+
+javafx reference guide
+
+https://docs.oracle.com/javafx/2/api/javafx/scene/doc-files/cssref.html
+
+
+
+
+
+
+
+anchorPane-elemento volatil
+
+Anchorpaneview = load... cargar fichero xml dentro de un anchorpane
+
+helloAnchor: ya lo tenemos creado
+
+.getChildren.setAll(view)
