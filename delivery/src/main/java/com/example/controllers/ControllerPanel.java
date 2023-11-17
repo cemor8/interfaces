@@ -1,4 +1,5 @@
 package com.example.controllers;
 
-public class ControllerMain {
+public class ControllerPanel {
+
 }

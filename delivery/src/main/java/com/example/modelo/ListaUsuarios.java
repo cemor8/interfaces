@@ -3,13 +3,9 @@ package com.example.modelo;
 import java.util.ArrayList;
 
 public class ListaUsuarios {
-    private ArrayList<Usuario> listaUsuarios;
+    private ArrayList<Usuario> listaUsuarios = new ArrayList<>();
 
-    public ListaUsuarios(ArrayList<Usuario> listaUsuarios) {
-        this.listaUsuarios = listaUsuarios;
-    }
-
-    public ArrayList<Usuario> getListaUsuarios() {
+    public ArrayList<Usuario> getUsuarios() {
         return listaUsuarios;
     }
 }
