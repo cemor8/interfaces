@@ -5,7 +5,6 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
 <AnchorPane fx:id="anchorCarrito" prefHeight="524.0" prefWidth="607.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controllers.ControllerComida">
    <children>
       <ImageView fx:id="mostrarComida" fitHeight="271.0" fitWidth="368.0" layoutX="110.0" layoutY="48.0" pickOnBounds="true" preserveRatio="true" />
