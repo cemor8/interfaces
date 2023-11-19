@@ -21,7 +21,14 @@ public class Restaurante {
         return comidaDisponible;
     }
 
-    public String getImagenRestarurante() {
+    public String getImagen() {
         return imagenRestarurante;
+    }
+    public double precioTotal(){
+        double precio = 0;
+        for (Comida cada_comida : this.comidaDisponible){
+            precio+= cada_comida.getPrecio();
+        }
+        return precio;
     }
 }

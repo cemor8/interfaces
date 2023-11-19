@@ -7,5 +7,7 @@ module com.example.delivery {
     exports com.example.delivery;
     exports com.example.controllers;
     exports com.example.modelo;
+    opens com.example.controllers to javafx.fxml;
+    opens com.example.modelo to javafx.fxml;
 
 }

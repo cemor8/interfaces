@@ -1,14 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.controllers.ControllerPanel"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane fx:id="mostrarTopBar" prefHeight="797.0" prefWidth="1286.0" stylesheets="@../../../styles/estilos_panel.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controllers.ControllerPanel">
+   <children>
+      <AnchorPane fx:id="mostrarContenido" layoutX="219.0" layoutY="155.0" prefHeight="642.0" prefWidth="1086.0" />
+      <MFXButton id="btnCarro" fx:id="btnCarro" layoutX="932.0" layoutY="28.0" onAction="#mostrarCarrito" prefHeight="61.0" prefWidth="122.0" styleClass="btn" text="Carrito" />
+      <MFXButton id="btnCerrar" fx:id="btnCerrarSesion" layoutX="1108.0" layoutY="28.0" onAction="#cerrarSesion" prefHeight="61.0" prefWidth="122.0" styleClass="btn" text="Cerrar Sesión" />
+      <Label fx:id="mostrarNombreUsuario" layoutX="26.0" layoutY="415.0" prefHeight="61.0" prefWidth="181.0" styleClass="mostrarNombre" />
+      <MFXButton id="btnCarro" fx:id="btnVolver" layoutX="37.0" layoutY="28.0" onAction="#volverInicio" prefHeight="61.0" prefWidth="122.0" styleClass="btn" text="Inicio" />
+      <ImageView fitHeight="83.0" fitWidth="106.0" layoutX="57.0" layoutY="271.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../imagenes/perfil.png" />
+         </image>
+      </ImageView>
+   </children>
 </AnchorPane>

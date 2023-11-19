@@ -1,0 +1,12 @@
+.mostrarNombre{
+     -fx-font-weight:bold;
+     -fx-font-family: "Arial";
+     -fx-font-size: 20;
+}
+.btn{
+   -fx-background-color:#68c3b7; /* Cambia el valor hexadecimal al color deseado */
+   -fx-font-family: "Arial";
+   -fx-font-weight: bold;
+   -fx-font-size: 15;
+   -fx-text-fill: "white";
+ }

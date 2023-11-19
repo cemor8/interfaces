@@ -5,7 +5,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="722.0" prefWidth="483.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controllers.ControllerRegistrar">
+<AnchorPane prefHeight="722.0" prefWidth="490.0" stylesheets="@../../../styles/estilos_registrar.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controllers.ControllerRegistrar">
    <children>
       <AnchorPane layoutX="47.0" layoutY="22.0" prefHeight="678.0" prefWidth="389.0">
          <children>
@@ -13,12 +13,12 @@
             <MFXTextField fx:id="introducirApellidos" floatingText="Apellidos" layoutX="101.0" layoutY="248.0" prefHeight="58.0" prefWidth="188.0" promptText="Escrbe aqui" />
             <MFXTextField fx:id="introducirCorreo" floatingText="Correo" layoutX="101.0" layoutY="342.0" prefHeight="58.0" prefWidth="188.0" promptText="Escrbe aqui" />
             <MFXTextField fx:id="introducirContraseña" floatingText="Contraseña" layoutX="101.0" layoutY="444.0" prefHeight="58.0" prefWidth="188.0" promptText="Escrbe aqui" />
-            <MFXButton fx:id="btnCrearCuenta" layoutX="101.0" layoutY="560.0" onAction="#crearUsuario" prefHeight="65.0" prefWidth="188.0" text="Crear Cuenta" />
-            <Label layoutX="129.0" layoutY="33.0" prefHeight="52.0" prefWidth="160.0" text="Crear Cuenta" />
-            <Label fx:id="avisoNombre" layoutX="107.0" layoutY="113.0" prefHeight="17.0" prefWidth="104.0" />
-            <Label fx:id="avisoApellidos" layoutX="107.0" layoutY="224.0" prefHeight="17.0" prefWidth="104.0" />
-            <Label fx:id="avisoCorreo" layoutX="107.0" layoutY="322.0" prefHeight="17.0" prefWidth="104.0" />
-            <Label fx:id="avisoContraseña" layoutX="107.0" layoutY="420.0" prefHeight="17.0" prefWidth="104.0" />
+            <MFXButton fx:id="btnCrearCuenta" layoutX="101.0" layoutY="560.0" onAction="#crearUsuario" prefHeight="65.0" prefWidth="188.0" styleClass="btn" text="Crear Cuenta" />
+            <Label id="mostrarInicioSesion" layoutX="104.0" layoutY="34.0" prefHeight="52.0" prefWidth="215.0" text="Crear Cuenta" />
+            <Label fx:id="avisoNombre" layoutX="107.0" layoutY="113.0" prefHeight="17.0" prefWidth="104.0" styleClass="error" />
+            <Label fx:id="avisoApellidos" layoutX="107.0" layoutY="224.0" prefHeight="17.0" prefWidth="104.0" styleClass="error" />
+            <Label fx:id="avisoCorreo" layoutX="107.0" layoutY="322.0" prefHeight="17.0" prefWidth="104.0" styleClass="error" />
+            <Label fx:id="avisoContraseña" layoutX="107.0" layoutY="420.0" prefHeight="17.0" prefWidth="104.0" styleClass="error" />
          </children>
       </AnchorPane>
    </children>
