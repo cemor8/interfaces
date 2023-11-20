@@ -4,10 +4,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 
-
 <AnchorPane fx:id="contenidoMenu" prefHeight="642.0" prefWidth="1086.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controllers.ControllerMostrarMenu">
    <children>
-      <HBox fx:id="mostrarComida" layoutX="84.0" layoutY="187.0" prefHeight="456.0" prefWidth="1165.0" />
-      <Label fx:id="mostrarNombreRestaurante" layoutX="426.0" layoutY="46.0" prefHeight="96.0" prefWidth="437.0" />
+      <HBox fx:id="mostrarComida" layoutX="30.0" layoutY="170.0" prefHeight="438.0" prefWidth="1026.0" />
+      <Label fx:id="mostrarNombreRestaurante" layoutX="325.0" layoutY="48.0" prefHeight="96.0" prefWidth="437.0" />
    </children>
 </AnchorPane>
