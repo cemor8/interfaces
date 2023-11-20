@@ -1,12 +1,21 @@
 .mostrarNombre{
-     -fx-font-weight:bold;
-     -fx-font-family: "Arial";
-     -fx-font-size: 20;
+     -fx-font-weight: bold;
+     -fx-font-family: "Helvetica Neue";
+     -fx-font-size: 25;
 }
 .btn{
-   -fx-background-color:#68c3b7; /* Cambia el valor hexadecimal al color deseado */
+   -fx-background-color:#539091; /* Cambia el valor hexadecimal al color deseado */
    -fx-font-family: "Arial";
    -fx-font-weight: bold;
-   -fx-font-size: 15;
+   -fx-font-size: 13;
    -fx-text-fill: "white";
+   -fx-background-radius: 25px;
+   -fx-min-width: 120px; /* Ancho mínimo */
+   -fx-min-height: 40px; /* Altura mínima */
+   -fx-max-width: 120px; /* Ancho máximo */
+   -fx-max-height: 40px;
+ }
+ #btnCerrar{
+ -fx-min-width: 140px; /* Ancho mínimo */
+ -fx-max-width: 140px; /* Ancho máximo */
  }

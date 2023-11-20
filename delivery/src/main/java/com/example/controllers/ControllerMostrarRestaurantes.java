@@ -34,6 +34,7 @@ public class ControllerMostrarRestaurantes {
 
     public void crearRestaurantes(){
         GridPane gridPane = new GridPane();
+        gridPane.getStyleClass().add("grid_pane");
         gridPane.setHgap(20);
         gridPane.setVgap(20);
 
@@ -57,6 +58,7 @@ public class ControllerMostrarRestaurantes {
             imageView.getStyleClass().add("imagen_restaurante");
             Label labelNombre = new Label(cada_restaurante.getNombre());
             labelNombre.setLayoutY(fitImageSize + 10);
+            labelNombre.setLayoutX(200/2);
 
             labelNombre.getStyleClass().add("texto_restaurante");
 
@@ -73,9 +75,10 @@ public class ControllerMostrarRestaurantes {
 
         }
         gridPane.setPadding(new Insets(15));
+        AnchorPane.setTopAnchor(gridPane, 10.0);
+        AnchorPane.setLeftAnchor(gridPane, 20.0);
         this.rellenarRestaurantes.getChildren().add(gridPane);
-        AnchorPane.setTopAnchor(gridPane, (this.rellenarRestaurantes.getHeight() - gridPane.getHeight()) / 2);
-        AnchorPane.setLeftAnchor(gridPane, (this.rellenarRestaurantes.getWidth() - gridPane.getWidth()) / 2);
+        this.rellenarRestaurantes.getStyleClass().add("anchor_principal");
 
     }
 

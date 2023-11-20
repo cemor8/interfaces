@@ -1,7 +1,6 @@
 /* Estilo para la clase del contenedor */
 .cada_restaurante {
-    -fx-background-color: lightblue;
-    -fx-border-color: gray;
+
 }
 
 /* Estilo para la clase de la imagen */
@@ -13,5 +12,14 @@
 /* Estilo para la clase del label */
 .texto_restaurante {
     -fx-font-size: 14px;
-    -fx-text-fill: red;
+       -fx-font-weight: bold;
+            -fx-font-family: "Helvetica Neue";
+
+}
+.anchor_principal{
+    -fx-border-color: "black";
+     -fx-border-width: 1px;
+}
+.grid_pane{
+  -fx-padding: 70 0 0 50;
 }

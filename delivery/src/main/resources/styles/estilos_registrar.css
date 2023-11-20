@@ -4,6 +4,7 @@
    -fx-font-weight: bold;
    -fx-font-size: 15;
    -fx-text-fill: "white";
+   -fx-background-radius: 15px;
  }
  .error{
     -fx-text-fill : "red";

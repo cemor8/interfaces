@@ -17,7 +17,7 @@
 
 }
 #principal{
-    -fx-background-color: #f0f0f0;
+    -fx-background-color: #539091;
  }
  #secundario{
      -fx-background-color: "white";
@@ -28,6 +28,7 @@
    -fx-font-weight: bold;
    -fx-font-size: 15;
    -fx-text-fill: "white";
+    -fx-background-radius: 15px;
  }
  .error{
     -fx-text-fill : "red";

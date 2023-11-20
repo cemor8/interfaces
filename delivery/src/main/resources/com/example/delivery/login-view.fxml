@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import io.github.palexdev.materialfx.controls.MFXPasswordField?>
 <?import io.github.palexdev.materialfx.controls.MFXTextField?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -10,12 +11,12 @@
       <AnchorPane layoutX="50.0" layoutY="42.0" prefHeight="561.0" prefWidth="383.0" styleClass="anchor-redondeado">
          <children>
             <MFXTextField id="correo" fx:id="introducirCorreo" floatingText="Correo" layoutX="113.0" layoutY="195.0" prefHeight="49.0" prefWidth="157.0" promptText="Escribe aqui" styleClass="textField" />
-            <MFXTextField id="password" fx:id="introducirContraseña" floatingText="Contraseña" layoutX="113.0" layoutY="281.0" prefHeight="49.0" prefWidth="157.0" promptText="Escribe aqui" styleClass="textField" />
             <MFXButton id="btnContinuar" fx:id="btnContnuar" layoutX="113.0" layoutY="365.0" onAction="#enviarCredenciales" prefHeight="49.0" prefWidth="157.0" styleClass="btn" text="Continuar" />
             <MFXButton id="btnRegistrarse" fx:id="btnRegistrarse" layoutX="113.0" layoutY="453.0" onAction="#registrarse" prefHeight="49.0" prefWidth="157.0" styleClass="btn" text="Registrarse" />
             <Label id="mostrarInicioSesion" layoutX="91.0" layoutY="48.0" prefHeight="69.0" prefWidth="201.0" text="Iniciar Sesion" />
             <Label fx:id="infoCorreo" layoutX="113.0" layoutY="166.0" prefHeight="23.0" prefWidth="102.0" styleClass="error" />
             <Label fx:id="infoContraseña" layoutX="118.0" layoutY="256.0" prefHeight="23.0" prefWidth="137.0" styleClass="error" />
+            <MFXPasswordField id="password" fx:id="introducirContraseña" floatingText="Contraseña" layoutX="113.0" layoutY="279.0" prefHeight="49.0" prefWidth="157.0" promptText="Escribe aqui" styleClass="textField" />
          </children>
       </AnchorPane>
    </children>
