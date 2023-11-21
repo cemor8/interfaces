@@ -7,6 +7,8 @@ import com.example.modelo.Restaurante;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
@@ -27,33 +29,41 @@ public class ControllerMostrarMenu {
     @FXML
     private HBox mostrarComida;
 
-    @FXML
-    private Label mostrarNombreRestaurante;
     private Data data = null;
     private Restaurante restaurante = null;
     public void recibirData(Data data){
         this.data = data;
         this.crearComida();
-        this.mostrarNombreRestaurante.setText(this.data.getRestauranteSeleccionado().getNombre());
     }
     public void crearComida(){
+        this.mostrarComida.setAlignment(Pos.CENTER);
         for(Comida cada_comida : this.data.getRestauranteSeleccionado().getComidaDisponible()){
+            Insets insets = new Insets(0, 10, 0, 10); // Márgenes: arriba, derecha, abajo, izquierda
             AnchorPane contenedorComida = new AnchorPane();
             contenedorComida.setPrefSize(150, 150);
+            contenedorComida.setId(cada_comida.getNombre());
             Image imagenComida = new Image(getClass().getResourceAsStream(cada_comida.getFoto()));
             ImageView imageView = new ImageView();
             imageView.setImage(imagenComida);
             imageView.setFitWidth(100);
             imageView.setFitHeight(100);
+            imageView.getStyleClass().add("imagen-comida");
             Label labelNombreComida = new Label(cada_comida.getNombre());
             labelNombreComida.setLayoutY(110);
+            labelNombreComida.getStyleClass().add("nombreComida");
             contenedorComida.setOnMouseClicked(this::mostrarComida);
             contenedorComida.getChildren().addAll(imageView, labelNombreComida);
+
+            HBox.setMargin(contenedorComida, insets);
+
             mostrarComida.getChildren().add(contenedorComida);
+
         }
+
         System.out.println("hola");
     }
     public void mostrarComida(Event event){
+        System.out.println("aqqui");
         AnchorPane anchorPane = (AnchorPane) event.getSource();
         String nombreComida =anchorPane.getId();
         Optional<Comida> comidaOptional = this.data.getRestauranteSeleccionado().getComidaDisponible().stream().filter(comida -> comida.getNombre().equalsIgnoreCase(nombreComida)).findAny();
@@ -66,10 +76,10 @@ public class ControllerMostrarMenu {
 
         try {
             Stage stage = new Stage();
-            FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("mostrar-comida.xfml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("mostrar-comida.fxml"));
             Parent menuRestaurante = fxmlLoader.load();
-            ControllerComida controllerComidac = fxmlLoader.getController();
-            controllerComidac.recibirData(this.data);
+            ControllerComida controllerComida = fxmlLoader.getController();
+            controllerComida.recibirData(this.data);
             stage.setScene(new Scene(menuRestaurante));
             stage.show();
 

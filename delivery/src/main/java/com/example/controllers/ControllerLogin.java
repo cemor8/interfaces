@@ -123,7 +123,7 @@ public class ControllerLogin {
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("panel-view.fxml"));
         Parent root = fxmlLoader.load();
         ControllerPanel controllerPanel = fxmlLoader.getController();
-        controllerPanel.establecerDatos(this.data);
+        controllerPanel.establecerDatos(this.data,controllerPanel);
         stage.setTitle("Panel");
         Scene scene = new Scene(root);
         scene.getStylesheets().add(getClass().getResource("/styles/estilos_restaurantes.css").toExternalForm());

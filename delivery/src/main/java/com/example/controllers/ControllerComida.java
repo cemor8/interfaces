@@ -40,6 +40,7 @@ public class ControllerComida implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        System.out.println("creado");
         for (int i = 1; i <= 20; i++) {
             mostrarCantidad.getItems().add(i);
         }

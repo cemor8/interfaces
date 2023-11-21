@@ -17,11 +17,11 @@ public class ListaRestaurantes {
         Comida patatasFritas = new Comida("patatas fritas","/patatasFritas.png",3.99);
         Comida taco = new Comida("taco","/taco.jpg",9.99);
         Comida pollo = new Comida("pollo frito","/pollo.jpg",8.99);
-        Restaurante mcDonalds = new Restaurante("Mc Donalds",new ArrayList<Comida>(List.of(patatasFritas,hamburguesa)),"/mcDonalds.jpg");
-        Restaurante bk = new Restaurante("Burguer king",new ArrayList<Comida>(List.of(nuggets)),"/logoBK.jpg");
+        Restaurante mcDonalds = new Restaurante("mcdonalds",new ArrayList<Comida>(List.of(patatasFritas,hamburguesa)),"/mcDonalds.jpg");
+        Restaurante bk = new Restaurante("burguerking",new ArrayList<Comida>(List.of(nuggets)),"/logoBK.jpg");
         Restaurante kfc = new Restaurante("KFC",new ArrayList<Comida>(List.of(pollo)),"/kfc.jpg");
-        Restaurante tacoBell = new Restaurante("Taco Bell",new ArrayList<Comida>(List.of(taco)),"/tacoBell.png");
-        Restaurante restauranteKebab = new Restaurante("Restaurante Kebabs",new ArrayList<Comida>(List.of(kebab)),"/kebabRestaurante.jpg");
+        Restaurante tacoBell = new Restaurante("Tacobell",new ArrayList<Comida>(List.of(taco)),"/tacoBell.png");
+        Restaurante restauranteKebab = new Restaurante("RestauranteKebabs",new ArrayList<Comida>(List.of(kebab)),"/kebabRestaurante.jpg");
         Restaurante subway = new Restaurante("SUBWAY",new ArrayList<Comida>(List.of(bocadillos)),"/subway.jpg");
         this.listaRestaurantes = new ArrayList<>(List.of(mcDonalds,bk,kfc,tacoBell,restauranteKebab,subway));
     }

@@ -14,13 +14,14 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class ControllerPanel implements Initializable {
+public class ControllerPanel {
 
     @FXML
     private MFXButton btnCarro;
@@ -48,19 +49,6 @@ public class ControllerPanel implements Initializable {
     @FXML
     private AnchorPane mostrarTopBar;
     private Data data = null;
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("crear-restaurantes.fxml"));
-        Parent root;
-        try {
-            root = fxmlLoader.load();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-        AnchorPane secondFXML = (AnchorPane) root;
-        this.mostrarContenido.getChildren().setAll(secondFXML);
-    }
-
 
     @FXML
     void cerrarSesion(ActionEvent event) {
@@ -91,16 +79,51 @@ public class ControllerPanel implements Initializable {
         ControllerCarro controllerCarro = fxmlLoader.getController();
         controllerCarro.recibirData(this.data);
         stage.setTitle("Carrito");
-        stage.setScene(new Scene(root));
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.initModality(Modality.APPLICATION_MODAL);
+        stage.focusedProperty().addListener((obs, wasFocused, isNowFocused) -> {
+            if (! isNowFocused) {
+                stage.hide();
+            }
+        });
         stage.show();
     }
-    public void establecerDatos(Data data) throws IOException {
+
+    public void establecerDatos(Data data, ControllerPanel controllerPanel) throws IOException {
         this.data = data;
         this.mostrarNombreUsuario.setText("Hola, "+this.data.getCurrentUser().getNombre());
+
+        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("crear-restaurantes.fxml"));
+        Parent root;
+        try {
+            root = fxmlLoader.load();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        ControllerMostrarRestaurantes controllerMostrarRestaurantes = fxmlLoader.getController();
+        controllerMostrarRestaurantes.recibirData(this.data,controllerPanel);
+        AnchorPane secondFXML = (AnchorPane) root;
+        this.mostrarContenido.getChildren().setAll(secondFXML);
+
     }
     @FXML
     void volverInicio(ActionEvent event) {
+        Button btn = (Button) event.getSource();
+        Stage stage= (Stage) btn.getScene().getWindow();
+        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("panel-view.fxml"));
+        Parent root = null;
+        try {
+            root = fxmlLoader.load();
+            ControllerPanel controllerPanel = fxmlLoader.getController();
+            controllerPanel.establecerDatos(this.data,controllerPanel);
+        }catch (IOException err){
+            System.out.println(err.getMessage());
+        }
 
+        stage.setTitle("Panel");
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
     }
 
 

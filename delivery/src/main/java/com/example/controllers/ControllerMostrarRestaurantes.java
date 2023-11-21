@@ -26,21 +26,22 @@ public class ControllerMostrarRestaurantes {
     @FXML
     private AnchorPane rellenarRestaurantes;
     private Data data = null;
-    public void recibirData(Data data) throws IOException {
+    private ControllerPanel controllerPanel = null;
+    public void recibirData(Data data, ControllerPanel controllerPanel) throws IOException {
         this.data = data;
+        this.controllerPanel = controllerPanel;
     }
 
     @FXML
     public void mostrarMenu(Event event){
         AnchorPane anchorPane = (AnchorPane) event.getSource();
         String nombreRestaurante =anchorPane.getId();
-        Optional<Restaurante> restauranteOptional = this.data.getListaRestaurantes().getListaRestaurantes().stream().filter(restaurante -> restaurante.getNombre().equalsIgnoreCase(nombreRestaurante)).findAny();
+        Optional<Restaurante> restauranteOptional = this.data.getListaRestaurantes().getListaRestaurantes().stream().filter(restaurante -> restaurante.getNombre().trim().equalsIgnoreCase(nombreRestaurante.trim())).findAny();
         if(restauranteOptional.isEmpty()){
             return;
         }
         Restaurante restauranteEncontrado = restauranteOptional.get();
         this.data.setRestauranteSeleccionado(restauranteEncontrado);
-        System.out.println(restauranteEncontrado.getNombre());
         try {
             this.mostrarMenuRestaurante();
         }catch (IOException err){
@@ -57,11 +58,7 @@ public class ControllerMostrarRestaurantes {
         ControllerMostrarMenu controllerMostrarMenu = fxmlLoader.getController();
         controllerMostrarMenu.recibirData(this.data);
 
-
-        FXMLLoader panelLoader = new FXMLLoader(MainApplication.class.getResource("panel-view.fxml"));
-        panelLoader.load();
-        ControllerPanel controllerPanel = panelLoader.getController();
-        controllerPanel.cambiarContenido(menuRestaurante);
+        this.controllerPanel.cambiarContenido(menuRestaurante);
 
     }
 
