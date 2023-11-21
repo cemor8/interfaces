@@ -7,6 +7,7 @@ import io.github.palexdev.materialfx.controls.MFXCheckbox;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -16,8 +17,10 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class ControllerPanel {
+public class ControllerPanel implements Initializable {
 
     @FXML
     private MFXButton btnCarro;
@@ -45,6 +48,19 @@ public class ControllerPanel {
     @FXML
     private AnchorPane mostrarTopBar;
     private Data data = null;
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("crear-restaurantes.fxml"));
+        Parent root;
+        try {
+            root = fxmlLoader.load();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        AnchorPane secondFXML = (AnchorPane) root;
+        this.mostrarContenido.getChildren().setAll(secondFXML);
+    }
+
 
     @FXML
     void cerrarSesion(ActionEvent event) {
@@ -61,16 +77,6 @@ public class ControllerPanel {
         }catch (IOException err){
             System.out.println(err.getMessage());
         }
-    }
-
-    @FXML
-    void mostrarRestaurantes(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("crear-restaurantes.fxml"));
-        Parent root =fxmlLoader.load();
-        ControllerMostrarRestaurantes controllerMostrarRestaurantes = fxmlLoader.getController();
-        controllerMostrarRestaurantes.recibirRestaurantes(this.data);
-        AnchorPane secondFXML = (AnchorPane) root;
-        this.mostrarContenido.getChildren().setAll(secondFXML);
     }
 
     public void cambiarContenido(Parent nuevoContenido) throws IOException {
@@ -90,14 +96,13 @@ public class ControllerPanel {
     }
     public void establecerDatos(Data data) throws IOException {
         this.data = data;
-        this.mostrarRestaurantes(new ActionEvent());
-        System.out.println(this.data.getCurrentUser().getNombre());
         this.mostrarNombreUsuario.setText("Hola, "+this.data.getCurrentUser().getNombre());
     }
     @FXML
     void volverInicio(ActionEvent event) {
 
     }
+
 
 }
 

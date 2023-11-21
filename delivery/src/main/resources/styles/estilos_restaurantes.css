@@ -11,9 +11,9 @@
 
 /* Estilo para la clase del label */
 .texto_restaurante {
-    -fx-font-size: 14px;
-       -fx-font-weight: bold;
-            -fx-font-family: "Helvetica Neue";
+    -fx-font-size: 1.17em;
+    -fx-font-weight: bold;
+    -fx-font-family: "Helvetica Neue";
 
 }
 .anchor_principal{

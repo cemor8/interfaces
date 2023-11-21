@@ -8,6 +8,7 @@ public class Data {
     private ListaRestaurantes listaRestaurantes= new ListaRestaurantes();
     private Usuario currentUser = null;
     private Restaurante restauranteSeleccionado = null;
+    private Comida comidaSeleccionada = null;
 
     public ListaUsuarios getListaUsuarios() {
         return listaUsuarios;
@@ -37,4 +38,11 @@ public class Data {
         return currentUser;
     }
 
+    public Comida getComidaSeleccionada() {
+        return comidaSeleccionada;
+    }
+
+    public void setComidaSeleccionada(Comida comidaSeleccionada) {
+        this.comidaSeleccionada = comidaSeleccionada;
+    }
 }

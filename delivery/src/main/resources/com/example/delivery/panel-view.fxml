@@ -6,17 +6,25 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane fx:id="mostrarTopBar" prefHeight="797.0" prefWidth="1286.0" stylesheets="@../../../styles/estilos_panel.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controllers.ControllerPanel">
+<AnchorPane fx:id="mostrarTopBar" prefHeight="783.0" prefWidth="1291.0" stylesheets="@../../../styles/estilos_panel.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controllers.ControllerPanel">
    <children>
       <AnchorPane fx:id="mostrarContenido" layoutX="219.0" layoutY="155.0" prefHeight="642.0" prefWidth="1086.0" />
-      <MFXButton id="btnCarro" fx:id="btnCarro" layoutX="932.0" layoutY="28.0" onAction="#mostrarCarrito" prefHeight="61.0" prefWidth="122.0" styleClass="btn" text="Carrito" />
-      <MFXButton id="btnCerrar" fx:id="btnCerrarSesion" layoutX="1108.0" layoutY="28.0" onAction="#cerrarSesion" prefHeight="61.0" prefWidth="122.0" styleClass="btn" text="Cerrar Sesión" />
-      <Label fx:id="mostrarNombreUsuario" layoutX="26.0" layoutY="415.0" prefHeight="61.0" prefWidth="181.0" styleClass="mostrarNombre" />
-      <MFXButton id="btnCarro" fx:id="btnVolver" layoutX="37.0" layoutY="28.0" onAction="#volverInicio" prefHeight="61.0" prefWidth="122.0" styleClass="btn" text="Inicio" />
-      <ImageView fitHeight="83.0" fitWidth="106.0" layoutX="57.0" layoutY="271.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../imagenes/perfil.png" />
-         </image>
-      </ImageView>
+      <AnchorPane id="anchor_lateral" prefHeight="797.0" prefWidth="217.0">
+         <children>
+            <ImageView fitHeight="83.0" fitWidth="106.0" layoutX="67.0" layoutY="277.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../imagenes/perfil.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="mostrarNombreUsuario" layoutX="31.0" layoutY="417.0" prefHeight="61.0" prefWidth="155.0" styleClass="mostrarNombre" />
+            <MFXButton id="btnCerrar" fx:id="btnCerrarSesion" layoutX="39.0" layoutY="684.0" onAction="#cerrarSesion" prefHeight="61.0" prefWidth="122.0" styleClass="btn" text="Cerrar Sesión" />
+         </children>
+      </AnchorPane>
+      <AnchorPane id="anchor_superior" layoutX="217.0" prefHeight="155.0" prefWidth="1092.0">
+         <children>
+            <MFXButton id="btnCarro" fx:id="btnVolver" layoutX="38.0" layoutY="60.0" onAction="#volverInicio" prefHeight="61.0" prefWidth="122.0" styleClass="btn" text="Inicio" />
+            <MFXButton id="btnCarro" fx:id="btnCarro" layoutX="939.0" layoutY="60.0" maxHeight="61.0" maxWidth="169.0" onAction="#mostrarCarrito" prefHeight="61.0" prefWidth="169.0" styleClass="btn" text="Carrito" />
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>
