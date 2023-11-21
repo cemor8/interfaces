@@ -57,7 +57,6 @@ public class ControllerMostrarMenu {
             HBox.setMargin(contenedorComida, insets);
 
             mostrarComida.getChildren().add(contenedorComida);
-
         }
 
         System.out.println("hola");

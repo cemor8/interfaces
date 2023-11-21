@@ -1,20 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import io.github.palexdev.materialfx.controls.MFXButton?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
-
+<?import javafx.scene.layout.VBox?>
 
 <AnchorPane prefHeight="563.0" prefWidth="698.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controllers.ControllerCarro">
    <children>
-      <TableView layoutX="173.0" layoutY="48.0" prefHeight="358.0" prefWidth="353.0">
-        <columns>
-          <TableColumn prefWidth="75.0" text="C1" />
-          <TableColumn prefWidth="75.0" text="C2" />
-        </columns>
-      </TableView>
-      <MFXButton fx:id="btnPagar" layoutX="185.0" layoutY="446.0" onAction="#pagar" prefHeight="58.0" prefWidth="117.0" styleClass="btn" text="Pagar" />
-      <MFXButton fx:id="btnEliminar" layoutX="392.0" layoutY="446.0" onAction="#eliminar" prefHeight="58.0" prefWidth="117.0" styleClass="btn" text="Eliminar" />
+      <VBox fx:id="meterCarro" layoutX="32.0" layoutY="21.0" prefHeight="518.0" prefWidth="634.0" />
    </children>
 </AnchorPane>

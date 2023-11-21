@@ -34,7 +34,9 @@ public class ControllerComida implements Initializable {
         if(this.mostrarCantidad.getValue() == null){
             return;
         }
-        this.data.getCurrentUser().getCarro().add(new Comida(this.data.getComidaSeleccionada().getNombre(),this.data.getComidaSeleccionada().getFoto(),this.data.getComidaSeleccionada().getPrecio()));
+        Comida comida = new Comida(this.data.getComidaSeleccionada().getNombre(),this.data.getComidaSeleccionada().getFoto(),this.data.getComidaSeleccionada().getPrecio());
+        comida.setCantidad(this.mostrarCantidad.getValue());
+        this.data.getCurrentUser().getCarro().add(comida);
     }
 
 
