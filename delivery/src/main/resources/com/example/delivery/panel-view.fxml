@@ -23,7 +23,7 @@
       <AnchorPane id="anchor_superior" layoutX="217.0" prefHeight="155.0" prefWidth="1092.0">
          <children>
             <MFXButton id="btnCarro" fx:id="btnVolver" layoutX="38.0" layoutY="60.0" onAction="#volverInicio" prefHeight="61.0" prefWidth="122.0" styleClass="btn" text="Inicio" />
-            <MFXButton id="btnCarro" fx:id="btnCarro" layoutX="939.0" layoutY="60.0" maxHeight="61.0" maxWidth="169.0" onAction="#mostrarCarrito" prefHeight="61.0" prefWidth="169.0" styleClass="btn" text="Carrito" />
+            <MFXButton id="btnCarro" fx:id="btnCarro" contentDisplay="RIGHT" layoutX="939.0" layoutY="60.0" maxHeight="61.0" maxWidth="169.0" onAction="#mostrarCarrito" prefHeight="61.0" prefWidth="169.0" styleClass="btn" text="Carrito" />
          </children>
       </AnchorPane>
    </children>

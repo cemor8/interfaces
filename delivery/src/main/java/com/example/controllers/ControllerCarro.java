@@ -1,5 +1,5 @@
 package com.example.controllers;
-
+import javafx.geometry.Insets;
 import com.example.delivery.MainApplication;
 import com.example.modelo.Comida;
 import com.example.modelo.Data;
@@ -10,10 +10,12 @@ import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -21,6 +23,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
+import javax.swing.border.CompoundBorder;
 import java.io.IOException;
 import java.util.Optional;
 
@@ -41,30 +44,49 @@ public class ControllerCarro{
         this.crearCarro();
     }
     public void crearCarro(){
-        this.meterCarro.setSpacing(20);
-        for(Comida cada_comida : this.data.getCurrentUser().getCarro()){
+        if(this.data.getCurrentUser().getCarro().isEmpty()){
             HBox hbox = new HBox();
             hbox.setSpacing(10);
 
-            Image imagenComida = new Image(cada_comida.getFoto());
+            return;
+        }
+        this.meterCarro.setSpacing(20);
+        for(Comida cada_comida : this.data.getCurrentUser().getCarro()){
+            VBox vbox = new VBox();
+            vbox.setSpacing(10);
+            vbox.setPadding(new Insets(5));
+
+            vbox.getStyleClass().add("vbox-foto-nombre");
+
+            VBox vbox2 = new VBox();
+            vbox2.setSpacing(10);
+            vbox2.setPadding(new Insets(5));
+            vbox2.getStyleClass().add("vbox-foto-nombre");
+            HBox hbox = new HBox();
+            hbox.setSpacing(30);
+            hbox.getStyleClass().add("contenedor-cada-comida");
+            Image imagenComida = new Image(getClass().getResourceAsStream(cada_comida.getFoto()));
             ImageView imageView = new ImageView(imagenComida);
-            imageView.setFitHeight(50);
-            imageView.setFitWidth(50);
-
+            imageView.setFitHeight(100);
+            imageView.setFitWidth(100);
+            imageView.getStyleClass().add("imagen-comida");
             Label nombreComida = new Label(cada_comida.getNombre());
-
-            MFXComboBox<Integer> mostrarCantidad = new MFXComboBox();
+            nombreComida.getStyleClass().add("nombre-comida");
+            ComboBox<Integer> mostrarCantidad = new ComboBox();
             for (int i = 1; i <= 20; i++) {
                 mostrarCantidad.getItems().add(i);
+
             }
             mostrarCantidad.setValue(cada_comida.getCantidad());
-
             MFXButton btn = new MFXButton();
             btn.setText("Eliminar");
             btn.setOnMouseClicked(this::eliminar);
             btn.setId(cada_comida.getNombre());
-            hbox.getChildren().setAll(imageView,nombreComida,mostrarCantidad,btn);
-            meterCarro.getChildren().add(hbox);
+            vbox.getChildren().setAll(imageView,nombreComida);
+            vbox2.getChildren().setAll(btn,mostrarCantidad);
+            hbox.getChildren().setAll(vbox,vbox2);
+            hbox.setAlignment(Pos.CENTER);
+            this.meterCarro.getChildren().add(hbox);
         }
         MFXButton btn = new MFXButton();
         btn.setText("Pagar");
