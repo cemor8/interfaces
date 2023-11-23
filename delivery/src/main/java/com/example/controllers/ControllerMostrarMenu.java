@@ -37,6 +37,7 @@ public class ControllerMostrarMenu {
     }
     public void crearComida(){
         this.mostrarComida.setAlignment(Pos.CENTER);
+        this.mostrarComida.setSpacing(20.0);
         for(Comida cada_comida : this.data.getRestauranteSeleccionado().getComidaDisponible()){
             Insets insets = new Insets(0, 10, 0, 10); // Márgenes: arriba, derecha, abajo, izquierda
             AnchorPane contenedorComida = new AnchorPane();
@@ -45,11 +46,11 @@ public class ControllerMostrarMenu {
             Image imagenComida = new Image(getClass().getResourceAsStream(cada_comida.getFoto()));
             ImageView imageView = new ImageView();
             imageView.setImage(imagenComida);
-            imageView.setFitWidth(100);
-            imageView.setFitHeight(100);
+            imageView.setFitWidth(200);
+            imageView.setFitHeight(150);
             imageView.getStyleClass().add("imagen-comida");
             Label labelNombreComida = new Label(cada_comida.getNombre());
-            labelNombreComida.setLayoutY(110);
+            labelNombreComida.setLayoutY(160);
             labelNombreComida.getStyleClass().add("nombreComida");
             contenedorComida.setOnMouseClicked(this::mostrarComida);
             contenedorComida.getChildren().addAll(imageView, labelNombreComida);

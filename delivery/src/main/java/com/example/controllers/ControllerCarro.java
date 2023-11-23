@@ -57,7 +57,7 @@ public class ControllerCarro{
             vbox.setPadding(new Insets(5));
 
             vbox.getStyleClass().add("vbox-foto-nombre");
-
+            HBox hBox2 = new HBox();
             VBox vbox2 = new VBox();
             vbox2.setSpacing(10);
             vbox2.setPadding(new Insets(5));
@@ -82,10 +82,15 @@ public class ControllerCarro{
             btn.setText("Eliminar");
             btn.setOnMouseClicked(this::eliminar);
             btn.setId(cada_comida.getNombre());
-            vbox.getChildren().setAll(imageView,nombreComida);
-            vbox2.getChildren().setAll(btn,mostrarCantidad);
-            hbox.getChildren().setAll(vbox,vbox2);
+
+            vbox.getChildren().setAll(nombreComida,btn);
+
+            //vbox2.getChildren().setAll(btn,mostrarCantidad);
+
+            hbox.getChildren().setAll(imageView,vbox,mostrarCantidad);
+
             hbox.setAlignment(Pos.CENTER);
+
             this.meterCarro.getChildren().add(hbox);
         }
         MFXButton btn = new MFXButton();

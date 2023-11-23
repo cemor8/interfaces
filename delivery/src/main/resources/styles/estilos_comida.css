@@ -1,0 +1,8 @@
+.btn{
+   -fx-background-color: #539091;
+   -fx-font-family: "Arial";
+   -fx-font-weight: bold;
+   -fx-font-size: 13;
+   -fx-background-radius: 25px;
+   -fx-text-fill: "white";
+};
