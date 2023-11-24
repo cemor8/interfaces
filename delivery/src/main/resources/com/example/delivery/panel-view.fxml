@@ -11,19 +11,27 @@
       <AnchorPane fx:id="mostrarContenido" layoutX="219.0" layoutY="155.0" prefHeight="642.0" prefWidth="1086.0" />
       <AnchorPane id="anchor_lateral" prefHeight="797.0" prefWidth="217.0">
          <children>
-            <ImageView fitHeight="83.0" fitWidth="106.0" layoutX="67.0" layoutY="277.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="83.0" fitWidth="106.0" layoutX="63.0" layoutY="124.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../imagenes/perfil.png" />
                </image>
             </ImageView>
-            <Label fx:id="mostrarNombreUsuario" layoutX="31.0" layoutY="417.0" prefHeight="61.0" prefWidth="155.0" styleClass="mostrarNombre" />
-            <MFXButton id="btnCerrar" fx:id="btnCerrarSesion" layoutX="39.0" layoutY="684.0" onAction="#cerrarSesion" prefHeight="61.0" prefWidth="122.0" styleClass="btn" text="Cerrar Sesión" />
+            <Label fx:id="mostrarNombreUsuario" layoutX="31.0" layoutY="268.0" prefHeight="61.0" prefWidth="155.0" styleClass="mostrarNombre" />
+            <ImageView fitHeight="75.0" fitWidth="80.0" layoutX="67.0" layoutY="658.0" onMouseClicked="#cerrarSesion" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../imagenes/logout.png" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
       <AnchorPane id="anchor_superior" layoutX="217.0" prefHeight="155.0" prefWidth="1092.0">
          <children>
-            <MFXButton id="btnCarro" fx:id="btnVolver" layoutX="38.0" layoutY="60.0" onAction="#volverInicio" prefHeight="61.0" prefWidth="122.0" styleClass="btn" text="Inicio" />
             <MFXButton id="btnCarro" fx:id="btnCarro" contentDisplay="RIGHT" layoutX="939.0" layoutY="60.0" maxHeight="61.0" maxWidth="169.0" onAction="#mostrarCarrito" prefHeight="61.0" prefWidth="169.0" styleClass="btn" text="Carrito" />
+            <ImageView fitHeight="111.0" fitWidth="120.0" layoutX="35.0" layoutY="22.0" onMouseClicked="#volverInicio" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../imagenes/atras.png" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
    </children>

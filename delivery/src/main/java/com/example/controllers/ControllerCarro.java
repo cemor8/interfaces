@@ -19,6 +19,7 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -32,8 +33,8 @@ public class ControllerCarro{
     @FXML
     private VBox meterCarro;
     private Data data = null;
-
-
+    @FXML
+    private AnchorPane anchor;
 
     @FXML
     void pagar(ActionEvent event) {
@@ -47,7 +48,15 @@ public class ControllerCarro{
         if(this.data.getCurrentUser().getCarro().isEmpty()){
             HBox hbox = new HBox();
             hbox.setSpacing(10);
-
+            Image imagenCesta = new Image(getClass().getResourceAsStream("/imagenes/sad_cart.png"));
+            ImageView imageView = new ImageView(imagenCesta);
+            imageView.setFitHeight(300);
+            imageView.setFitWidth(300);
+            imageView.getStyleClass().add("imagen-vacio");
+            Label texto = new Label("Tu cesta de la compra está vacia, Añade algo para continuar");
+            texto.getStyleClass().add("texto-vacio");
+            this.meterCarro.getChildren().setAll(imageView);
+            AnchorPane.setLeftAnchor(meterCarro, 300.0);
             return;
         }
         this.meterCarro.setSpacing(20);
@@ -67,11 +76,13 @@ public class ControllerCarro{
             hbox.getStyleClass().add("contenedor-cada-comida");
             Image imagenComida = new Image(getClass().getResourceAsStream(cada_comida.getFoto()));
             ImageView imageView = new ImageView(imagenComida);
-            imageView.setFitHeight(100);
-            imageView.setFitWidth(100);
+
+            imageView.setFitHeight(130);
+            imageView.setFitWidth(130);
             imageView.getStyleClass().add("imagen-comida");
             Label nombreComida = new Label(cada_comida.getNombre());
             nombreComida.getStyleClass().add("nombre-comida");
+            nombreComida.setLayoutY(120);
             ComboBox<Integer> mostrarCantidad = new ComboBox();
             for (int i = 1; i <= 20; i++) {
                 mostrarCantidad.getItems().add(i);
@@ -82,6 +93,7 @@ public class ControllerCarro{
             btn.setText("Eliminar");
             btn.setOnMouseClicked(this::eliminar);
             btn.setId(cada_comida.getNombre());
+            btn.getStyleClass().add("btn-eliminar");
 
             vbox.getChildren().setAll(nombreComida,btn);
 
@@ -97,6 +109,7 @@ public class ControllerCarro{
         btn.setText("Pagar");
         btn.setOnMouseClicked(this::pagar);
         this.meterCarro.getChildren().add(btn);
+        this.meterCarro.getStylesheets().add(getClass().getResource("/styles/estilos_carro.css").toExternalForm());
 
     }
     public void eliminar(Event event){

@@ -7,3 +7,13 @@
 -fx-opacity: 0.7;
     -fx-effect: dropshadow(three-pass-box, black, 10, 0, 5, 5);
 }
+.mostrar-calorias{
+-fx-text-fill: #888888; /* Color gris para el texto */
+    -fx-font-size: 13px; /* Tamaño de la fuente pequeño */
+    -fx-font-family: "Arial";
+}
+.btn-eliminar{
+     -fx-font-size: 14px;
+     -fx-padding: 10px 20px;
+     -fx-background-radius: 20;
+}

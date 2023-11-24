@@ -5,6 +5,7 @@ import com.example.modelo.Data;
 import io.github.palexdev.materialfx.controls.MFXButton;
 import io.github.palexdev.materialfx.controls.MFXCheckbox;
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -22,6 +23,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
+import java.awt.event.MouseEvent;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -56,10 +58,10 @@ public class ControllerPanel implements Initializable {
     private Data data = null;
 
     @FXML
-    void cerrarSesion(ActionEvent event) {
+    public void cerrarSesion(Event event) {
         this.data.setCurrentUser(null);
-        Button btn = (Button) event.getSource();
-        Stage stage = (Stage) btn.getScene().getWindow();
+        ImageView img = (ImageView) event.getSource();
+        Stage stage = (Stage) img.getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("login-view.fxml"));
         try {
             Parent root = fxmlLoader.load();
@@ -114,8 +116,8 @@ public class ControllerPanel implements Initializable {
     }
 
     @FXML
-    void volverInicio(ActionEvent event) {
-        Button btn = (Button) event.getSource();
+    void volverInicio(Event event) {
+        ImageView btn = (ImageView) event.getSource();
         Stage stage = (Stage) btn.getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("panel-view.fxml"));
         Parent root = null;

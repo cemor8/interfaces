@@ -53,7 +53,11 @@ public class ControllerMostrarMenu {
             labelNombreComida.setLayoutY(160);
             labelNombreComida.getStyleClass().add("nombreComida");
             contenedorComida.setOnMouseClicked(this::mostrarComida);
-            contenedorComida.getChildren().addAll(imageView, labelNombreComida);
+            int calorias = (int) (Math.random() * 1000) + 300;
+            Label labelCalorias = new Label("Calorias: "+calorias);
+            labelCalorias.getStyleClass().add("mostrar-calorias");
+            labelCalorias.setLayoutY(180);
+            contenedorComida.getChildren().addAll(imageView, labelNombreComida,labelCalorias);
 
             HBox.setMargin(contenedorComida, insets);
 

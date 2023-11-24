@@ -3,7 +3,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane prefHeight="563.0" prefWidth="698.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controllers.ControllerCarro">
+<AnchorPane fx:id="anchor" prefHeight="563.0" prefWidth="698.0" stylesheets="@../../../styles/estilos_carro.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controllers.ControllerCarro">
    <children>
       <VBox fx:id="meterCarro" layoutX="32.0" layoutY="21.0" prefHeight="518.0" prefWidth="634.0" />
    </children>

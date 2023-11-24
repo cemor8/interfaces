@@ -4,13 +4,17 @@ import java.util.ArrayList;
 
 public class Restaurante {
     private String nombre;
+    private int tiempoInicio;
+    private int tiempoFin;
     private ArrayList<Comida> comidaDisponible;
     private String imagenRestarurante;
 
-    public Restaurante(String nombre, ArrayList<Comida> comidaDisponible, String imagenRestarurante) {
+    public Restaurante(String nombre, ArrayList<Comida> comidaDisponible, String imagenRestarurante, int tiempoInicio, int tiempoFin) {
         this.nombre = nombre;
         this.comidaDisponible = comidaDisponible;
         this.imagenRestarurante = imagenRestarurante;
+        this.tiempoFin=tiempoFin;
+        this.tiempoInicio=tiempoInicio;
     }
 
     public String getNombre() {

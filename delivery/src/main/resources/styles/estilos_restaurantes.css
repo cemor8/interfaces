@@ -16,10 +16,8 @@
     -fx-font-family: "Helvetica Neue";
 
 }
-.anchor_principal{
-    -fx-border-color: "black";
-     -fx-border-width: 1px;
-}
-.grid_pane{
-  -fx-padding: 70 0 0 50;
+.tiempo{
+-fx-text-fill: #888888; /* Color gris para el texto */
+    -fx-font-size: 13px; /* Tamaño de la fuente pequeño */
+    -fx-font-family: "Arial";
 }
