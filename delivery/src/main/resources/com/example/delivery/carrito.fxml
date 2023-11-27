@@ -1,10 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import io.github.palexdev.materialfx.controls.MFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane fx:id="anchor" prefHeight="563.0" prefWidth="698.0" stylesheets="@../../../styles/estilos_carro.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controllers.ControllerCarro">
+<AnchorPane fx:id="anchor" prefHeight="740.0" prefWidth="932.0" stylesheets="@../../../styles/estilos_carro.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controllers.ControllerCarro">
    <children>
-      <VBox fx:id="meterCarro" layoutX="32.0" layoutY="21.0" prefHeight="518.0" prefWidth="634.0" />
+      <VBox fx:id="meterCarro" layoutX="14.0" layoutY="65.0" prefHeight="597.0" prefWidth="532.0" />
+      <AnchorPane fx:id="contenedorTarjeta" layoutX="597.0" layoutY="14.0" prefHeight="720.0" prefWidth="329.0" styleClass="contenedor-tarjeta">
+         <children>
+            <ImageView fitHeight="259.0" fitWidth="261.0" layoutX="27.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../imagenes/tarjeta.jpg" />
+               </image>
+            </ImageView>
+            <HBox layoutX="12.0" layoutY="255.0" prefHeight="69.0" prefWidth="290.0">
+               <children>
+                  <VBox prefHeight="56.0" prefWidth="289.0">
+                     <children>
+                        <Label prefHeight="22.0" prefWidth="154.0" text="Nº Tarjeta" />
+                        <MFXTextField fx:id="introducirNtarjeta" onMouseClicked="#quitarTexto" prefHeight="6.0" prefWidth="289.0" promptText="XXXXXXXXXXXXXXXX" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <MFXButton fx:id="btnPagar" layoutX="12.0" layoutY="652.0" onAction="#pagar" prefHeight="54.0" prefWidth="290.0" text="Pagar" />
+            <HBox layoutX="12.0" layoutY="390.0" prefHeight="69.0" prefWidth="154.0">
+               <children>
+                  <VBox prefHeight="56.0" prefWidth="289.0">
+                     <children>
+                        <Label prefHeight="22.0" prefWidth="154.0" text="Fecha Caducidad" />
+                        <MFXTextField fx:id="introducirCaducidad" onMouseClicked="#quitarTexto" prefHeight="49.0" prefWidth="292.0" promptText="mm/yy" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox layoutX="12.0" layoutY="521.0" prefHeight="69.0" prefWidth="290.0">
+               <children>
+                  <VBox prefHeight="56.0" prefWidth="289.0">
+                     <children>
+                        <Label prefHeight="22.0" prefWidth="154.0" text="Nombre del Titular" />
+                        <MFXTextField fx:id="introducirNombre" onMouseClicked="#quitarTexto" prefHeight="49.0" prefWidth="292.0" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <VBox layoutX="185.0" layoutY="390.0" prefHeight="69.0" prefWidth="120.0">
+               <children>
+                  <Label prefHeight="22.0" prefWidth="154.0" text="CVC" />
+                  <MFXTextField fx:id="introduciCvc" onMouseClicked="#quitarTexto" prefHeight="49.0" prefWidth="292.0" promptText="XXX" />
+               </children>
+            </VBox>
+            <Label fx:id="infoTarjeta" layoutX="13.0" layoutY="334.0" prefHeight="21.0" prefWidth="134.0" styleClass="info" />
+            <Label fx:id="infoCaducidad" layoutX="13.0" layoutY="466.0" prefHeight="21.0" prefWidth="134.0" styleClass="info" />
+            <Label fx:id="infoCvc" layoutX="185.0" layoutY="466.0" prefHeight="21.0" prefWidth="134.0" styleClass="info" />
+            <Label fx:id="infoTitular" layoutX="13.0" layoutY="597.0" prefHeight="21.0" prefWidth="134.0" styleClass="info" />
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>

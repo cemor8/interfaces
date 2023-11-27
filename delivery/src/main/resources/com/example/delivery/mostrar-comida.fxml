@@ -2,6 +2,7 @@
 
 <?import io.github.palexdev.materialfx.controls.MFXButton?>
 <?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
@@ -10,5 +11,6 @@
       <ImageView id="imagen" fx:id="mostrarComida" fitHeight="271.0" fitWidth="340.0" layoutX="172.0" layoutY="47.0" pickOnBounds="true" preserveRatio="true" />
       <MFXButton fx:id="meterCarrito" layoutX="161.0" layoutY="363.0" onAction="#meterCarrito" prefHeight="66.0" prefWidth="181.0" styleClass="btn" text="Añadir al carrito" />
       <ComboBox id="boxCantidad" fx:id="mostrarCantidad" layoutX="381.0" layoutY="373.0" prefHeight="46.0" prefWidth="65.0" />
+      <Label fx:id="info" layoutX="161.0" layoutY="429.0" prefHeight="33.0" prefWidth="210.0" styleClass="info" />
    </children>
 </AnchorPane>

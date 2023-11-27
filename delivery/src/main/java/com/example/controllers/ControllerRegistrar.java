@@ -62,32 +62,40 @@ public class ControllerRegistrar {
 
     @FXML
     void crearUsuario(ActionEvent event) {
+        this.avisoCorreo.setText("");
+        this.avisoContraseña.setText("");
+        this.avisoApellidos.setText("");
+        this.avisoNombre.setText("");
         boolean error = false;
         System.out.println("hola");
         if(!validarContenido(columnasExpresiones.get("Nombre"),this.introducirNombre.getText())){
-            System.out.println("mal nombre");
+
             this.avisoNombre.setText("Nombre inválido");
+            this.introducirNombre.setText("");
             error = true;
         }
         if(!validarContenido(columnasExpresiones.get("Apellidos"),this.introducirApellidos.getText())){
-            System.out.println("mal apellidos");
+
             this.avisoApellidos.setText("Apellidos Inválidos");
+            this.introducirApellidos.setText("");
             error = true;
         }
         if(!validarContenido(columnasExpresiones.get("Contraseña"),this.introducirContraseña.getText())){
-            System.out.println("mal contraseña");
+
             this.avisoContraseña.setText("Contraseña inválida");
+            this.introducirContraseña.setText("");
             error = true;
         }
         if(!validarContenido(columnasExpresiones.get("Correo"),this.introducirCorreo.getText())){
-            System.out.println("mal correo");
+
             this.avisoCorreo.setText("Correo inválido");
+            this.introducirCorreo.setText("");
             error = true;
         }
         if(error){
             return;
         }
-        System.out.println("bien");
+
         Usuario usuarioCreado = new Usuario(this.introducirNombre.getText(),this.introducirApellidos.getText(),this.introducirCorreo.getText(),this.introducirContraseña.getText());
         this.data.getListaUsuarios().getUsuarios().add(usuarioCreado);
         this.volverLogin(event);

@@ -36,4 +36,8 @@ public class Usuario {
     public ArrayList<Comida> getCarro() {
         return carro;
     }
+
+    public void setCarro(ArrayList<Comida> carro) {
+        this.carro = carro;
+    }
 }

@@ -5,4 +5,8 @@
    -fx-font-size: 13;
    -fx-background-radius: 25px;
    -fx-text-fill: "white";
-};
+}
+.info{
+    -fx-text-fill: "red";
+    -fx-font-size: 12;
+}

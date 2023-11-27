@@ -52,6 +52,8 @@ public class ControllerLogin {
      */
     @FXML
     void enviarCredenciales(ActionEvent event) {
+        this.infoCorreo.setText("");
+        this.infoContraseña.setText("");
         MFXButton btn= (MFXButton) event.getSource() ;
         boolean error = false;
         if (!validarContenido(this.columnasExpresiones.get("Correo"), this.introducirCorreo.getText())) {
