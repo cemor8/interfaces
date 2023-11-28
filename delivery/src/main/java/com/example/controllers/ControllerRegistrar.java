@@ -112,6 +112,7 @@ public class ControllerRegistrar {
         Matcher matcher = patronValidar.matcher(texto_buscar);
         return matcher.matches();
     }
+    @FXML
     public void volverLogin(Event event){
         Button btn = (Button) event.getSource();
         Stage stage= (Stage) btn.getScene().getWindow();

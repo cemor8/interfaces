@@ -12,6 +12,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.input.KeyEvent;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -52,16 +54,16 @@ public class ControllerLogin {
      */
     @FXML
     void enviarCredenciales(ActionEvent event) {
-        this.infoCorreo.setText("");
-        this.infoContraseña.setText("");
         MFXButton btn= (MFXButton) event.getSource() ;
         boolean error = false;
         if (!validarContenido(this.columnasExpresiones.get("Correo"), this.introducirCorreo.getText())) {
             this.infoCorreo.setText("Correo inválido");
+            this.introducirCorreo.setText("");
             error = true;
         }
         if (!validarContenido(this.columnasExpresiones.get("Contraseña"), this.introducirContraseña.getText())) {
             this.infoContraseña.setText("Contraseña inválida");
+            this.introducirContraseña.setText("");
             error = true;
         }
         if (error) {
@@ -71,6 +73,8 @@ public class ControllerLogin {
                 usuario.getClave().equalsIgnoreCase(this.introducirContraseña.getText())).findFirst();
         if (usuarioEncontrado.isEmpty()) {
             this.infoCorreo.setText("Credenciales inválidas");
+            this.introducirContraseña.setText("");
+            this.introducirCorreo.setText("");
             return;
         }
         Usuario usuario = usuarioEncontrado.get();
@@ -131,6 +135,17 @@ public class ControllerLogin {
         scene.getStylesheets().add(getClass().getResource("/styles/estilos_restaurantes.css").toExternalForm());
         System.out.println(getClass().getResource("/styles/estilos_restaurantes.css"));
         stage.setScene(scene);
+    }
+
+    public void eliminarTexto(){
+        this.infoCorreo.setText("");
+        this.infoContraseña.setText("");
+    }
+
+    @FXML
+    void eliminarInfo(KeyEvent event) {
+        System.out.println("hola");
+        this.eliminarTexto();
     }
 
 }

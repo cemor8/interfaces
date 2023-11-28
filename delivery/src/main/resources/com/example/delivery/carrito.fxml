@@ -24,7 +24,7 @@
                   <VBox prefHeight="56.0" prefWidth="289.0">
                      <children>
                         <Label prefHeight="22.0" prefWidth="154.0" text="Nº Tarjeta" />
-                        <MFXTextField fx:id="introducirNtarjeta" onMouseClicked="#quitarTexto" prefHeight="6.0" prefWidth="289.0" promptText="XXXXXXXXXXXXXXXX" />
+                        <MFXTextField fx:id="introducirNtarjeta" minHeight="-Infinity" onKeyPressed="#quitarTexto" prefHeight="40.0" prefWidth="289.0" promptText="XXXXXXXXXXXXXXXX" styleClass="rellenar-pago" />
                      </children>
                   </VBox>
                </children>
@@ -35,7 +35,7 @@
                   <VBox prefHeight="56.0" prefWidth="289.0">
                      <children>
                         <Label prefHeight="22.0" prefWidth="154.0" text="Fecha Caducidad" />
-                        <MFXTextField fx:id="introducirCaducidad" onMouseClicked="#quitarTexto" prefHeight="49.0" prefWidth="292.0" promptText="mm/yy" />
+                        <MFXTextField fx:id="introducirCaducidad" minHeight="-Infinity" onKeyPressed="#quitarTexto" prefHeight="40.0" prefWidth="292.0" promptText="mm/yy" styleClass="rellenar-pago" />
                      </children>
                   </VBox>
                </children>
@@ -45,7 +45,7 @@
                   <VBox prefHeight="56.0" prefWidth="289.0">
                      <children>
                         <Label prefHeight="22.0" prefWidth="154.0" text="Nombre del Titular" />
-                        <MFXTextField fx:id="introducirNombre" onMouseClicked="#quitarTexto" prefHeight="49.0" prefWidth="292.0" />
+                        <MFXTextField fx:id="introducirNombre" minHeight="-Infinity" onKeyPressed="#quitarTexto" prefHeight="40.0" prefWidth="292.0" styleClass="rellenar-pago" />
                      </children>
                   </VBox>
                </children>
@@ -53,13 +53,13 @@
             <VBox layoutX="185.0" layoutY="390.0" prefHeight="69.0" prefWidth="120.0">
                <children>
                   <Label prefHeight="22.0" prefWidth="154.0" text="CVC" />
-                  <MFXTextField fx:id="introduciCvc" onMouseClicked="#quitarTexto" prefHeight="49.0" prefWidth="292.0" promptText="XXX" />
+                  <MFXTextField fx:id="introduciCvc" minHeight="-Infinity" onKeyPressed="#quitarTexto" prefHeight="40.0" prefWidth="292.0" promptText="XXX" styleClass="rellenar-pago" />
                </children>
             </VBox>
-            <Label fx:id="infoTarjeta" layoutX="13.0" layoutY="334.0" prefHeight="21.0" prefWidth="134.0" styleClass="info" />
-            <Label fx:id="infoCaducidad" layoutX="13.0" layoutY="466.0" prefHeight="21.0" prefWidth="134.0" styleClass="info" />
-            <Label fx:id="infoCvc" layoutX="185.0" layoutY="466.0" prefHeight="21.0" prefWidth="134.0" styleClass="info" />
-            <Label fx:id="infoTitular" layoutX="13.0" layoutY="597.0" prefHeight="21.0" prefWidth="134.0" styleClass="info" />
+            <Label fx:id="infoTarjeta" layoutX="13.0" layoutY="324.0" prefHeight="21.0" prefWidth="134.0" styleClass="info" />
+            <Label fx:id="infoCaducidad" layoutX="13.0" layoutY="456.0" prefHeight="21.0" prefWidth="134.0" styleClass="info" />
+            <Label fx:id="infoCvc" layoutX="185.0" layoutY="456.0" prefHeight="21.0" prefWidth="134.0" styleClass="info" />
+            <Label fx:id="infoTitular" layoutX="13.0" layoutY="590.0" prefHeight="21.0" prefWidth="134.0" styleClass="info" />
          </children>
       </AnchorPane>
    </children>

@@ -7,11 +7,13 @@ import io.github.palexdev.materialfx.controls.MFXComboBox;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 
 import java.net.URL;
 import java.util.Optional;
@@ -56,6 +58,9 @@ public class ControllerComida implements Initializable {
             return;
         }
         this.data.getCurrentUser().getCarro().add(comida);
+        Button btn = (Button) event.getSource();
+        Stage stage = (Stage) btn.getScene().getWindow();
+        stage.close();
     }
 
 
@@ -72,6 +77,7 @@ public class ControllerComida implements Initializable {
     public void recibirData(Data data){
         this.data = data;
         this.mostrarComida.setImage(new Image(getClass().getResourceAsStream(this.data.getComidaSeleccionada().getFoto())));
+        this.mostrarComida.setPreserveRatio(false);
         this.mostrarComida.setFitHeight(300);
         this.mostrarComida.setFitWidth(300);
     }

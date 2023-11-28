@@ -13,13 +13,14 @@
             <MFXTextField fx:id="introducirNombre" floatingText="Nombre" layoutX="101.0" layoutY="138.0" prefHeight="58.0" prefWidth="188.0" promptText="Escrbe aqui" />
             <MFXTextField fx:id="introducirApellidos" floatingText="Apellidos" layoutX="101.0" layoutY="248.0" prefHeight="58.0" prefWidth="188.0" promptText="Escrbe aqui" />
             <MFXTextField fx:id="introducirCorreo" floatingText="Correo" layoutX="101.0" layoutY="342.0" prefHeight="58.0" prefWidth="188.0" promptText="Escrbe aqui" />
-            <MFXButton fx:id="btnCrearCuenta" layoutX="101.0" layoutY="560.0" onAction="#crearUsuario" prefHeight="65.0" prefWidth="188.0" styleClass="btn" text="Crear Cuenta" />
+            <MFXButton fx:id="btnCrearCuenta" layoutX="101.0" layoutY="533.0" onAction="#crearUsuario" prefHeight="52.0" prefWidth="188.0" styleClass="btn" text="Crear Cuenta" />
             <Label id="mostrarInicioSesion" layoutX="104.0" layoutY="34.0" prefHeight="52.0" prefWidth="215.0" text="Crear Cuenta" />
             <Label fx:id="avisoNombre" layoutX="107.0" layoutY="113.0" prefHeight="17.0" prefWidth="104.0" styleClass="error" />
             <Label fx:id="avisoApellidos" layoutX="107.0" layoutY="224.0" prefHeight="17.0" prefWidth="104.0" styleClass="error" />
             <Label fx:id="avisoCorreo" layoutX="107.0" layoutY="322.0" prefHeight="17.0" prefWidth="104.0" styleClass="error" />
             <Label fx:id="avisoContraseña" layoutX="107.0" layoutY="420.0" prefHeight="17.0" prefWidth="104.0" styleClass="error" />
             <MFXPasswordField fx:id="introducirContraseña" floatingText="Contraseña" layoutX="101.0" layoutY="437.0" prefHeight="58.0" prefWidth="188.0" promptText="Escribe aqu" />
+            <MFXButton fx:id="btnVolverLogin" layoutX="101.0" layoutY="613.0" onAction="#volverLogin" prefHeight="52.0" prefWidth="188.0" styleClass="btn" text="Volver Login" />
          </children>
       </AnchorPane>
    </children>

@@ -120,11 +120,13 @@ public class ControllerCarro{
 
             imageView.setFitHeight(130);
             imageView.setFitWidth(130);
-            imageView.setPreserveRatio(true);
+
+            //imageView.setPreserveRatio(true);
             imageView.getStyleClass().add("imagen-comida");
             Label nombreComida = new Label(cada_comida.getNombre());
             nombreComida.getStyleClass().add("nombre-comida");
             nombreComida.setLayoutY(120);
+            nombreComida.setWrapText(true);
             ComboBox<Integer> mostrarCantidad = new ComboBox();
             for (int i = 1; i <= 20; i++) {
                 mostrarCantidad.getItems().add(i);
@@ -142,7 +144,8 @@ public class ControllerCarro{
             vbox.getChildren().setAll(nombreComida,btn);
 
             //vbox2.getChildren().setAll(btn,mostrarCantidad);
-
+            vbox.setMaxWidth(150);
+            vbox.setMinWidth(150);
             hbox.getChildren().setAll(imageView,vbox,mostrarCantidad);
 
             hbox.setAlignment(Pos.CENTER);
@@ -177,22 +180,26 @@ public class ControllerCarro{
         if(!validarContenido(this.columnasExpresiones.get("nombre"),this.introducirNombre.getText())){
             error = true;
             this.infoTitular.setText("Nombre inválido");
+            this.introducirNombre.setText("");
             System.out.println("nombre mal");
 
         }
         if(!validarContenido(this.columnasExpresiones.get("tarjeta"),this.introducirNtarjeta.getText())){
             error = true;
             this.infoTarjeta.setText("Numero inválido");
+            this.introducirNtarjeta.setText("");
             System.out.println("tarjeta mal");
         }
         if(!validarContenido(this.columnasExpresiones.get("cvc"),this.introduciCvc.getText())){
             error = true;
             this.infoCvc.setText("CVC erróneo");
+            this.introduciCvc.setText("");
             System.out.println("cvc mal");
         }
         if(!validarContenido(this.columnasExpresiones.get("fecha"),this.introducirCaducidad.getText())){
             error = true;
             this.infoCaducidad.setText("Fecha errónea");
+            this.introducirCaducidad.setText("");
             System.out.println("fecha mal");
         }
         if(error){
@@ -206,9 +213,10 @@ public class ControllerCarro{
         imageView.setFitHeight(300);
         imageView.setFitWidth(350);
         imageView.getStyleClass().add("imagen-pagado");
-        Label texto = new Label("Compra exitosa");
+        Label texto = new Label("Compra exitosa!!");
         texto.getStyleClass().add("texto");
         this.meterCarro.setSpacing(40);
+        VBox.setMargin(texto,new Insets(0,0,0,80));
         this.meterCarro.getChildren().setAll(imageView,texto);
         AnchorPane.setLeftAnchor(meterCarro, 300.0);
 
@@ -217,7 +225,7 @@ public class ControllerCarro{
     public void comprobarPrecio(){
         this.precio = 0;
         for (Comida comida : this.data.getCurrentUser().getCarro()){
-            this.precio+= comida.getPrecio() * comida.getCantidad();
+            this.precio+= comida.getPrecio() * (double) comida.getCantidad();
         }
         this.btnPagar.setText("Pagar : "+this.precio);
 

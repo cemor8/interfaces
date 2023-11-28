@@ -1,4 +1,5 @@
 .imagen-comida{
+    -fx-padding: 0 20 0 0;
 
 }
 .vbox-foto-nombre{
@@ -9,20 +10,26 @@
 }
 .nombre-comida{
   -fx-font-family: "Arial"; /* Tipo de fuente */
-       -fx-font-size: 16px; /* Tamaño de la fuente */
-       -fx-font-weight: bold; /* Fuente en negrita */
-       -fx-text-fill: #333333;
+  -fx-font-size: 16px; /* Tamaño de la fuente */
+  -fx-font-weight: bold; /* Fuente en negrita */
+  -fx-text-fill: #333333;
 }
 
 .imagen-vacio{
 }
+
 .btn-eliminar{
--fx-background-radius: 20px;
+    -fx-background-radius: 20px;
     -fx-font-size: 16px;
     -fx-padding: 10px 20px;
 }
+
+.btn-eliminar:hover {
+     -fx-background-color: red;
+ }
+
 .texto{
--fx-font-family: "Arial";
+    -fx-font-family: "Arial";
     -fx-font-size: 20px;
     -fx-font-weight: bold;
     -fx-text-fill: black;
@@ -31,4 +38,8 @@
 }
 .info{
     -fx-text-fill : "red";
+}
+.rellenar-pago{
+    -fx-font-family: "Arial";
+    -fx-font-size: 15px;
 }

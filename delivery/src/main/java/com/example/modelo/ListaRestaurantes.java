@@ -10,24 +10,24 @@ public class ListaRestaurantes {
         return listaRestaurantes;
     }
     public void inicializarRestaurantes(){
-        Comida nuggets = new Comida("Nuggets de pollo","/imagenes/nuggets.jpg",5.25);
-        Comida bocadillos = new Comida("Bocaditos pollo","/imagenes/bocadillos.jpg",3.95);
-        Comida hamburguesa = new Comida("Hamburguesa con queso","/imagenes/hamburguesa.jpg",1.0);
-        Comida kebab = new Comida("Kebab con carne y pollo","/imagenes/kebab.jpg",6.99);
-        Comida patatasFritas = new Comida("Patatas fritas","/imagenes/patatasFritas.png",3.99);
-        Comida taco = new Comida("Taco con tomate","/imagenes/taco.jpg",9.99);
+        Comida nuggets = new Comida("Nuggets de pollo","/imagenes/nuggets.jpg",5.00);
+        Comida bocadillos = new Comida("Bocaditos pollo","/imagenes/bocadillos.jpg",3.50);
+        Comida hamburguesa = new Comida("Hamburguesa con queso","/imagenes/hamburguesa.jpg",10.0);
+        Comida kebab = new Comida("Kebab con carne y pollo","/imagenes/kebab.jpg",6.50);
+        Comida patatasFritas = new Comida("Patatas fritas","/imagenes/patatasFritas.png",3.50);
+        Comida taco = new Comida("Taco con tomate","/imagenes/taco.jpg",9.50);
         Comida pollo = new Comida("Pollo frito con salsa BBQ","/imagenes/pollo.jpg",8.99);
-        Comida bigMac = new Comida("Big mac","/imagenes/bigmac.png",10.99);
+        Comida bigMac = new Comida("Big mac","/imagenes/bigmac.png",10.50);
         Comida bigMacPollo = new Comida("Big Mac Pollo","/imagenes/bigmacpollo.png",12.00);
         Comida burrito = new Comida("Burrito","/imagenes/burrito.png",9.00);
-        Comida cocacola = new Comida("Cocacola Zero","/imagenes/cocacola.png",2.99);
+        Comida cocacola = new Comida("Cocacola Zero","/imagenes/cocacola.png",3.50);
         Comida hamburKfc = new Comida("Hamburguesa","/imagenes/hamburKfc.jpg",10.00);
-        Comida kebab1 = new Comida("Kebab Solo Pollo","/imagenes/kebab1.jpg",7.99);
-        Comida kebab2 = new Comida("Kebab Solo Carne","/imagenes/kebab2.jpg",7.99);
-        Comida mcFlurry = new Comida("Mc Flurry Kit-Kat","/imagenes/mcflurry.png",4.99);
-        Comida menuSuper = new Comida("Menu Super KFC","/imagenes/menuSuperkfc.jpg",12.99);
+        Comida kebab1 = new Comida("Kebab Solo Pollo","/imagenes/kebab1.jpg",7.50);
+        Comida kebab2 = new Comida("Kebab Solo Carne","/imagenes/kebab2.jpg",7.50);
+        Comida mcFlurry = new Comida("Mc Flurry Kit-Kat","/imagenes/mcflurry.png",4.50);
+        Comida menuSuper = new Comida("Menu Super KFC","/imagenes/menuSuperkfc.jpg",12.50);
         Comida muchosTacos = new Comida("Pack de 4 Tacos de Pollo","/imagenes/muchosTacos.jpg",20.00);
-        Comida patatasKfc = new Comida("Patatas Fritas","/imagenes/patatasKfc.jpg",5.99);
+        Comida patatasKfc = new Comida("Patatas Fritas","/imagenes/patatasKfc.jpg",5.50);
         Comida subway1= new Comida("Bocadillo Chicken Tikka","/imagenes/subway1.jpg",10.00);
         Comida bocadillo= new Comida("Bocadillo Albóndigas","/imagenes/subwayalbondigas.jpg",12.00);
         Comida bocadilloTomate = new Comida("Bocadillo con Tomate","/imagenes/subwaytomate.jpg",11.00);
