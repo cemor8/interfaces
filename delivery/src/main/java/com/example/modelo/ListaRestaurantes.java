@@ -34,12 +34,12 @@ public class ListaRestaurantes {
         Comida tacoPatatas = new Comida("Patatas Fritas","/imagenes/tacoPatatas.jpg",5.00);
 
 
-        Restaurante mcDonalds = new Restaurante("mcdonalds",new ArrayList<Comida>(List.of(patatasFritas,bigMacPollo,bigMac,mcFlurry)),"/imagenes/mcDonalds.jpg",10,45);
-        Restaurante bk = new Restaurante("burguerking",new ArrayList<Comida>(List.of(nuggets,cocacola,hamburguesa)),"/imagenes/logoBK.jpg",20,30);
-        Restaurante kfc = new Restaurante("KFC",new ArrayList<Comida>(List.of(pollo,hamburKfc,menuSuper,patatasKfc)),"/imagenes/kfc.jpg",25,50);
-        Restaurante tacoBell = new Restaurante("Tacobell",new ArrayList<Comida>(List.of(taco,muchosTacos,tacoPatatas,burrito)),"/imagenes/tacoBell.png",10,40);
-        Restaurante restauranteKebab = new Restaurante("RestauranteKebabs",new ArrayList<Comida>(List.of(kebab,kebab2,kebab1)),"/imagenes/kebabRestaurante.jpg",35,50);
-        Restaurante subway = new Restaurante("SUBWAY",new ArrayList<Comida>(List.of(bocadillos,subway1,bocadilloTomate,bocadillo)),"/imagenes/subway.jpg",10,20);
+        Restaurante mcDonalds = new Restaurante("mcdonalds",new ArrayList<Comida>(List.of(patatasFritas,bigMacPollo,bigMac,mcFlurry)),"/imagenes/mcDonalds.jpg",10,45,"Mc Donalds Av. Madrid");
+        Restaurante bk = new Restaurante("burguerking",new ArrayList<Comida>(List.of(nuggets,cocacola,hamburguesa)),"/imagenes/logoBK.jpg",20,30,"Burger King c/ Florida");
+        Restaurante kfc = new Restaurante("KFC",new ArrayList<Comida>(List.of(pollo,hamburKfc,menuSuper,patatasKfc)),"/imagenes/kfc.jpg",25,50,"KFC Vialia Vigo");
+        Restaurante tacoBell = new Restaurante("Tacobell",new ArrayList<Comida>(List.of(taco,muchosTacos,tacoPatatas,burrito)),"/imagenes/tacoBell.png",10,40, "Taco Bell Vialia Vigo");
+        Restaurante restauranteKebab = new Restaurante("RestauranteKebabs",new ArrayList<Comida>(List.of(kebab,kebab2,kebab1)),"/imagenes/kebabRestaurante.jpg",35,50, "Las Palmas Torrecedeira Vigo");
+        Restaurante subway = new Restaurante("SUBWAY",new ArrayList<Comida>(List.of(bocadillos,subway1,bocadilloTomate,bocadillo)),"/imagenes/subway.jpg",10,20,"Subway C.C. Gran Vía");
         this.listaRestaurantes = new ArrayList<>(List.of(mcDonalds,bk,kfc,tacoBell,restauranteKebab,subway));
     }
 }

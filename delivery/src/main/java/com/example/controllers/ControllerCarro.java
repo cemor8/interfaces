@@ -79,9 +79,11 @@ public class ControllerCarro{
     private MFXTextField introducirNtarjeta;
 
 
+
     public void recibirData(Data data){
         this.data = data;
         this.crearCarro();
+
     }
     public void crearCarro(){
         if(this.data.getCurrentUser().getCarro().isEmpty()){
@@ -219,6 +221,7 @@ public class ControllerCarro{
         VBox.setMargin(texto,new Insets(0,0,0,80));
         this.meterCarro.getChildren().setAll(imageView,texto);
         AnchorPane.setLeftAnchor(meterCarro, 300.0);
+        this.data.getCurrentUser().sumarDineroGastado(this.precio);
 
 
     }

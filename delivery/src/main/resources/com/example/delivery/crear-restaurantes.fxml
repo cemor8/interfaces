@@ -8,14 +8,12 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="rellenarRestaurantes" prefHeight="1089.0" prefWidth="1295.0" stylesheets="@../../../styles/estilos_restaurantes.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controllers.ControllerMostrarRestaurantes">
+<AnchorPane fx:id="rellenarRestaurantes" prefHeight="886.0" prefWidth="1134.0" stylesheets="@../../../styles/estilos_restaurantes.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controllers.ControllerMostrarRestaurantes">
    <children>
-      <Label id="labelCerca" layoutX="91.0" layoutY="55.0" prefHeight="50.0" prefWidth="417.0" text="Comida Cerca De Tí" />
-      <HBox layoutX="91.0" layoutY="136.0" prefHeight="234.0" prefWidth="1025.0" spacing="30.0">
+      <HBox layoutX="91.0" layoutY="31.0" prefHeight="234.0" prefWidth="1025.0" spacing="30.0">
          <children>
             <VBox prefHeight="220.0" prefWidth="193.0" styleClass="contenedor_cantidad_restaurantes">
                <children>
@@ -35,6 +33,11 @@
                      <VBox.margin>
                         <Insets left="5.0" />
                      </VBox.margin></Label>
+                  <MFXButton prefHeight="41.0" prefWidth="103.0" styleClass="btn_mas" text="Mas...">
+                     <VBox.margin>
+                        <Insets left="20.0" top="10.0" />
+                     </VBox.margin>
+                  </MFXButton>
                </children>
             </VBox>
             <VBox prefHeight="220.0" prefWidth="193.0" styleClass="contenedor_cantidad_restaurantes">
@@ -46,6 +49,11 @@
                   </ImageView>
                   <Label prefHeight="43.0" prefWidth="194.0" styleClass="labelCantidadRestaurantesNombre" text="Tacos" />
                   <Label prefHeight="43.0" prefWidth="194.0" styleClass="labelCercaRestaurantes" text="4 Restaurantes Cerca" />
+                  <MFXButton prefHeight="41.0" prefWidth="103.0" styleClass="btn_mas" text="Mas...">
+                     <VBox.margin>
+                        <Insets left="20.0" top="10.0" />
+                     </VBox.margin>
+                  </MFXButton>
                </children>
             </VBox>
             <VBox prefHeight="220.0" prefWidth="193.0" styleClass="contenedor_cantidad_restaurantes">
@@ -57,6 +65,11 @@
                   </ImageView>
                   <Label prefHeight="43.0" prefWidth="194.0" styleClass="labelCantidadRestaurantesNombre" text="Pollo Frito" />
                   <Label prefHeight="43.0" prefWidth="194.0" styleClass="labelCercaRestaurantes" text="10 Restaurantes Cerca" />
+                  <MFXButton prefHeight="41.0" prefWidth="103.0" styleClass="btn_mas" text="Mas...">
+                     <VBox.margin>
+                        <Insets left="20.0" top="10.0" />
+                     </VBox.margin>
+                  </MFXButton>
                </children>
             </VBox>
             <VBox prefHeight="220.0" prefWidth="193.0" styleClass="contenedor_cantidad_restaurantes">
@@ -68,6 +81,11 @@
                   </ImageView>
                   <Label prefHeight="43.0" prefWidth="194.0" styleClass="labelCantidadRestaurantesNombre" text="Bocadillos" />
                   <Label prefHeight="43.0" prefWidth="194.0" styleClass="labelCercaRestaurantes" text="7 Restaurantes Cerca" />
+                  <MFXButton prefHeight="41.0" prefWidth="103.0" styleClass="btn_mas" text="Mas...">
+                     <VBox.margin>
+                        <Insets left="20.0" top="10.0" />
+                     </VBox.margin>
+                  </MFXButton>
                </children>
             </VBox>
             <VBox prefHeight="220.0" prefWidth="193.0" styleClass="contenedor_cantidad_restaurantes">
@@ -82,126 +100,35 @@
                         <Font name="Roboto" size="12.0" />
                      </font></Label>
                   <Label prefHeight="43.0" prefWidth="194.0" styleClass="labelCercaRestaurantes" text="3 Restaurantes Cerca" />
+                  <MFXButton prefHeight="41.0" prefWidth="103.0" styleClass="btn_mas" text="Mas...">
+                     <VBox.margin>
+                        <Insets left="20.0" top="10.0" />
+                     </VBox.margin>
+                  </MFXButton>
                </children>
             </VBox>
          </children>
       </HBox>
-      <MFXScrollPane layoutX="91.0" layoutY="774.0" prefHeight="305.0" prefWidth="1025.0">
-         <content>
-            <VBox prefHeight="609.0" prefWidth="1138.0" spacing="50.0">
-               <children>
-                  <HBox prefHeight="266.0" prefWidth="1012.0" spacing="30.0">
-                     <children>
-                        <AnchorPane fx:id="KFC" onMouseClicked="#mostrarMenu" prefHeight="199.0" prefWidth="333.0" styleClass="cadaRestaurante">
-                           <children>
-                              <Label layoutX="8.0" layoutY="172.0" prefHeight="50.0" prefWidth="175.0" styleClass="texto_restaurante" text="KFC Vialia Vigo" />
-                              <Label layoutX="8.0" layoutY="210.0" prefHeight="24.0" prefWidth="164.0" styleClass="tiempo" text="Tiempo envío 20-35min" />
-                              <StackPane layoutX="13.0" prefHeight="143.0" prefWidth="297.0">
-                                 <children>
-                                    <ImageView fitHeight="169.0" fitWidth="316.0" pickOnBounds="true" styleClass="imagen_restaurante">
-                                       <image>
-                                          <Image url="@../../../imagenes/kfc.jpg" />
-                                       </image>
-                                    </ImageView>
-                                 </children>
-                              </StackPane>
-                           </children>
-                        </AnchorPane>
-                        <AnchorPane fx:id="SUBWAY" onMouseClicked="#mostrarMenu" prefHeight="199.0" prefWidth="333.0" styleClass="cadaRestaurante">
-                           <children>
-                              <Label layoutX="8.0" layoutY="172.0" prefHeight="50.0" prefWidth="175.0" styleClass="texto_restaurante" text="Subway C.C. Gran Vía" />
-                              <Label layoutX="8.0" layoutY="210.0" prefHeight="24.0" prefWidth="164.0" styleClass="tiempo" text="Tiempo envío 40-55min" />
-                              <StackPane layoutX="13.0" prefHeight="143.0" prefWidth="297.0">
-                                 <children>
-                                    <ImageView fitHeight="169.0" fitWidth="316.0" pickOnBounds="true" styleClass="imagen_restaurante">
-                                       <image>
-                                          <Image url="@../../../imagenes/subway.jpg" />
-                                       </image>
-                                    </ImageView>
-                                 </children>
-                              </StackPane>
-                           </children>
-                        </AnchorPane>
-                        <AnchorPane fx:id="burguerking" onMouseClicked="#mostrarMenu" prefHeight="199.0" prefWidth="333.0" styleClass="cadaRestaurante">
-                           <children>
-                              <Label layoutX="8.0" layoutY="172.0" prefHeight="50.0" prefWidth="175.0" styleClass="texto_restaurante" text="Burguer King Av. Madrid" />
-                              <Label layoutX="8.0" layoutY="210.0" prefHeight="24.0" prefWidth="164.0" styleClass="tiempo" text="Tiempo envío 10-25min" />
-                              <StackPane layoutX="13.0" prefHeight="143.0" prefWidth="297.0">
-                                 <children>
-                                    <ImageView fitHeight="169.0" fitWidth="316.0" pickOnBounds="true" styleClass="imagen_restaurante">
-                                       <image>
-                                          <Image url="@../../../imagenes/logoBK.jpg" />
-                                       </image>
-                                    </ImageView>
-                                 </children>
-                              </StackPane>
-                           </children>
-                        </AnchorPane>
-                     </children>
-                  </HBox>
-                  <HBox prefHeight="267.0" prefWidth="1025.0" spacing="30.0">
-                     <children>
-                        <AnchorPane fx:id="McDonalds" onMouseClicked="#mostrarMenu" prefHeight="199.0" prefWidth="333.0" styleClass="cadaRestaurante">
-                           <children>
-                              <Label layoutX="8.0" layoutY="172.0" prefHeight="50.0" prefWidth="175.0" styleClass="texto_restaurante" text="Mc Donalds Av. Madrid" />
-                              <Label layoutX="8.0" layoutY="210.0" prefHeight="24.0" prefWidth="164.0" styleClass="tiempo" text="Tiempo envío 25-35min" />
-                              <StackPane layoutX="13.0" prefHeight="143.0" prefWidth="297.0">
-                                 <children>
-                                    <ImageView fx:id="McDonalds" fitHeight="169.0" fitWidth="316.0" pickOnBounds="true" styleClass="imagen_restaurante">
-                                       <image>
-                                          <Image url="@../../../imagenes/mcDonalds.jpg" />
-                                       </image>
-                                    </ImageView>
-                                 </children>
-                              </StackPane>
-                           </children>
-                        </AnchorPane>
-                        <AnchorPane fx:id="RestauranteKebabs" onMouseClicked="#mostrarMenu" prefHeight="199.0" prefWidth="333.0" styleClass="cadaRestaurante">
-                           <children>
-                              <Label layoutX="8.0" layoutY="172.0" prefHeight="50.0" prefWidth="175.0" styleClass="texto_restaurante" text="Las Palmas Döner Kebab" />
-                              <Label layoutX="8.0" layoutY="210.0" prefHeight="24.0" prefWidth="164.0" styleClass="tiempo" text="Tiempo envío 15-20min" />
-                              <StackPane layoutX="13.0" prefHeight="143.0" prefWidth="297.0">
-                                 <children>
-                                    <ImageView fx:id="RestauranteKebabs" fitHeight="169.0" fitWidth="316.0" pickOnBounds="true" styleClass="imagen_restaurante">
-                                       <image>
-                                          <Image url="@../../../imagenes/kebabRestaurante.jpg" />
-                                       </image>
-                                    </ImageView>
-                                 </children>
-                              </StackPane>
-                           </children>
-                        </AnchorPane>
-                        <AnchorPane fx:id="TacoBell" onMouseClicked="#mostrarMenu" prefHeight="199.0" prefWidth="333.0" styleClass="cadaRestaurante">
-                           <children>
-                              <Label layoutX="8.0" layoutY="172.0" prefHeight="50.0" prefWidth="175.0" styleClass="texto_restaurante" text="Taco Bell C.C. Gran Vía" />
-                              <Label layoutX="8.0" layoutY="210.0" prefHeight="24.0" prefWidth="164.0" styleClass="tiempo" text="Tiempo envío 20-25min" />
-                              <StackPane layoutX="13.0" prefHeight="143.0" prefWidth="297.0">
-                                 <children>
-                                    <ImageView fx:id="TacoBell" fitHeight="169.0" fitWidth="316.0" pickOnBounds="true" styleClass="imagen_restaurante">
-                                       <image>
-                                          <Image url="@../../../imagenes/tacoBell.png" />
-                                       </image>
-                                    </ImageView>
-                                 </children>
-                              </StackPane>
-                           </children>
-                        </AnchorPane>
-                     </children>
-                  </HBox>
-               </children>
-            </VBox>
-         </content>
-      </MFXScrollPane>
-      <VBox id="contenedorOfertas" fx:id="contenedorOfertas" layoutX="91.0" layoutY="401.0" prefHeight="340.0" prefWidth="505.0">
+      <MFXScrollPane fx:id="scrollRestaurantes" layoutX="91.0" layoutY="639.0" prefHeight="215.0" prefWidth="1025.0" />
+      <VBox id="contenedorOfertas" fx:id="contenedorOfertas" layoutX="88.0" layoutY="283.0" prefHeight="340.0" prefWidth="505.0">
          <children>
-            <Label id="labelOfertas" prefHeight="142.0" prefWidth="476.0" text="Descubre Las Ofertas Del Momento" />
-            <MFXButton id="btn_ver_mas" prefHeight="54.0" prefWidth="138.0" text="Ver mas" />
+            <Label id="labelOfertas" prefHeight="142.0" prefWidth="286.0" text="Ofertas Del Momento">
+               <VBox.margin>
+                  <Insets left="130.0" top="30.0" />
+               </VBox.margin></Label>
+            <MFXButton id="btn_ver_mas" prefHeight="54.0" prefWidth="138.0" text="Ver mas">
+               <VBox.margin>
+                  <Insets left="180.0" />
+               </VBox.margin></MFXButton>
          </children>
       </VBox>
-      <VBox id="contenedor_gastado" layoutX="838.0" layoutY="401.0" prefHeight="340.0" prefWidth="284.0">
+      <VBox id="contenedor_gastado" layoutX="835.0" layoutY="283.0" prefHeight="340.0" prefWidth="284.0">
          <children>
-            <Label id="labelGastadoMes" prefHeight="57.0" prefWidth="262.0" text="Dinero Gastado Este Mes" />
-            <Label id="cantidad_gastado" prefHeight="154.0" prefWidth="264.0" />
+            <Label id="labelGastadoMes" alignment="CENTER" prefHeight="57.0" prefWidth="281.0" text="Dinero Gastado" />
+            <Label id="cantidad_gastado" fx:id="mostrarGastado" alignment="CENTER" prefHeight="154.0" prefWidth="284.0">
+               <VBox.margin>
+                  <Insets top="30.0" />
+               </VBox.margin></Label>
          </children>
       </VBox>
    </children>

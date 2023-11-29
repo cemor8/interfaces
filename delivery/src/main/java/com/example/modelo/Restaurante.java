@@ -8,13 +8,15 @@ public class Restaurante {
     private int tiempoFin;
     private ArrayList<Comida> comidaDisponible;
     private String imagenRestarurante;
+    private String nombreMostrar;
 
-    public Restaurante(String nombre, ArrayList<Comida> comidaDisponible, String imagenRestarurante, int tiempoInicio, int tiempoFin) {
+    public Restaurante(String nombre, ArrayList<Comida> comidaDisponible, String imagenRestarurante, int tiempoInicio, int tiempoFin, String nombreMostrar) {
         this.nombre = nombre;
         this.comidaDisponible = comidaDisponible;
         this.imagenRestarurante = imagenRestarurante;
         this.tiempoFin=tiempoFin;
         this.tiempoInicio=tiempoInicio;
+        this.nombreMostrar = nombreMostrar;
     }
 
     public String getNombre() {
@@ -34,5 +36,21 @@ public class Restaurante {
             precio+= cada_comida.getPrecio();
         }
         return precio;
+    }
+
+    public int getTiempoInicio() {
+        return tiempoInicio;
+    }
+
+    public int getTiempoFin() {
+        return tiempoFin;
+    }
+
+    public String getImagenRestarurante() {
+        return imagenRestarurante;
+    }
+
+    public String getNombreMostrar() {
+        return nombreMostrar;
     }
 }

@@ -56,8 +56,6 @@
 
 }
 #contenedorOfertas{
-
-
     -fx-background-size: contain;
     -fx-background-repeat: no-repeat;
     -fx-background-radius: 35px;
@@ -68,9 +66,53 @@
 
 }
 #cantidad_gastado{
+    -fx-font-family: "Roboto";
+            -fx-font-size: 8.25em;
+            -fx-text-fill: #539091;
+            -fx-font-weight: bold;
 
 }
 
 #labelGastadoMes{
+    -fx-font-family: "Roboto";
+        -fx-font-size: 2.25em;
+        -fx-text-fill: "black";
+        -fx-font-weight: bold;
+}
+.btn_mas{
+    -fx-background-color:#539091; /* Cambia el valor hexadecimal al color deseado */
+       -fx-font-family: "Arial";
+       -fx-font-weight: bold;
+       -fx-font-size: 13;
+       -fx-text-fill: "white";
+       -fx-background-radius: 25px;
+       -fx-min-width: 120px; /* Ancho mínimo */
+       -fx-min-height: 40px; /* Altura mínima */
+       -fx-max-width: 120px; /* Ancho máximo */
+       -fx-max-height: 40px;
+}
+.redondear_imagen{
+    -fx-background-radius: 50%; /* Redondear los bordes */
+        -fx-border-radius: 50%; /* Redondear los bordes */
+        -fx-background-color: white; /* Color de fondo */
+        -fx-border-color: black; /* Color del borde */
+        -fx-border-width: 2px; /* Ancho del borde */
+        -fx-border-style: solid; /* Estilo del borde */
+
+}
+.test{
+}
+
+.nombre_restaurante{
+        -fx-font-family: "Roboto";
+        -fx-font-size: 1.25em;
+        -fx-text-fill: "black";
+        -fx-font-weight: bold;
+
+}
+.tiempo-entrega{
+-fx-font-family: "Roboto";
+        -fx-font-size: 1em;
+        -fx-text-fill: "grey";
 
 }

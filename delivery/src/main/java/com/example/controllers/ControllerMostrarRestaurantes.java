@@ -3,6 +3,7 @@ package com.example.controllers;
 import com.example.delivery.MainApplication;
 import com.example.modelo.Data;
 import com.example.modelo.Restaurante;
+import io.github.palexdev.materialfx.controls.MFXScrollPane;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
@@ -15,12 +16,12 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.*;
+import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Optional;
 
 public class ControllerMostrarRestaurantes {
@@ -31,10 +32,71 @@ public class ControllerMostrarRestaurantes {
     @FXML
     private VBox contenedorOfertas;
     private ControllerPanel controllerPanel = null;
+    @FXML
+    private MFXScrollPane scrollRestaurantes;
+    @FXML
+    private Label mostrarGastado;
     public void recibirData(Data data, ControllerPanel controllerPanel) throws IOException {
         this.data = data;
         this.controllerPanel = controllerPanel;
-        this.contenedorOfertas.setAlignment(Pos.CENTER);
+        this.crearRestaurantes();
+        this.mostrarGastado.setText(String.valueOf(this.data.getCurrentUser().getDineroGastado()));
+
+    }
+    public void crearRestaurantes(){
+        //333 //199 anchorpane // 1012 // 266 hbox
+        VBox vBox = new VBox();
+        HBox hBox = new HBox();
+        vBox.setSpacing(30);
+        for(int i = 0; i<this.data.getListaRestaurantes().getListaRestaurantes().size() ; i++){
+            //hBox.setSpacing(30);
+            AnchorPane anchorPane = new AnchorPane();
+            anchorPane.setId(this.data.getListaRestaurantes().getListaRestaurantes().get(i).getNombre());
+            anchorPane.setMinWidth(200);
+            anchorPane.setMinHeight(220);
+            anchorPane.getStyleClass().add("test");
+            anchorPane.setOnMouseClicked(this::mostrarMenu);
+            Image image = new Image(getClass().getResourceAsStream(this.data.getListaRestaurantes().getListaRestaurantes().get(i).getImagen()));
+            ImageView imageView = new ImageView(image);
+            imageView.setFitWidth(290);
+            imageView.setFitHeight(150);
+            imageView.setPreserveRatio(false);
+            Rectangle clipRect = new Rectangle(290, 150);
+            clipRect.setArcWidth(20);
+            clipRect.setArcHeight(20);
+            imageView.setClip(clipRect);
+            StackPane stackPane = new StackPane();
+            stackPane.getChildren().add(imageView);
+            stackPane.setPrefHeight(270);
+            stackPane.setPrefWidth(150);
+            Label nombre = new Label(this.data.getListaRestaurantes().getListaRestaurantes().get(i).getNombreMostrar());
+            nombre.getStyleClass().add("nombre_restaurante");
+            nombre.setLayoutY(160);
+            Label tiempo = new Label("Tiempo de Entrega: "+this.data.getListaRestaurantes().getListaRestaurantes().get(i).getTiempoInicio()+" - "+this.data.getListaRestaurantes().getListaRestaurantes().get(i).getTiempoFin()+" mins.");
+            tiempo.getStyleClass().add("tiempo-entrega");
+            tiempo.setLayoutY(190);
+            anchorPane.getChildren().add(imageView);
+            anchorPane.getChildren().add(nombre);
+            anchorPane.getChildren().add(tiempo);
+            Insets insets = new Insets(0, 0, 0, 25);
+            HBox.setMargin(anchorPane, insets);
+
+            if (i % 3 == 0) {
+                if (i > 0) {
+                    vBox.getChildren().add(hBox);
+                }
+                hBox = new HBox();
+            }
+            hBox.getChildren().add(anchorPane);
+
+            if (i == this.data.getListaRestaurantes().getListaRestaurantes().size() - 1) {
+                vBox.getChildren().add(hBox);
+            }
+        }
+        this.scrollRestaurantes.setContent(vBox);
+
+
+
     }
 
     @FXML
