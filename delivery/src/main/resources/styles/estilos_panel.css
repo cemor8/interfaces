@@ -16,8 +16,8 @@
    -fx-max-height: 40px;
  }
 #btnCerrar{
- -fx-min-width: 140px; /* Ancho mínimo */
- -fx-max-width: 140px; /* Ancho máximo */
+    -fx-min-width: 140px; /* Ancho mínimo */
+    -fx-max-width: 140px; /* Ancho máximo */
  }
 #anchor_lateral{
      -fx-border-width: 0 2 0 0;

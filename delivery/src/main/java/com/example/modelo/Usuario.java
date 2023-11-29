@@ -9,6 +9,7 @@ public class Usuario {
     private String correo;
     private String clave;
     private ArrayList<Comida> carro = new ArrayList<>();
+    private double dineroGastado = 0;
 
     public Usuario(String nombre, String apellidos, String correo, String clave) {
         this.nombre = nombre;
@@ -39,5 +40,12 @@ public class Usuario {
 
     public void setCarro(ArrayList<Comida> carro) {
         this.carro = carro;
+    }
+
+    public double getDineroGastado() {
+        return dineroGastado;
+    }
+    public void sumarDineroGastado(double dinero){
+        this.dineroGastado += dinero;
     }
 }
