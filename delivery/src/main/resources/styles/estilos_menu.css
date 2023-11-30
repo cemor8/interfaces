@@ -17,3 +17,16 @@
      -fx-padding: 10px 20px;
      -fx-background-radius: 20;
 }
+.nombre_restaurante{
+        -fx-font-family: "Roboto";
+        -fx-font-size: 2.5em;
+        -fx-text-fill: "black";
+        -fx-font-weight: bold;
+
+}
+.tiempo-entrega{
+-fx-font-family: "Roboto";
+        -fx-font-size: 1.2em;
+        -fx-text-fill: "grey";
+
+}

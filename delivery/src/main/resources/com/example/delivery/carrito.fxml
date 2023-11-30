@@ -16,7 +16,7 @@
          <children>
             <ImageView fitHeight="259.0" fitWidth="261.0" layoutX="27.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../imagenes/tarjeta.jpg" />
+                  <Image url="@../../../imagenes/imagenesCarrito/tarjeta.jpg" />
                </image>
             </ImageView>
             <HBox layoutX="12.0" layoutY="255.0" prefHeight="69.0" prefWidth="290.0">

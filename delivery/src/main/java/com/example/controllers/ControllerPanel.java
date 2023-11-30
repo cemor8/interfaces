@@ -2,6 +2,7 @@ package com.example.controllers;
 
 import com.example.delivery.MainApplication;
 import com.example.modelo.Data;
+import com.example.modelo.Restaurante;
 import io.github.palexdev.materialfx.controls.MFXButton;
 import io.github.palexdev.materialfx.controls.MFXCheckbox;
 import javafx.event.ActionEvent;
@@ -9,21 +10,16 @@ import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
-import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-import java.awt.event.MouseEvent;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -56,6 +52,9 @@ public class ControllerPanel implements Initializable {
     @FXML
     private AnchorPane mostrarTopBar;
     private Data data = null;
+    /**
+     * Método que se encarga de cerrar sesion para logearse con otro usuario
+     * */
 
     @FXML
     public void cerrarSesion(Event event) {
@@ -73,11 +72,15 @@ public class ControllerPanel implements Initializable {
             System.out.println(err.getMessage());
         }
     }
-
+    /**
+     * Método que cambia el contenido del contenedor anchorpane
+     * */
     public void cambiarContenido(Parent nuevoContenido) throws IOException {
         this.mostrarContenido.getChildren().setAll(nuevoContenido);
     }
-
+    /**
+     * Método que se encarga de abrir una nueva ventana para mostrar el carrito
+     * **/
     @FXML
     void mostrarCarrito(ActionEvent event) throws IOException {
         Stage stage = new Stage();
@@ -96,7 +99,10 @@ public class ControllerPanel implements Initializable {
         });
         stage.show();
     }
-
+    /**
+     * Método que se encarga de cargar los datos en el controlador, tambien carga el fxml donde se encuentran los
+     * restaurantes.
+     * */
     public void establecerDatos(Data data, ControllerPanel controllerPanel) throws IOException {
         this.data = data;
         this.mostrarNombreUsuario.setText("Hola, " + this.data.getCurrentUser().getNombre());
@@ -114,7 +120,9 @@ public class ControllerPanel implements Initializable {
         this.mostrarContenido.getChildren().setAll(secondFXML);
 
     }
-
+    /**
+     * Método que se encarga de volver al panel central.
+     * */
     @FXML
     void volverInicio(Event event) {
         ImageView btn = (ImageView) event.getSource();
@@ -138,7 +146,7 @@ public class ControllerPanel implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        Image image = new Image(getClass().getResourceAsStream("/imagenes/carritoimagen.png"));
+        Image image = new Image(getClass().getResourceAsStream("/imagenes/imagenesPanel/carritoimagen.png"));
 
 
         ImageView imageView = new ImageView(image);
@@ -157,6 +165,39 @@ public class ControllerPanel implements Initializable {
 
 
         this.btnCarro.setGraphic(stackPane);
+
+    }
+
+    /**
+     * Método que busca un restaurante aleatorio y muestra su menu en el panel.
+     * */
+    @FXML
+    public void mostrarMenuAleatorio(Event event){
+
+        Restaurante restauranteEncontrado = this.data.getListaRestaurantes().getListaRestaurantes().get((int) Math.floor(Math.random() * this.data.getListaRestaurantes().getListaRestaurantes().size()));
+        this.data.setRestauranteSeleccionado(restauranteEncontrado);
+
+        try {
+            this.mostrarMenuRestaurante();
+        }catch (IOException err){
+            System.out.println(err.getMessage());
+        }
+
+
+    }
+    /**
+     * Método que se encarga de mostrar el menu del restaurante, cargando el fxml y luego
+     * añadiendolo al anchorpane establecido como contenedor
+     * **/
+    public void mostrarMenuRestaurante() throws IOException {
+        System.out.println("A camabiar");
+        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("mostrar-menu.fxml"));
+        Parent menuRestaurante = fxmlLoader.load();
+
+        ControllerMostrarMenu controllerMostrarMenu = fxmlLoader.getController();
+        controllerMostrarMenu.recibirData(this.data);
+
+        this.cambiarContenido(menuRestaurante);
 
     }
 }

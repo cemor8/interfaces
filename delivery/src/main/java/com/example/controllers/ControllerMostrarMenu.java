@@ -31,9 +31,22 @@ public class ControllerMostrarMenu {
 
     private Data data = null;
     private Restaurante restaurante = null;
+    @FXML
+    private Label descripRes;
+
+    @FXML
+    private ImageView imagenRes;
+
+    @FXML
+    private Label nombreRes;
     public void recibirData(Data data){
         this.data = data;
         this.crearComida();
+        Image image = new Image(getClass().getResourceAsStream(this.data.getRestauranteSeleccionado().getMostrarEnMenu()));
+        this.imagenRes.setImage(image);
+        this.imagenRes.setPreserveRatio(false);
+        this.nombreRes.setText(this.data.getRestauranteSeleccionado().getNombreMostrar());
+        this.descripRes.setText("Tiempo de entrega entre "+this.data.getRestauranteSeleccionado().getTiempoInicio() + " - "+this.data.getRestauranteSeleccionado().getTiempoInicio() + " min.");
     }
     public void crearComida(){
         this.mostrarComida.setAlignment(Pos.CENTER);

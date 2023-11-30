@@ -9,14 +9,18 @@ public class Restaurante {
     private ArrayList<Comida> comidaDisponible;
     private String imagenRestarurante;
     private String nombreMostrar;
+    private String mostrarEnMenu;
+    private ArrayList<String> tipoComida;
 
-    public Restaurante(String nombre, ArrayList<Comida> comidaDisponible, String imagenRestarurante, int tiempoInicio, int tiempoFin, String nombreMostrar) {
+    public Restaurante(String nombre, ArrayList<Comida> comidaDisponible, String imagenRestarurante, int tiempoInicio, int tiempoFin, String nombreMostrar, String mostrarEnMenu, ArrayList<String> tipo) {
         this.nombre = nombre;
         this.comidaDisponible = comidaDisponible;
         this.imagenRestarurante = imagenRestarurante;
         this.tiempoFin=tiempoFin;
         this.tiempoInicio=tiempoInicio;
         this.nombreMostrar = nombreMostrar;
+        this.mostrarEnMenu = mostrarEnMenu;
+        this.tipoComida = tipo;
     }
 
     public String getNombre() {
@@ -52,5 +56,13 @@ public class Restaurante {
 
     public String getNombreMostrar() {
         return nombreMostrar;
+    }
+
+    public String getMostrarEnMenu() {
+        return mostrarEnMenu;
+    }
+
+    public ArrayList<String> getTipoComida() {
+        return tipoComida;
     }
 }

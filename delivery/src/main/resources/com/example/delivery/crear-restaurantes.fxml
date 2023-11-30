@@ -19,7 +19,7 @@
                <children>
                   <ImageView fitHeight="85.0" fitWidth="87.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../imagenes/kebabQuerer.png" />
+                        <Image url="@../../../imagenes/iconos/kebabQuerer.png" />
                      </image>
                      <VBox.margin>
                         <Insets left="5.0" />
@@ -33,7 +33,7 @@
                      <VBox.margin>
                         <Insets left="5.0" />
                      </VBox.margin></Label>
-                  <MFXButton prefHeight="41.0" prefWidth="103.0" styleClass="btn_mas" text="Mas...">
+                  <MFXButton fx:id="btnKebab" onAction="#mostrarMenuAleatorio" prefHeight="41.0" prefWidth="103.0" styleClass="btn_mas" text="Mas...">
                      <VBox.margin>
                         <Insets left="20.0" top="10.0" />
                      </VBox.margin>
@@ -44,12 +44,12 @@
                <children>
                   <ImageView fitHeight="85.0" fitWidth="87.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../imagenes/tacoRestaurant.png" />
+                        <Image url="@../../../imagenes/iconos/tacoRestaurant.png" />
                      </image>
                   </ImageView>
                   <Label prefHeight="43.0" prefWidth="194.0" styleClass="labelCantidadRestaurantesNombre" text="Tacos" />
                   <Label prefHeight="43.0" prefWidth="194.0" styleClass="labelCercaRestaurantes" text="4 Restaurantes Cerca" />
-                  <MFXButton prefHeight="41.0" prefWidth="103.0" styleClass="btn_mas" text="Mas...">
+                  <MFXButton fx:id="btnTacos" onAction="#mostrarMenuAleatorio" prefHeight="41.0" prefWidth="103.0" styleClass="btn_mas" text="Mas...">
                      <VBox.margin>
                         <Insets left="20.0" top="10.0" />
                      </VBox.margin>
@@ -60,12 +60,12 @@
                <children>
                   <ImageView fitHeight="85.0" fitWidth="87.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../imagenes/Fried%20Chicken.png" />
+                        <Image url="@../../../imagenes/iconos/Fried_Chicken.png" />
                      </image>
                   </ImageView>
                   <Label prefHeight="43.0" prefWidth="194.0" styleClass="labelCantidadRestaurantesNombre" text="Pollo Frito" />
                   <Label prefHeight="43.0" prefWidth="194.0" styleClass="labelCercaRestaurantes" text="10 Restaurantes Cerca" />
-                  <MFXButton prefHeight="41.0" prefWidth="103.0" styleClass="btn_mas" text="Mas...">
+                  <MFXButton fx:id="btnPollo" onAction="#mostrarMenuAleatorio" prefHeight="41.0" prefWidth="103.0" styleClass="btn_mas" text="Mas...">
                      <VBox.margin>
                         <Insets left="20.0" top="10.0" />
                      </VBox.margin>
@@ -76,12 +76,12 @@
                <children>
                   <ImageView fitHeight="85.0" fitWidth="87.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../imagenes/Sandwich.png" />
+                        <Image url="@../../../imagenes/iconos/Sandwich.png" />
                      </image>
                   </ImageView>
                   <Label prefHeight="43.0" prefWidth="194.0" styleClass="labelCantidadRestaurantesNombre" text="Bocadillos" />
                   <Label prefHeight="43.0" prefWidth="194.0" styleClass="labelCercaRestaurantes" text="7 Restaurantes Cerca" />
-                  <MFXButton prefHeight="41.0" prefWidth="103.0" styleClass="btn_mas" text="Mas...">
+                  <MFXButton fx:id="btnBoca" onAction="#mostrarMenuAleatorio" prefHeight="41.0" prefWidth="103.0" styleClass="btn_mas" text="Mas...">
                      <VBox.margin>
                         <Insets left="20.0" top="10.0" />
                      </VBox.margin>
@@ -92,7 +92,7 @@
                <children>
                   <ImageView fitHeight="85.0" fitWidth="87.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../imagenes/Hamburger.png" />
+                        <Image url="@../../../imagenes/iconos/Hamburger.png" />
                      </image>
                   </ImageView>
                   <Label prefHeight="43.0" prefWidth="194.0" styleClass="labelCantidadRestaurantesNombre" text="Hamburguesas">
@@ -100,7 +100,7 @@
                         <Font name="Roboto" size="12.0" />
                      </font></Label>
                   <Label prefHeight="43.0" prefWidth="194.0" styleClass="labelCercaRestaurantes" text="3 Restaurantes Cerca" />
-                  <MFXButton prefHeight="41.0" prefWidth="103.0" styleClass="btn_mas" text="Mas...">
+                  <MFXButton fx:id="btnHambur" onAction="#mostrarMenuAleatorio" prefHeight="41.0" prefWidth="103.0" styleClass="btn_mas" text="Mas...">
                      <VBox.margin>
                         <Insets left="20.0" top="10.0" />
                      </VBox.margin>
@@ -116,7 +116,7 @@
                <VBox.margin>
                   <Insets left="130.0" top="30.0" />
                </VBox.margin></Label>
-            <MFXButton id="btn_ver_mas" prefHeight="54.0" prefWidth="138.0" text="Ver mas">
+            <MFXButton id="btn_ver_mas" onAction="#mostrarMenuAleatorio" prefHeight="54.0" prefWidth="138.0" text="Ver mas">
                <VBox.margin>
                   <Insets left="180.0" />
                </VBox.margin></MFXButton>

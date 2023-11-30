@@ -1,11 +1,11 @@
 .mostrarNombre{
      -fx-font-weight: bold;
-     -fx-font-family: "Helvetica Neue";
+     -fx-font-family: "Roboto";
      -fx-font-size: 25;
 }
 .btn{
    -fx-background-color:#539091; /* Cambia el valor hexadecimal al color deseado */
-   -fx-font-family: "Arial";
+   -fx-font-family: "Roboto";
    -fx-font-weight: bold;
    -fx-font-size: 13;
    -fx-text-fill: "white";

@@ -5,31 +5,58 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane fx:id="mostrarTopBar" prefHeight="947.0" prefWidth="1376.0" stylesheets="@../../../styles/estilos_panel.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controllers.ControllerPanel">
    <children>
-      <AnchorPane fx:id="mostrarContenido" layoutX="188.0" layoutY="61.0" prefHeight="886.0" prefWidth="1134.0" />
-      <AnchorPane id="anchor_lateral" prefHeight="786.0" prefWidth="171.0">
+      <AnchorPane fx:id="mostrarContenido" layoutX="235.0" layoutY="61.0" prefHeight="886.0" prefWidth="1134.0" />
+      <AnchorPane id="anchor_lateral" prefHeight="947.0" prefWidth="235.0">
          <children>
-            <ImageView fitHeight="83.0" fitWidth="106.0" layoutX="28.0" layoutY="122.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="75.0" fitWidth="80.0" layoutX="83.0" layoutY="848.0" onMouseClicked="#cerrarSesion" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../imagenes/perfil.png" />
+                  <Image url="@../../../imagenes/imagenesPanel/logout.png" />
                </image>
             </ImageView>
-            <Label fx:id="mostrarNombreUsuario" layoutX="31.0" layoutY="268.0" prefHeight="61.0" prefWidth="155.0" styleClass="mostrarNombre" />
-            <ImageView fitHeight="75.0" fitWidth="80.0" layoutX="39.0" layoutY="657.0" onMouseClicked="#cerrarSesion" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="61.0" fitWidth="91.0" layoutX="63.0" layoutY="601.0" onMouseClicked="#volverInicio" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../imagenes/logout.png" />
+                  <Image url="@../../../imagenes/imagenesPanel/atras.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="61.0" fitWidth="91.0" layoutX="57.0" layoutY="387.0" onMouseClicked="#volverInicio" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../imagenes/atras.png" />
-               </image>
-            </ImageView>
-            <MFXButton id="btnCarro" fx:id="btnCarro" contentDisplay="RIGHT" layoutX="37.0" layoutY="512.0" maxHeight="61.0" maxWidth="169.0" onAction="#mostrarCarrito" prefHeight="61.0" prefWidth="169.0" styleClass="btn" text="Carrito" />
+            <MFXButton id="btnCarro" fx:id="btnCarro" contentDisplay="RIGHT" layoutX="34.0" layoutY="687.0" maxHeight="61.0" maxWidth="169.0" onAction="#mostrarCarrito" prefHeight="61.0" prefWidth="169.0" styleClass="btn" text="Carrito" />
+            <VBox alignment="CENTER" layoutX="24.0" layoutY="109.0" prefHeight="331.0" prefWidth="188.0" spacing="20.0">
+               <children>
+                  <ImageView fitHeight="83.0" fitWidth="106.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../imagenes/imagenesPanel/perfil.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="mostrarNombreUsuario" prefHeight="61.0" prefWidth="155.0" styleClass="mostrarNombre" textAlignment="CENTER" />
+                  <HBox alignment="CENTER" prefHeight="54.0" prefWidth="235.0">
+                     <children>
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="27.0" prefWidth="50.0" text="Mas de" textAlignment="CENTER" wrapText="true">
+                           <font>
+                              <Font name="Roboto" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="27.0" prefWidth="32.0" text="130" textAlignment="CENTER" textFill="#539091" wrapText="true">
+                           <font>
+                              <Font name="Roboto" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="27.0" prefWidth="82.0" text="restaurantes" textAlignment="CENTER" wrapText="true">
+                           <font>
+                              <Font name="Roboto" size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <MFXButton onAction="#mostrarMenuAleatorio" prefHeight="54.0" prefWidth="155.0" text="Descubrir Ofertas" />
+               </children>
+            </VBox>
          </children>
       </AnchorPane>
-      <AnchorPane id="anchor_superior" layoutX="187.0" prefHeight="61.0" prefWidth="1189.0" />
+      <AnchorPane id="anchor_superior" layoutX="235.0" prefHeight="61.0" prefWidth="1141.0" />
    </children>
 </AnchorPane>

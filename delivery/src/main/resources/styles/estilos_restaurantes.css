@@ -59,7 +59,7 @@
     -fx-background-size: contain;
     -fx-background-repeat: no-repeat;
     -fx-background-radius: 35px;
-    -fx-background-image: url("../imagenes/brindis-cena.jpg");
+    -fx-background-image: url("../imagenes/imagenesCrearRestaurantes/brindis-cena.jpg");
     -fx-background-color : #fff;
 }
 #contenedor_gastado{

@@ -117,6 +117,53 @@ public class ControllerMostrarRestaurantes {
 
 
     }
+    @FXML
+    public void mostrarMenuAleatorio(Event event){
+
+        ArrayList<Restaurante> posibles = new ArrayList<>();
+        Button btn = (Button) event.getSource();
+        switch (btn.getId()){
+            case "btnHambur":
+                this.comporbarCommidaRestaurante(posibles,"hamburguesa");
+                break;
+            case "btnBoca":
+                this.comporbarCommidaRestaurante(posibles,"bocadillos");
+                break;
+            case "btnPollo":
+                this.comporbarCommidaRestaurante(posibles,"pollo");
+                break;
+            case "btnTacos":
+                this.comporbarCommidaRestaurante(posibles,"taco");
+                break;
+            case "btnKebab":
+                this.comporbarCommidaRestaurante(posibles,"kebab");
+                break;
+        }
+
+        Restaurante restauranteEncontrado = posibles.get((int) Math.floor(Math.random() * posibles.size()));
+        this.data.setRestauranteSeleccionado(restauranteEncontrado);
+
+        try {
+            this.mostrarMenuRestaurante();
+        }catch (IOException err){
+            System.out.println(err.getMessage());
+        }
+
+
+    }
+    private void comporbarCommidaRestaurante (ArrayList<Restaurante> posibles, String tipo) {
+        for(Restaurante restaurante : this.data.getListaRestaurantes().getListaRestaurantes()){
+            for(String comida : restaurante.getTipoComida()){
+                if(comida.equalsIgnoreCase(tipo)){
+                    posibles.add(restaurante);
+                    break;
+                }
+            }
+        }
+    }
+
+
+
     public void mostrarMenuRestaurante() throws IOException {
         System.out.println("A camabiar");
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("mostrar-menu.fxml"));

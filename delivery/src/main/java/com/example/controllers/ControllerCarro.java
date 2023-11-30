@@ -1,21 +1,14 @@
 package com.example.controllers;
 import io.github.palexdev.materialfx.controls.MFXTextField;
 import javafx.geometry.Insets;
-import com.example.delivery.MainApplication;
 import com.example.modelo.Comida;
 import com.example.modelo.Data;
 import io.github.palexdev.materialfx.controls.MFXButton;
-import io.github.palexdev.materialfx.controls.MFXComboBox;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.geometry.Pos;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.CheckBox;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
@@ -23,11 +16,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import javafx.stage.Stage;
 
-import javax.swing.border.CompoundBorder;
-import java.awt.event.MouseEvent;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Optional;
@@ -88,7 +77,7 @@ public class ControllerCarro{
     public void crearCarro(){
         if(this.data.getCurrentUser().getCarro().isEmpty()){
             this.contenedorTarjeta.getChildren().clear();
-            Image imagenCesta = new Image(getClass().getResourceAsStream("/imagenes/sad_cart.png"));
+            Image imagenCesta = new Image(getClass().getResourceAsStream("/imagenes/imagenesCarrito/sad_cart.png"));
             ImageView imageView = new ImageView(imagenCesta);
             imageView.setFitHeight(300);
             imageView.setFitWidth(300);
@@ -210,7 +199,7 @@ public class ControllerCarro{
         System.out.println("bie");
         this.contenedorTarjeta.getChildren().clear();
         this.data.getCurrentUser().setCarro(new ArrayList<>());
-        Image imagenCesta = new Image(getClass().getResourceAsStream("/imagenes/feliz.png"));
+        Image imagenCesta = new Image(getClass().getResourceAsStream("/imagenes/imagenesCarrito/feliz.png"));
         ImageView imageView = new ImageView(imagenCesta);
         imageView.setFitHeight(300);
         imageView.setFitWidth(350);
