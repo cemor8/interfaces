@@ -9,7 +9,7 @@
 
 }
 .nombre-comida{
-    -fx-font-family:
+    -fx-font-family: "Roboto";
     -fx-font-size: 16px;
     -fx-font-weight: bold;
     -fx-text-fill: #333333;
@@ -29,7 +29,7 @@
  }
 
 .texto{
-    -fx-font-family: "Arial";
+    -fx-font-family: "Roboto";
     -fx-font-size: 20px;
     -fx-font-weight: bold;
     -fx-text-fill: black;
@@ -40,6 +40,6 @@
     -fx-text-fill : "red";
 }
 .rellenar-pago{
-    -fx-font-family: "Arial";
+    -fx-font-family: "Roboto";
     -fx-font-size: 15px;
 }

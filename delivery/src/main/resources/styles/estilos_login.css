@@ -6,7 +6,7 @@
 }
 #mostrarInicioSesion{
     -fx-font-size: 30;
-    -fx-font-family: "Arial";
+    -fx-font-family: "Roboto";
     -fx-text-fill: "black";
     -fx-font-weight:bold;
 }
@@ -24,7 +24,7 @@
   }
  .btn{
     -fx-background-color:#68c3b7;
-    -fx-font-family: "Arial";
+    -fx-font-family: "Roboto";
     -fx-font-weight: bold;
     -fx-font-size: 15;
     -fx-text-fill: "white";

@@ -11,9 +11,9 @@
 
 /* Estilo para la clase del label */
 .texto_restaurante {
-    -fx-font-size: 1.17em;
+    -fx-font-size: 1.2em;
     -fx-font-weight: bold;
-    -fx-font-family: "Helvetica Neue";
+    -fx-font-family: "Roboto";
 
 }
 .tiempo{
@@ -53,6 +53,10 @@
         -fx-text-fill: "white";
 }
 #btn_ver_mas{
+    -fx-background-color:#539091;
+    -fx-font-family: "Roboto";
+     -fx-text-fill: "white";
+     -fx-font-weight: bold;
 
 }
 #contenedorOfertas{
@@ -81,7 +85,7 @@
 }
 .btn_mas{
     -fx-background-color:#539091;
-       -fx-font-family: "Arial";
+       -fx-font-family: "Roboto";
        -fx-font-weight: bold;
        -fx-font-size: 13;
        -fx-text-fill: "white";

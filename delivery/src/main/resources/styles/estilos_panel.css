@@ -27,3 +27,20 @@
     -fx-border-width: 0 0 2 0;
     -fx-border-color: "black";
  }
+#labelCerrar{
+    -fx-font-weight: bold;
+
+}
+#buscar{
+    -fx-text-fill: "grey";
+}
+#descubrir{
+    -fx-background-color:#539091;
+    -fx-text-fill: "white";
+    -fx-font-weight: bold;
+}
+.seccion{
+    -fx-font-weight: bold;
+    -fx-font-family: "Roboto";
+
+}

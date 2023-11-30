@@ -15,6 +15,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Modality;
@@ -24,10 +25,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class ControllerPanel implements Initializable {
-
-    @FXML
-    private MFXButton btnCarro;
+public class ControllerPanel {
 
     @FXML
     private MFXButton btnCerrarSesion;
@@ -59,7 +57,7 @@ public class ControllerPanel implements Initializable {
     @FXML
     public void cerrarSesion(Event event) {
         this.data.setCurrentUser(null);
-        ImageView img = (ImageView) event.getSource();
+        AnchorPane img = (AnchorPane) event.getSource();
         Stage stage = (Stage) img.getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("login-view.fxml"));
         try {
@@ -82,7 +80,7 @@ public class ControllerPanel implements Initializable {
      * Método que se encarga de abrir una nueva ventana para mostrar el carrito
      * **/
     @FXML
-    void mostrarCarrito(ActionEvent event) throws IOException {
+    void mostrarCarrito(MouseEvent event) throws IOException {
         Stage stage = new Stage();
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("carrito.fxml"));
         Parent root = fxmlLoader.load();
@@ -141,32 +139,29 @@ public class ControllerPanel implements Initializable {
         Scene scene = new Scene(root);
         stage.setScene(scene);
     }
+    /**
+     * Método que se encarga de volver al panel central.
+     * */
+    @FXML
+    void volver(MouseEvent event) {
+        AnchorPane btn = (AnchorPane) event.getSource();
+        Stage stage = (Stage) btn.getScene().getWindow();
+        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("panel-view.fxml"));
+        Parent root = null;
+        try {
+            root = fxmlLoader.load();
+            ControllerPanel controllerPanel = fxmlLoader.getController();
+            controllerPanel.establecerDatos(this.data, controllerPanel);
+        } catch (IOException err) {
+            System.out.println(err.getMessage());
+        }
 
-
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-
-        Image image = new Image(getClass().getResourceAsStream("/imagenes/imagenesPanel/carritoimagen.png"));
-
-
-        ImageView imageView = new ImageView(image);
-        imageView.setFitWidth(40);
-        imageView.setFitHeight(40);
-
-
-        imageView.setPreserveRatio(true);
-        imageView.setSmooth(true);
-        imageView.setCache(true);
-
-
-        StackPane stackPane = new StackPane();
-        stackPane.getChildren().add(imageView);
-        StackPane.setMargin(imageView, new javafx.geometry.Insets(-4, 0, 0, 0));
-
-
-        this.btnCarro.setGraphic(stackPane);
-
+        stage.setTitle("Panel");
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
     }
+
+
 
     /**
      * Método que busca un restaurante aleatorio y muestra su menu en el panel.

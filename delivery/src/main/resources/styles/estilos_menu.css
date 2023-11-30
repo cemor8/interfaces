@@ -1,12 +1,12 @@
 .nombreComida{
-    -fx-font-size: 1.17em;
+    -fx-font-size: 1.2em;
     -fx-font-weight: bold;
-    -fx-font-family: "Helvetica Neue";
+    -fx-font-family: "Roboto";
 }
 .mostrar-calorias{
     -fx-text-fill: #888888;
     -fx-font-size: 13px;
-    -fx-font-family: "Arial";
+    -fx-font-family: "Roboto";
 }
 .btn-eliminar{
      -fx-font-size: 14px;

@@ -44,7 +44,7 @@ public class ControllerMostrarRestaurantes {
         this.data = data;
         this.controllerPanel = controllerPanel;
         this.crearRestaurantes();
-        this.mostrarGastado.setText(String.valueOf(this.data.getCurrentUser().getDineroGastado()));
+        this.mostrarGastado.setText(String.valueOf(this.data.getCurrentUser().getDineroGastado() + "€"));
 
     }
     /**
