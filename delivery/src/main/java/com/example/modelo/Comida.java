@@ -5,11 +5,13 @@ public class Comida {
     private String foto;
     private double precio;
     private int cantidad;
+    private String descripcion;
 
-    public Comida(String nombre, String foto, double precio) {
+    public Comida(String nombre, String foto, double precio, String descripcion) {
         this.nombre = nombre;
         this.foto = foto;
         this.precio = precio;
+        this.descripcion = descripcion;
     }
 
     public String getNombre() {
@@ -30,5 +32,9 @@ public class Comida {
 
     public void setCantidad(int cantidad) {
         this.cantidad = cantidad;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
     }
 }

@@ -86,6 +86,9 @@ public class ControllerLogin {
         }
 
     }
+    /**
+     * Método que carga la vista para poder registrar un usuario
+     * */
     @FXML
     void registrarse(ActionEvent event) {
         Button btn = (Button) event.getSource();
@@ -101,11 +104,12 @@ public class ControllerLogin {
             System.out.println(err.getMessage());
         }
     }
-
+    /**
+     * Método que se encarga de recibir la informacion para
+     * cargarla en el controlador
+     * */
     public void recibirData(Data data) {
         this.data = data;
-        System.out.println("hola");
-
     }
 
     /**
@@ -133,18 +137,20 @@ public class ControllerLogin {
         stage.setTitle("Panel");
         Scene scene = new Scene(root);
         scene.getStylesheets().add(getClass().getResource("/styles/estilos_restaurantes.css").toExternalForm());
-        System.out.println(getClass().getResource("/styles/estilos_restaurantes.css"));
         stage.setScene(scene);
     }
-
+    /**
+     * Método que se encarga de eliminar el texto cuando se introduce informacion erronea
+     * */
     public void eliminarTexto(){
         this.infoCorreo.setText("");
         this.infoContraseña.setText("");
     }
-
+    /**
+     * Método que se encarga de llamar al metodo que elimina el texto de notificaion.
+     * */
     @FXML
     void eliminarInfo(KeyEvent event) {
-        System.out.println("hola");
         this.eliminarTexto();
     }
 

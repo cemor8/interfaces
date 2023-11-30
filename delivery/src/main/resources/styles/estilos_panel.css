@@ -1,29 +1,29 @@
 .mostrarNombre{
-     -fx-font-weight: bold;
-     -fx-font-family: "Roboto";
-     -fx-font-size: 25;
+    -fx-font-weight: bold;
+    -fx-font-family: "Roboto";
+    -fx-font-size: 25;
 }
 .btn{
-   -fx-background-color:#539091; /* Cambia el valor hexadecimal al color deseado */
-   -fx-font-family: "Roboto";
-   -fx-font-weight: bold;
-   -fx-font-size: 13;
-   -fx-text-fill: "white";
-   -fx-background-radius: 25px;
-   -fx-min-width: 120px; /* Ancho mínimo */
-   -fx-min-height: 40px; /* Altura mínima */
-   -fx-max-width: 120px; /* Ancho máximo */
-   -fx-max-height: 40px;
+    -fx-background-color:#539091;
+    -fx-font-family: "Roboto";
+    -fx-font-weight: bold;
+    -fx-font-size: 13;
+    -fx-text-fill: "white";
+    -fx-background-radius: 25px;
+    -fx-min-width: 120px;
+    -fx-min-height: 40px;
+    -fx-max-width: 120px;
+    -fx-max-height: 40px;
  }
 #btnCerrar{
-    -fx-min-width: 140px; /* Ancho mínimo */
-    -fx-max-width: 140px; /* Ancho máximo */
+    -fx-min-width: 140px;
+    -fx-max-width: 140px;
  }
 #anchor_lateral{
-     -fx-border-width: 0 2 0 0;
-     -fx-border-color: "grey";
+    -fx-border-width: 0 2 0 0;
+    -fx-border-color: "grey";
  }
 #anchor_superior{
-      -fx-border-width: 0 0 2 0;
-      -fx-border-color: "black";
+    -fx-border-width: 0 0 2 0;
+    -fx-border-color: "black";
  }

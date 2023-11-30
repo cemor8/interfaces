@@ -36,48 +36,63 @@ public class ControllerMostrarRestaurantes {
     private MFXScrollPane scrollRestaurantes;
     @FXML
     private Label mostrarGastado;
-    public void recibirData(Data data, ControllerPanel controllerPanel) throws IOException {
+    /**
+     * Método que se encarga de recibir la informacion y crear los
+     * restaurantes
+     * */
+    public void recibirData(Data data, ControllerPanel controllerPanel) {
         this.data = data;
         this.controllerPanel = controllerPanel;
         this.crearRestaurantes();
         this.mostrarGastado.setText(String.valueOf(this.data.getCurrentUser().getDineroGastado()));
 
     }
+    /**
+     * Método que se encarga de crear los restaurantes y meterlos
+     * en un scrollpane
+     * */
     public void crearRestaurantes(){
-        //333 //199 anchorpane // 1012 // 266 hbox
+
         VBox vBox = new VBox();
         HBox hBox = new HBox();
+
         vBox.setSpacing(30);
         for(int i = 0; i<this.data.getListaRestaurantes().getListaRestaurantes().size() ; i++){
-            //hBox.setSpacing(30);
             AnchorPane anchorPane = new AnchorPane();
             anchorPane.setId(this.data.getListaRestaurantes().getListaRestaurantes().get(i).getNombre());
             anchorPane.setMinWidth(200);
             anchorPane.setMinHeight(220);
             anchorPane.getStyleClass().add("test");
             anchorPane.setOnMouseClicked(this::mostrarMenu);
+
             Image image = new Image(getClass().getResourceAsStream(this.data.getListaRestaurantes().getListaRestaurantes().get(i).getImagen()));
             ImageView imageView = new ImageView(image);
             imageView.setFitWidth(290);
             imageView.setFitHeight(150);
             imageView.setPreserveRatio(false);
+
             Rectangle clipRect = new Rectangle(290, 150);
             clipRect.setArcWidth(20);
             clipRect.setArcHeight(20);
             imageView.setClip(clipRect);
+
             StackPane stackPane = new StackPane();
             stackPane.getChildren().add(imageView);
             stackPane.setPrefHeight(270);
             stackPane.setPrefWidth(150);
+
             Label nombre = new Label(this.data.getListaRestaurantes().getListaRestaurantes().get(i).getNombreMostrar());
             nombre.getStyleClass().add("nombre_restaurante");
             nombre.setLayoutY(160);
+
             Label tiempo = new Label("Tiempo de Entrega: "+this.data.getListaRestaurantes().getListaRestaurantes().get(i).getTiempoInicio()+" - "+this.data.getListaRestaurantes().getListaRestaurantes().get(i).getTiempoFin()+" mins.");
             tiempo.getStyleClass().add("tiempo-entrega");
             tiempo.setLayoutY(190);
+
             anchorPane.getChildren().add(imageView);
             anchorPane.getChildren().add(nombre);
             anchorPane.getChildren().add(tiempo);
+
             Insets insets = new Insets(0, 0, 0, 25);
             HBox.setMargin(anchorPane, insets);
 
@@ -95,10 +110,11 @@ public class ControllerMostrarRestaurantes {
         }
         this.scrollRestaurantes.setContent(vBox);
 
-
-
     }
-
+    /**
+     * Método que se encarga de mostrar el menu de un restaurante, se utiliza cuando
+     * se selecciona un restaurante.
+     * */
     @FXML
     public void mostrarMenu(Event event){
         AnchorPane anchorPane = (AnchorPane) event.getSource();
@@ -115,8 +131,11 @@ public class ControllerMostrarRestaurantes {
             System.out.println(err.getMessage());
         }
 
-
     }
+    /**
+     * Método que se encarga de buscar un restaurante aleatorio dependiendo
+     * de en la categoria que se ha clickado.
+     * */
     @FXML
     public void mostrarMenuAleatorio(Event event){
 
@@ -124,19 +143,19 @@ public class ControllerMostrarRestaurantes {
         Button btn = (Button) event.getSource();
         switch (btn.getId()){
             case "btnHambur":
-                this.comporbarCommidaRestaurante(posibles,"hamburguesa");
+                this.comporbarComidaRestaurante(posibles,"hamburguesa");
                 break;
             case "btnBoca":
-                this.comporbarCommidaRestaurante(posibles,"bocadillos");
+                this.comporbarComidaRestaurante(posibles,"bocadillos");
                 break;
             case "btnPollo":
-                this.comporbarCommidaRestaurante(posibles,"pollo");
+                this.comporbarComidaRestaurante(posibles,"pollo");
                 break;
             case "btnTacos":
-                this.comporbarCommidaRestaurante(posibles,"taco");
+                this.comporbarComidaRestaurante(posibles,"taco");
                 break;
             case "btnKebab":
-                this.comporbarCommidaRestaurante(posibles,"kebab");
+                this.comporbarComidaRestaurante(posibles,"kebab");
                 break;
         }
 
@@ -151,7 +170,13 @@ public class ControllerMostrarRestaurantes {
 
 
     }
-    private void comporbarCommidaRestaurante (ArrayList<Restaurante> posibles, String tipo) {
+    /**
+     * Método que se encarga de comprobar si un restaurante tiene
+     * comida de una categoria
+     * @param posibles lista de restaurantes posibles
+     * @param tipo categoria de comida
+     * */
+    private void comporbarComidaRestaurante (ArrayList<Restaurante> posibles, String tipo) {
         for(Restaurante restaurante : this.data.getListaRestaurantes().getListaRestaurantes()){
             for(String comida : restaurante.getTipoComida()){
                 if(comida.equalsIgnoreCase(tipo)){
@@ -162,16 +187,15 @@ public class ControllerMostrarRestaurantes {
         }
     }
 
-
-
+    /**
+     * Método que se encarga de mostrar el menu de un restaurante
+     * */
     public void mostrarMenuRestaurante() throws IOException {
-        System.out.println("A camabiar");
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("mostrar-menu.fxml"));
         Parent menuRestaurante = fxmlLoader.load();
 
         ControllerMostrarMenu controllerMostrarMenu = fxmlLoader.getController();
         controllerMostrarMenu.recibirData(this.data);
-
         this.controllerPanel.cambiarContenido(menuRestaurante);
 
     }

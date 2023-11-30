@@ -9,10 +9,10 @@
 
 }
 .nombre-comida{
-  -fx-font-family: "Arial"; /* Tipo de fuente */
-  -fx-font-size: 16px; /* Tamaño de la fuente */
-  -fx-font-weight: bold; /* Fuente en negrita */
-  -fx-text-fill: #333333;
+    -fx-font-family:
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333;
 }
 
 .imagen-vacio{
@@ -25,7 +25,7 @@
 }
 
 .btn-eliminar:hover {
-     -fx-background-color: red;
+    -fx-background-color: red;
  }
 
 .texto{

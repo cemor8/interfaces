@@ -1,15 +1,11 @@
 .nombreComida{
- -fx-font-size: 1.17em;
+    -fx-font-size: 1.17em;
     -fx-font-weight: bold;
     -fx-font-family: "Helvetica Neue";
 }
-.imagen-comida{
--fx-opacity: 0.7;
-    -fx-effect: dropshadow(three-pass-box, black, 10, 0, 5, 5);
-}
 .mostrar-calorias{
--fx-text-fill: #888888; /* Color gris para el texto */
-    -fx-font-size: 13px; /* Tamaño de la fuente pequeño */
+    -fx-text-fill: #888888;
+    -fx-font-size: 13px;
     -fx-font-family: "Arial";
 }
 .btn-eliminar{
@@ -18,15 +14,15 @@
      -fx-background-radius: 20;
 }
 .nombre_restaurante{
-        -fx-font-family: "Roboto";
-        -fx-font-size: 2.5em;
-        -fx-text-fill: "black";
-        -fx-font-weight: bold;
+    -fx-font-family: "Roboto";
+    -fx-font-size: 2.5em;
+    -fx-text-fill: "black";
+    -fx-font-weight: bold;
 
 }
 .tiempo-entrega{
--fx-font-family: "Roboto";
-        -fx-font-size: 1.2em;
-        -fx-text-fill: "grey";
+    -fx-font-family: "Roboto";
+    -fx-font-size: 1.2em;
+    -fx-text-fill: "grey";
 
 }

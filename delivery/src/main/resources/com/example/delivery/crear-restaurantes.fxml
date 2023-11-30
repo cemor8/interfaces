@@ -122,7 +122,7 @@
                </VBox.margin></MFXButton>
          </children>
       </VBox>
-      <VBox id="contenedor_gastado" layoutX="835.0" layoutY="283.0" prefHeight="340.0" prefWidth="284.0">
+      <VBox id="contenedor_gastado" layoutX="733.0" layoutY="283.0" prefHeight="340.0" prefWidth="284.0">
          <children>
             <Label id="labelGastadoMes" alignment="CENTER" prefHeight="57.0" prefWidth="281.0" text="Dinero Gastado" />
             <Label id="cantidad_gastado" fx:id="mostrarGastado" alignment="CENTER" prefHeight="154.0" prefWidth="284.0">

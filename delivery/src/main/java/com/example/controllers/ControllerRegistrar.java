@@ -59,7 +59,9 @@ public class ControllerRegistrar {
         }
 
     };
-
+    /**
+     * Método que se encarga de comprobar los datos para crear un usuario.
+     * */
     @FXML
     void crearUsuario(ActionEvent event) {
         this.avisoCorreo.setText("");
@@ -67,9 +69,8 @@ public class ControllerRegistrar {
         this.avisoApellidos.setText("");
         this.avisoNombre.setText("");
         boolean error = false;
-        System.out.println("hola");
-        if(!validarContenido(columnasExpresiones.get("Nombre"),this.introducirNombre.getText())){
 
+        if(!validarContenido(columnasExpresiones.get("Nombre"),this.introducirNombre.getText())){
             this.avisoNombre.setText("Nombre inválido");
             this.introducirNombre.setText("");
             error = true;
@@ -112,6 +113,9 @@ public class ControllerRegistrar {
         Matcher matcher = patronValidar.matcher(texto_buscar);
         return matcher.matches();
     }
+    /**
+     * Método que se encarga de volver al login
+     * */
     @FXML
     public void volverLogin(Event event){
         Button btn = (Button) event.getSource();

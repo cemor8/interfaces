@@ -54,8 +54,8 @@ public class ControllerPanel implements Initializable {
     private Data data = null;
     /**
      * Método que se encarga de cerrar sesion para logearse con otro usuario
+     *
      * */
-
     @FXML
     public void cerrarSesion(Event event) {
         this.data.setCurrentUser(null);
@@ -190,7 +190,6 @@ public class ControllerPanel implements Initializable {
      * añadiendolo al anchorpane establecido como contenedor
      * **/
     public void mostrarMenuRestaurante() throws IOException {
-        System.out.println("A camabiar");
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("mostrar-menu.fxml"));
         Parent menuRestaurante = fxmlLoader.load();
 

@@ -9,7 +9,7 @@
    <children>
       <HBox fx:id="mostrarComida" layoutX="70.0" layoutY="505.0" prefHeight="367.0" prefWidth="1020.0" styleClass="contenedorComida" />
       <ImageView fx:id="imagenRes" fitHeight="320.0" fitWidth="770.0" layoutX="195.0" layoutY="14.0" pickOnBounds="true" />
-      <Label fx:id="nombreRes" layoutX="195.0" layoutY="327.0" prefHeight="74.0" prefWidth="385.0" styleClass="nombre_restaurante" />
+      <Label fx:id="nombreRes" layoutX="195.0" layoutY="320.0" prefHeight="81.0" prefWidth="501.0" styleClass="nombre_restaurante" />
       <Label fx:id="descripRes" layoutX="195.0" layoutY="388.0" prefHeight="55.0" prefWidth="314.0" styleClass="tiempo-entrega" />
    </children>
 </AnchorPane>

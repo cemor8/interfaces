@@ -35,14 +35,22 @@ public class ControllerComida implements Initializable {
     private Data data;
     @FXML
     private Label info;
+    @FXML
+    private Label descripcionComida;
+    @FXML
+    private Label nombreComida;
 
+    /**
+     * Método que se encarga de meter un artículo en el carrito, comprueba que haya hueco en este y
+     * que la cantidad del articulo no supere la máxima.
+     * */
     @FXML
     void meterCarrito(ActionEvent event) {
         this.info.setText("");
         if(this.mostrarCantidad.getValue() == null){
             return;
         }
-        Comida comida = new Comida(this.data.getComidaSeleccionada().getNombre(),this.data.getComidaSeleccionada().getFoto(),this.data.getComidaSeleccionada().getPrecio());
+        Comida comida = new Comida(this.data.getComidaSeleccionada().getNombre(),this.data.getComidaSeleccionada().getFoto(),this.data.getComidaSeleccionada().getPrecio(),this.data.getComidaSeleccionada().getDescripcion());
         comida.setCantidad(this.mostrarCantidad.getValue());
         Optional<Comida> comidaOptional = this.data.getCurrentUser().getCarro().stream().filter(comida1 -> comida1.getNombre().equalsIgnoreCase(comida.getNombre())).findAny();
         if(comidaOptional.isPresent()){
@@ -73,13 +81,19 @@ public class ControllerComida implements Initializable {
         this.mostrarCantidad.setValue(1);
 
     }
-
+    /**
+     * Método que se encarga de cargar los datos en el controlador y establecer la imagen
+     * de la comida junto a una descripcion y su nombre.
+     * */
     public void recibirData(Data data){
         this.data = data;
         this.mostrarComida.setImage(new Image(getClass().getResourceAsStream(this.data.getComidaSeleccionada().getFoto())));
         this.mostrarComida.setPreserveRatio(false);
         this.mostrarComida.setFitHeight(300);
         this.mostrarComida.setFitWidth(300);
+        this.nombreComida.setText(this.data.getComidaSeleccionada().getNombre());
+        this.descripcionComida.setText(this.data.getComidaSeleccionada().getDescripcion());
+
     }
 
 }
