@@ -116,7 +116,7 @@
                <VBox.margin>
                   <Insets left="130.0" top="30.0" />
                </VBox.margin></Label>
-            <MFXButton id="btn_ver_mas" onAction="#mostrarMenuAleatorio" prefHeight="54.0" prefWidth="138.0" text="Ver mas">
+            <MFXButton id="btn_ver_mas" fx:id="todos" onAction="#mostrarMenuAleatorio" prefHeight="54.0" prefWidth="138.0" text="Ver mas">
                <VBox.margin>
                   <Insets left="180.0" />
                </VBox.margin></MFXButton>
