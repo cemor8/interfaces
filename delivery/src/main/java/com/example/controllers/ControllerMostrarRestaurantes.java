@@ -141,7 +141,6 @@ public class ControllerMostrarRestaurantes {
 
         ArrayList<Restaurante> posibles = new ArrayList<>();
         Button btn = (Button) event.getSource();
-        System.out.println(btn.getId());
         switch (btn.getId()){
             case "btnHambur":
                 this.comporbarComidaRestaurante(posibles,"hamburguesa");

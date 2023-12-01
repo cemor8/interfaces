@@ -33,7 +33,7 @@
                               <Font name="Roboto" size="14.0" />
                            </font>
                         </Label>
-                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="27.0" prefWidth="32.0" text="130" textAlignment="CENTER" textFill="#539091" wrapText="true">
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="27.0" prefWidth="32.0" text="130" textAlignment="CENTER" textFill="#68c3b7" wrapText="true">
                            <font>
                               <Font name="Roboto" size="18.0" />
                            </font>

@@ -57,6 +57,8 @@
     -fx-font-family: "Roboto";
      -fx-text-fill: "white";
      -fx-font-weight: bold;
+     -fx-background-radius: 15px;
+     -fx-font-size: 1.25em;
 
 }
 #contenedorOfertas{
