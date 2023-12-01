@@ -52,7 +52,7 @@ public class ControllerMostrarMenu {
         this.imagenRes.setImage(image);
         this.imagenRes.setPreserveRatio(false);
         this.nombreRes.setText(this.data.getRestauranteSeleccionado().getNombreMostrar());
-        this.descripRes.setText("Tiempo de entrega entre "+this.data.getRestauranteSeleccionado().getTiempoInicio() + " - "+this.data.getRestauranteSeleccionado().getTiempoInicio() + " min.");
+        this.descripRes.setText("Tiempo de entrega entre "+this.data.getRestauranteSeleccionado().getTiempoInicio() + " - "+this.data.getRestauranteSeleccionado().getTiempoFin() + " min.");
     }
     /**
      * Método que se encarga de crear cada elemento que representa a la

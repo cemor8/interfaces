@@ -89,8 +89,8 @@ public class ControllerComida implements Initializable {
         this.data = data;
         this.mostrarComida.setImage(new Image(getClass().getResourceAsStream(this.data.getComidaSeleccionada().getFoto())));
         this.mostrarComida.setPreserveRatio(false);
-        this.mostrarComida.setFitHeight(300);
-        this.mostrarComida.setFitWidth(300);
+        this.mostrarComida.setFitHeight(271);
+        this.mostrarComida.setFitWidth(383);
         this.nombreComida.setText(this.data.getComidaSeleccionada().getNombre());
         this.descripcionComida.setText(this.data.getComidaSeleccionada().getDescripcion());
 
