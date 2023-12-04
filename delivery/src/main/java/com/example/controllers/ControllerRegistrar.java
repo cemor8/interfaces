@@ -19,6 +19,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -87,7 +88,7 @@ public class ControllerRegistrar {
             this.introducirContraseña.setText("");
             error = true;
         }
-        if(!validarContenido(columnasExpresiones.get("Correo"),this.introducirCorreo.getText())){
+        if(!validarContenido(columnasExpresiones.get("Correo"),this.introducirCorreo.getText()) || this.comprobarExistente(this.introducirCorreo.getText())){
 
             this.avisoCorreo.setText("Correo inválido");
             this.introducirCorreo.setText("");
@@ -130,6 +131,13 @@ public class ControllerRegistrar {
         }catch (IOException err){
             System.out.println(err.getMessage());
         }
+    }
+    /**
+     * Método que comprueba si ya hay un usuario con el mismo correo.
+     * */
+    public boolean comprobarExistente(String correo){
+        Optional<Usuario> usuarioOptional = this.data.getListaUsuarios().getUsuarios().stream().filter(usuario -> usuario.getCorreo().equalsIgnoreCase(correo)).findAny();
+        return usuarioOptional.isPresent();
     }
     public void recibirData(Data data) {
         this.data = data;
