@@ -36,7 +36,7 @@ public class ControllerLogin {
     void continuar(MouseEvent event) {
         this.data.setCurrentUser(new Usuario(this.introducirUsuario.getText()));
         Button btn = (Button) event.getSource();
-        Stage stage= (Stage) btn.getScene().getWindow();
+        Stage stageLogin= (Stage) btn.getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("panel-view.fxml"));
         Parent root =null;
         try {
@@ -45,11 +45,12 @@ public class ControllerLogin {
             System.out.println(err.getMessage());
         }
         ControllerPanelPrincipal controllerPanel = fxmlLoader.getController();
-        //controllerPanel.establecerDatos(this.data);
+        controllerPanel.establecerDatos(this.data);
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root));
         stage.setTitle("Panel");
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-
+        stage.show();
+        stageLogin.close();
     }
     public void recibirData(Data data){
         this.data = data;
