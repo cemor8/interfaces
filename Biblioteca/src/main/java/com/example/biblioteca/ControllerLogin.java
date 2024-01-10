@@ -52,7 +52,7 @@ public class ControllerLogin {
         stage.show();
         stageLogin.close();
     }
-    public void recibirData(Data data){
+    public void establecerDatos(Data data){
         this.data = data;
     }
 

@@ -6,6 +6,11 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class ControllerConfiguracion {
 
     @FXML
@@ -23,7 +28,6 @@ public class ControllerConfiguracion {
     @FXML
     private MFXComboBox<String> opcionesIdioma;
     private Data data;
-
     @FXML
     void guardar(MouseEvent event) {
 
@@ -31,6 +35,5 @@ public class ControllerConfiguracion {
     public void recibirData(Data data){
         this.data = data;
     }
-
 }
 

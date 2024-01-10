@@ -14,7 +14,7 @@ public class MainApplication extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("login.fxml"));
         Parent root = fxmlLoader.load();
         ControllerLogin controllerLogin = fxmlLoader.getController();
-        controllerLogin.recibirData(new Data());
+        controllerLogin.establecerDatos(new Data());
         Scene scene = new Scene(root);
         stage.setTitle("Login");
         stage.setScene(scene);
